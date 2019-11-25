@@ -1,72 +1,7 @@
 {
-  "total_count": 1,
+  "total_count": 0,
   "incomplete_results": false,
   "items": [
-    {
-      "url": "https://api.github.com/repos/pytorch/pytorch/issues/29959",
-      "repository_url": "https://api.github.com/repos/pytorch/pytorch",
-      "labels_url": "https://api.github.com/repos/pytorch/pytorch/issues/29959/labels{/name}",
-      "comments_url": "https://api.github.com/repos/pytorch/pytorch/issues/29959/comments",
-      "events_url": "https://api.github.com/repos/pytorch/pytorch/issues/29959/events",
-      "html_url": "https://github.com/pytorch/pytorch/issues/29959",
-      "id": 523784646,
-      "node_id": "MDU6SXNzdWU1MjM3ODQ2NDY=",
-      "number": 29959,
-      "title": "DISABLED test_async_grad_guard_with_grad (jit.test_async.TestAsync)",
-      "user": {
-        "login": "zdevito",
-        "id": 370202,
-        "node_id": "MDQ6VXNlcjM3MDIwMg==",
-        "avatar_url": "https://avatars0.githubusercontent.com/u/370202?v=4",
-        "gravatar_id": "",
-        "url": "https://api.github.com/users/zdevito",
-        "html_url": "https://github.com/zdevito",
-        "followers_url": "https://api.github.com/users/zdevito/followers",
-        "following_url": "https://api.github.com/users/zdevito/following{/other_user}",
-        "gists_url": "https://api.github.com/users/zdevito/gists{/gist_id}",
-        "starred_url": "https://api.github.com/users/zdevito/starred{/owner}{/repo}",
-        "subscriptions_url": "https://api.github.com/users/zdevito/subscriptions",
-        "organizations_url": "https://api.github.com/users/zdevito/orgs",
-        "repos_url": "https://api.github.com/users/zdevito/repos",
-        "events_url": "https://api.github.com/users/zdevito/events{/privacy}",
-        "received_events_url": "https://api.github.com/users/zdevito/received_events",
-        "type": "User",
-        "site_admin": false
-      },
-      "labels": [
-        {
-          "id": 1301397902,
-          "node_id": "MDU6TGFiZWwxMzAxMzk3OTAy",
-          "url": "https://api.github.com/repos/pytorch/pytorch/labels/topic:%20flaky-tests",
-          "name": "topic: flaky-tests",
-          "color": "0e8a16",
-          "default": false,
-          "description": "Problem is a flaky test in CI"
-        },
-        {
-          "id": 1301347167,
-          "node_id": "MDU6TGFiZWwxMzAxMzQ3MTY3",
-          "url": "https://api.github.com/repos/pytorch/pytorch/labels/triaged",
-          "name": "triaged",
-          "color": "006b75",
-          "default": false,
-          "description": "This issue has been looked at a team member, and triaged and prioritized into an appropriate module"
-        }
-      ],
-      "state": "open",
-      "locked": false,
-      "assignee": null,
-      "assignees": [
 
-      ],
-      "milestone": null,
-      "comments": 0,
-      "created_at": "2019-11-16T03:43:54Z",
-      "updated_at": "2019-11-19T15:04:09Z",
-      "closed_at": null,
-      "author_association": "CONTRIBUTOR",
-      "body": "Test issues please ignore.\r\nThis is not a real issue, but a test that the presence of this issue causes the code in the PR https://github.com/pytorch/pytorch/pull/29944 to skip the test named in this issue.\n\ncc @ezyang @gchanan @zou3519 @jerryzh168 @suo",
-      "score": 0.0
-    }
   ]
 }
