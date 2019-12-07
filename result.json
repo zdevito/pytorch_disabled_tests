@@ -78,9 +78,9 @@
 
       ],
       "milestone": null,
-      "comments": 0,
+      "comments": 1,
       "created_at": "2019-12-05T22:38:00Z",
-      "updated_at": "2019-12-05T23:13:05Z",
+      "updated_at": "2019-12-07T18:47:31Z",
       "closed_at": null,
       "author_association": "CONTRIBUTOR",
       "body": "## 🐛 Bug\r\n\r\n19:19:52 ERROR: test_max_pool2d (__main__.TestQuantizedOps)\r\n19:19:52 ----------------------------------------------------------------------\r\n19:19:52 Traceback (most recent call last):\r\n19:19:52   File \"test_quantized.py\", line 403, in test_max_pool2d\r\n19:19:52     min_side=1, max_side=10),\r\n19:19:52   File \"/usr/local/lib/python3.6/dist-packages/hypothesis/core.py\", line 991, in wrapped_test\r\n19:19:52     raise the_error_hypothesis_found\r\n19:19:52   File \"/usr/local/lib/python3.6/dist-packages/hypothesis/core.py\", line 950, in wrapped_test\r\n19:19:52     state.run()\r\n19:19:52   File \"/usr/local/lib/python3.6/dist-packages/hypothesis/core.py\", line 686, in run\r\n19:19:52     info.__expected_traceback,\r\n19:19:52   File \"/usr/local/lib/python3.6/dist-packages/hypothesis/core.py\", line 582, in execute\r\n19:19:52     % (test.__name__, text_repr[0])\r\n19:19:52   File \"/usr/local/lib/python3.6/dist-packages/hypothesis/core.py\", line 741, in __flaky\r\n19:19:52     raise Flaky(message)\r\n19:19:52 hypothesis.errors.Flaky: Hypothesis test_max_pool2d(self=<__main__.TestQuantizedOps testMethod=test_max_pool2d>, X=(array([[[[-75., -75., -75., ..., -75., -75., -75.],\r\n\r\n<!-- Add any other context about the problem here. -->\r\n\r\nFrom: https://ci.pytorch.org/jenkins/job/pytorch-builds/job/py3.6-clang7-rocmdeb-ubuntu16.04-test2/10054//console\r\n\n\ncc @ezyang @gchanan @zou3519 @jerryzh168 @jianyuh @dzhulgakov @raghuramank100 @jamesr66a",
