@@ -34,7 +34,24 @@
         "site_admin": false
       },
       "labels": [
-
+        {
+          "id": 1679533716,
+          "node_id": "MDU6TGFiZWwxNjc5NTMzNzE2",
+          "url": "https://api.github.com/repos/pytorch/pytorch/labels/skipped",
+          "name": "skipped",
+          "color": "bfdadc",
+          "default": false,
+          "description": "Denotes a (flaky) test currently skipped in CI."
+        },
+        {
+          "id": 1301347167,
+          "node_id": "MDU6TGFiZWwxMzAxMzQ3MTY3",
+          "url": "https://api.github.com/repos/pytorch/pytorch/labels/triaged",
+          "name": "triaged",
+          "color": "006b75",
+          "default": false,
+          "description": "This issue has been looked at a team member, and triaged and prioritized into an appropriate module"
+        }
       ],
       "state": "open",
       "locked": false,
@@ -45,7 +62,7 @@
       "milestone": null,
       "comments": 2,
       "created_at": "2019-12-31T19:03:16Z",
-      "updated_at": "2019-12-31T19:43:41Z",
+      "updated_at": "2020-01-02T14:49:19Z",
       "closed_at": null,
       "author_association": "CONTRIBUTOR",
       "body": "Temporarily disabling a flakey test.",
