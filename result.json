@@ -1,5 +1,5 @@
 {
-  "total_count": 3,
+  "total_count": 4,
   "incomplete_results": false,
   "items": [
     {
@@ -142,6 +142,99 @@
       "closed_at": null,
       "author_association": "MEMBER",
       "body": "## 🐛 Bug\r\n\r\ntes_quantized_rnn is flaky, see https://app.circleci.com/jobs/github/pytorch/pytorch/4343194\r\nSee example failure: \r\n```\r\nJan 26 08:10:23 ======================================================================\r\nJan 26 08:10:23 ERROR [0.186s]: test_quantized_rnn (__main__.PostTrainingDynamicQuantTest)\r\nJan 26 08:10:23 ----------------------------------------------------------------------\r\nJan 26 08:10:23 Traceback (most recent call last):\r\nJan 26 08:10:23   File \"test_quantization.py\", line 722, in test_quantized_rnn\r\nJan 26 08:10:23     y, (h, c) = cell_dq(x, (h, c))\r\nJan 26 08:10:23   File \"/opt/conda/lib/python3.6/site-packages/torch/nn/modules/module.py\", line 540, in __call__\r\nJan 26 08:10:23     result = self.forward(*input, **kwargs)\r\nJan 26 08:10:23   File \"/opt/conda/lib/python3.6/site-packages/torch/nn/quantized/dynamic/modules/rnn.py\", line 373, in forward\r\nJan 26 08:10:23     return self.forward_tensor(input, hx)\r\nJan 26 08:10:23   File \"/opt/conda/lib/python3.6/site-packages/torch/nn/quantized/dynamic/modules/rnn.py\", line 334, in forward_tensor\r\nJan 26 08:10:23     input, hx, batch_sizes, max_batch_size, sorted_indices)\r\nJan 26 08:10:23   File \"/opt/conda/lib/python3.6/site-packages/torch/nn/quantized/dynamic/modules/rnn.py\", line 315, in forward_impl\r\nJan 26 08:10:23     self.batch_first, dtype=self.dtype, use_dynamic=True)\r\nJan 26 08:10:23 RuntimeError: quantization scale should be > 0\r\n```\n\ncc @ezyang @gchanan @zou3519 @jerryzh168 @jianyuh @dzhulgakov @raghuramank100 @jamesr66a",
+      "score": 0.0
+    },
+    {
+      "url": "https://api.github.com/repos/pytorch/pytorch/issues/34237",
+      "repository_url": "https://api.github.com/repos/pytorch/pytorch",
+      "labels_url": "https://api.github.com/repos/pytorch/pytorch/issues/34237/labels{/name}",
+      "comments_url": "https://api.github.com/repos/pytorch/pytorch/issues/34237/comments",
+      "events_url": "https://api.github.com/repos/pytorch/pytorch/issues/34237/events",
+      "html_url": "https://github.com/pytorch/pytorch/issues/34237",
+      "id": 575659841,
+      "node_id": "MDU6SXNzdWU1NzU2NTk4NDE=",
+      "number": 34237,
+      "title": "DISABLED test_stress_heavy_rpc_torchscript (__main__.RpcTestWithSpawn)",
+      "user": {
+        "login": "mrshenli",
+        "id": 16999635,
+        "node_id": "MDQ6VXNlcjE2OTk5NjM1",
+        "avatar_url": "https://avatars2.githubusercontent.com/u/16999635?v=4",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/mrshenli",
+        "html_url": "https://github.com/mrshenli",
+        "followers_url": "https://api.github.com/users/mrshenli/followers",
+        "following_url": "https://api.github.com/users/mrshenli/following{/other_user}",
+        "gists_url": "https://api.github.com/users/mrshenli/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/mrshenli/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/mrshenli/subscriptions",
+        "organizations_url": "https://api.github.com/users/mrshenli/orgs",
+        "repos_url": "https://api.github.com/users/mrshenli/repos",
+        "events_url": "https://api.github.com/users/mrshenli/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/mrshenli/received_events",
+        "type": "User",
+        "site_admin": false
+      },
+      "labels": [
+        {
+          "id": 443484135,
+          "node_id": "MDU6TGFiZWw0NDM0ODQxMzU=",
+          "url": "https://api.github.com/repos/pytorch/pytorch/labels/high%20priority",
+          "name": "high priority",
+          "color": "F22613",
+          "default": false,
+          "description": null
+        },
+        {
+          "id": 679953983,
+          "node_id": "MDU6TGFiZWw2Nzk5NTM5ODM=",
+          "url": "https://api.github.com/repos/pytorch/pytorch/labels/jit",
+          "name": "jit",
+          "color": "c5def5",
+          "default": false,
+          "description": null
+        },
+        {
+          "id": 1536612774,
+          "node_id": "MDU6TGFiZWwxNTM2NjEyNzc0",
+          "url": "https://api.github.com/repos/pytorch/pytorch/labels/module:%20rpc",
+          "name": "module: rpc",
+          "color": "f7e101",
+          "default": false,
+          "description": "Related to RPC, distributed autograd, RRef, and distributed optimizer"
+        },
+        {
+          "id": 1301397902,
+          "node_id": "MDU6TGFiZWwxMzAxMzk3OTAy",
+          "url": "https://api.github.com/repos/pytorch/pytorch/labels/topic:%20flaky-tests",
+          "name": "topic: flaky-tests",
+          "color": "0e8a16",
+          "default": false,
+          "description": "Problem is a flaky test in CI"
+        },
+        {
+          "id": 1301347167,
+          "node_id": "MDU6TGFiZWwxMzAxMzQ3MTY3",
+          "url": "https://api.github.com/repos/pytorch/pytorch/labels/triaged",
+          "name": "triaged",
+          "color": "006b75",
+          "default": false,
+          "description": "This issue has been looked at a team member, and triaged and prioritized into an appropriate module"
+        }
+      ],
+      "state": "open",
+      "locked": false,
+      "assignee": null,
+      "assignees": [
+
+      ],
+      "milestone": null,
+      "comments": 0,
+      "created_at": "2020-03-04T18:39:54Z",
+      "updated_at": "2020-03-04T18:40:03Z",
+      "closed_at": null,
+      "author_association": "CONTRIBUTOR",
+      "body": "`test_stress_heavy_rpc_torchscript` is flaky\r\n\r\nhttps://app.circleci.com/jobs/github/pytorch/pytorch/4688332\r\n\r\n```\r\nMar 04 09:25:35 ======================================================================\r\nMar 04 09:25:35 ERROR [361.213s]: test_stress_heavy_rpc_torchscript (__main__.RpcTestWithSpawn)\r\nMar 04 09:25:35 ----------------------------------------------------------------------\r\nMar 04 09:25:35 Traceback (most recent call last):\r\nMar 04 09:25:35   File \"/Users/distiller/workspace/miniconda3/lib/python3.7/site-packages/torch/testing/_internal/common_distributed.py\", line 175, in wrapper\r\nMar 04 09:25:35     self._join_processes(fn)\r\nMar 04 09:25:35   File \"/Users/distiller/workspace/miniconda3/lib/python3.7/site-packages/torch/testing/_internal/common_distributed.py\", line 256, in _join_processes\r\nMar 04 09:25:35     self._check_return_codes(elapsed_time)\r\nMar 04 09:25:35   File \"/Users/distiller/workspace/miniconda3/lib/python3.7/site-packages/torch/testing/_internal/common_distributed.py\", line 275, in _check_return_codes\r\nMar 04 09:25:35     raise RuntimeError('Process {} terminated or timed out after {} seconds'.format(i, elapsed_time))\r\nMar 04 09:25:35 RuntimeError: Process 1 terminated or timed out after 361.193176984787 seconds\r\n```\n\ncc @ezyang @gchanan @zou3519 @suo @pietern @mrshenli @pritamdamania87 @zhaojuanmao @satgera @gqchen @aazzolini @rohan-varma @xush6528 @jjlilley @osalpekar",
       "score": 0.0
     },
     {
