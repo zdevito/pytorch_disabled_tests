@@ -267,9 +267,9 @@
         }
       ],
       "milestone": null,
-      "comments": 1,
+      "comments": 2,
       "created_at": "2020-03-04T18:39:54Z",
-      "updated_at": "2020-03-04T19:12:52Z",
+      "updated_at": "2020-03-04T19:53:44Z",
       "closed_at": null,
       "author_association": "CONTRIBUTOR",
       "body": "`test_stress_heavy_rpc_torchscript` is flaky\r\n\r\nhttps://app.circleci.com/jobs/github/pytorch/pytorch/4688332\r\n\r\n```\r\nMar 04 09:25:35 ======================================================================\r\nMar 04 09:25:35 ERROR [361.213s]: test_stress_heavy_rpc_torchscript (__main__.RpcTestWithSpawn)\r\nMar 04 09:25:35 ----------------------------------------------------------------------\r\nMar 04 09:25:35 Traceback (most recent call last):\r\nMar 04 09:25:35   File \"/Users/distiller/workspace/miniconda3/lib/python3.7/site-packages/torch/testing/_internal/common_distributed.py\", line 175, in wrapper\r\nMar 04 09:25:35     self._join_processes(fn)\r\nMar 04 09:25:35   File \"/Users/distiller/workspace/miniconda3/lib/python3.7/site-packages/torch/testing/_internal/common_distributed.py\", line 256, in _join_processes\r\nMar 04 09:25:35     self._check_return_codes(elapsed_time)\r\nMar 04 09:25:35   File \"/Users/distiller/workspace/miniconda3/lib/python3.7/site-packages/torch/testing/_internal/common_distributed.py\", line 275, in _check_return_codes\r\nMar 04 09:25:35     raise RuntimeError('Process {} terminated or timed out after {} seconds'.format(i, elapsed_time))\r\nMar 04 09:25:35 RuntimeError: Process 1 terminated or timed out after 361.193176984787 seconds\r\n```\n\ncc @ezyang @gchanan @zou3519 @suo @pietern @mrshenli @pritamdamania87 @zhaojuanmao @satgera @gqchen @aazzolini @rohan-varma @xush6528 @jjlilley @osalpekar",
