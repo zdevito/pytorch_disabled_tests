@@ -1,5 +1,5 @@
 {
-  "total_count": 9,
+  "total_count": 10,
   "incomplete_results": false,
   "items": [
     {
@@ -851,6 +851,99 @@
       "closed_at": null,
       "author_association": "CONTRIBUTOR",
       "body": "Previous failed runs:\r\nhttps://circleci.com/gh/pytorch/pytorch/4682966\r\n\r\nSubsequent succeeded runs:\r\nhttps://circleci.com/gh/pytorch/pytorch/4682247\r\nhttps://circleci.com/gh/pytorch/pytorch/4682241\r\n\r\nToday, it consistently fails:\r\nhttps://circleci.com/gh/pytorch/pytorch/4687625\r\nhttps://circleci.com/gh/pytorch/pytorch/4687610\r\nhttps://circleci.com/gh/pytorch/pytorch/4686149\r\n\r\n@ljk53 tried reverting the seemingly culprit PR #32814 and #34055, but the error persist. \r\n\r\nI am going to disable this test while JIT team investigating it. \n\ncc @ezyang @gchanan @zou3519 @suo",
+      "score": 0.0
+    },
+    {
+      "url": "https://api.github.com/repos/pytorch/pytorch/issues/34432",
+      "repository_url": "https://api.github.com/repos/pytorch/pytorch",
+      "labels_url": "https://api.github.com/repos/pytorch/pytorch/issues/34432/labels{/name}",
+      "comments_url": "https://api.github.com/repos/pytorch/pytorch/issues/34432/comments",
+      "events_url": "https://api.github.com/repos/pytorch/pytorch/issues/34432/events",
+      "html_url": "https://github.com/pytorch/pytorch/issues/34432",
+      "id": 577434425,
+      "node_id": "MDU6SXNzdWU1Nzc0MzQ0MjU=",
+      "number": 34432,
+      "title": "DISABLED test_gloo_backend_1gpu_module_device_ids_integer_list (__main__.DistributedDataParallelTest)",
+      "user": {
+        "login": "mrshenli",
+        "id": 16999635,
+        "node_id": "MDQ6VXNlcjE2OTk5NjM1",
+        "avatar_url": "https://avatars2.githubusercontent.com/u/16999635?v=4",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/mrshenli",
+        "html_url": "https://github.com/mrshenli",
+        "followers_url": "https://api.github.com/users/mrshenli/followers",
+        "following_url": "https://api.github.com/users/mrshenli/following{/other_user}",
+        "gists_url": "https://api.github.com/users/mrshenli/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/mrshenli/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/mrshenli/subscriptions",
+        "organizations_url": "https://api.github.com/users/mrshenli/orgs",
+        "repos_url": "https://api.github.com/users/mrshenli/repos",
+        "events_url": "https://api.github.com/users/mrshenli/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/mrshenli/received_events",
+        "type": "User",
+        "site_admin": false
+      },
+      "labels": [
+        {
+          "id": 443484135,
+          "node_id": "MDU6TGFiZWw0NDM0ODQxMzU=",
+          "url": "https://api.github.com/repos/pytorch/pytorch/labels/high%20priority",
+          "name": "high priority",
+          "color": "F22613",
+          "default": false,
+          "description": null
+        },
+        {
+          "id": 679953883,
+          "node_id": "MDU6TGFiZWw2Nzk5NTM4ODM=",
+          "url": "https://api.github.com/repos/pytorch/pytorch/labels/module:%20distributed",
+          "name": "module: distributed",
+          "color": "f7e101",
+          "default": false,
+          "description": "Related to torch.distributed"
+        },
+        {
+          "id": 1301397902,
+          "node_id": "MDU6TGFiZWwxMzAxMzk3OTAy",
+          "url": "https://api.github.com/repos/pytorch/pytorch/labels/topic:%20flaky-tests",
+          "name": "topic: flaky-tests",
+          "color": "0e8a16",
+          "default": false,
+          "description": "Problem is a flaky test in CI"
+        },
+        {
+          "id": 466131885,
+          "node_id": "MDU6TGFiZWw0NjYxMzE4ODU=",
+          "url": "https://api.github.com/repos/pytorch/pytorch/labels/triage%20review",
+          "name": "triage review",
+          "color": "cc317c",
+          "default": false,
+          "description": ""
+        },
+        {
+          "id": 1301347167,
+          "node_id": "MDU6TGFiZWwxMzAxMzQ3MTY3",
+          "url": "https://api.github.com/repos/pytorch/pytorch/labels/triaged",
+          "name": "triaged",
+          "color": "006b75",
+          "default": false,
+          "description": "This issue has been looked at a team member, and triaged and prioritized into an appropriate module"
+        }
+      ],
+      "state": "open",
+      "locked": false,
+      "assignee": null,
+      "assignees": [
+
+      ],
+      "milestone": null,
+      "comments": 0,
+      "created_at": "2020-03-08T02:42:25Z",
+      "updated_at": "2020-03-08T02:42:33Z",
+      "closed_at": null,
+      "author_association": "CONTRIBUTOR",
+      "body": "https://ci.pytorch.org/jenkins/job/pytorch-builds/job/py3.6-clang7-rocmdeb-ubuntu16.04-test2/20231//console\r\n\r\n```\r\n22:09:03 ======================================================================\r\n22:09:03 FAIL: test_gloo_backend_1gpu_module_device_ids_integer_list (__main__.DistributedDataParallelTest)\r\n22:09:03 ----------------------------------------------------------------------\r\n22:09:03 Traceback (most recent call last):\r\n22:09:03   File \"/var/lib/jenkins/.local/lib/python3.6/site-packages/torch/testing/_internal/common_distributed.py\", line 175, in wrapper\r\n22:09:03     self._join_processes(fn)\r\n22:09:03   File \"/var/lib/jenkins/.local/lib/python3.6/site-packages/torch/testing/_internal/common_distributed.py\", line 256, in _join_processes\r\n22:09:03     self._check_return_codes(elapsed_time)\r\n22:09:03   File \"/var/lib/jenkins/.local/lib/python3.6/site-packages/torch/testing/_internal/common_distributed.py\", line 276, in _check_return_codes\r\n22:09:03     self.assertEqual(p.exitcode, first_process.exitcode)\r\n22:09:03   File \"/var/lib/jenkins/.local/lib/python3.6/site-packages/torch/testing/_internal/common_utils.py\", line 915, in assertEqual\r\n22:09:03     super(TestCase, self).assertLessEqual(abs(x - y), prec, message)\r\n22:09:03 AssertionError: 16 not less than or equal to 1e-05 : \r\n```\n\ncc @ezyang @gchanan @zou3519 @pietern @mrshenli @pritamdamania87 @zhaojuanmao @satgera @rohan-varma @gqchen @aazzolini @xush6528 @osalpekar",
       "score": 0.0
     },
     {
