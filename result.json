@@ -1,5 +1,5 @@
 {
-  "total_count": 8,
+  "total_count": 9,
   "incomplete_results": false,
   "items": [
     {
@@ -150,6 +150,99 @@
       "closed_at": null,
       "author_association": "CONTRIBUTOR",
       "body": "## 🐛 Bug\r\n\r\nhttps://app.circleci.com/pipelines/github/pytorch/pytorch/138566/workflows/850299ec-3258-4e78-b680-cfad253c746a/jobs/4782754/parallel-runs/0/steps/0-105\r\n\r\n```\r\nMar 12 17:35:27 =================================== FAILURES ===================================\r\nMar 12 17:35:27 __________________ TestONNXRuntime_opset11.test_keypoint_rcnn __________________\r\nMar 12 17:35:27 \r\nMar 12 17:35:27 self = <test_pytorch_onnx_onnxruntime.TestONNXRuntime_opset11 testMethod=test_keypoint_rcnn>\r\nMar 12 17:35:27 \r\nMar 12 17:35:27     def wrapper(self):\r\nMar 12 17:35:27         if self.opset_version < min_opset_version:\r\nMar 12 17:35:27             raise unittest.SkipTest(\"Skip verify test for unsupported opset_version\")\r\nMar 12 17:35:27 >       return func(self)\r\nMar 12 17:35:27 \r\nMar 12 17:35:27 test/onnx/test_pytorch_common.py:54: \r\n```\r\n\n\ncc @houseroad @spandantiwari @lara-hdr @BowenBao @neginraoof",
+      "score": 0.0
+    },
+    {
+      "url": "https://api.github.com/repos/pytorch/pytorch/issues/34716",
+      "repository_url": "https://api.github.com/repos/pytorch/pytorch",
+      "labels_url": "https://api.github.com/repos/pytorch/pytorch/issues/34716/labels{/name}",
+      "comments_url": "https://api.github.com/repos/pytorch/pytorch/issues/34716/comments",
+      "events_url": "https://api.github.com/repos/pytorch/pytorch/issues/34716/events",
+      "html_url": "https://github.com/pytorch/pytorch/issues/34716",
+      "id": 580678249,
+      "node_id": "MDU6SXNzdWU1ODA2NzgyNDk=",
+      "number": 34716,
+      "title": "DISABLED test_stress_heavy_rpc_torchscript (__main__.RpcTestWithSpawn)",
+      "user": {
+        "login": "mrshenli",
+        "id": 16999635,
+        "node_id": "MDQ6VXNlcjE2OTk5NjM1",
+        "avatar_url": "https://avatars2.githubusercontent.com/u/16999635?v=4",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/mrshenli",
+        "html_url": "https://github.com/mrshenli",
+        "followers_url": "https://api.github.com/users/mrshenli/followers",
+        "following_url": "https://api.github.com/users/mrshenli/following{/other_user}",
+        "gists_url": "https://api.github.com/users/mrshenli/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/mrshenli/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/mrshenli/subscriptions",
+        "organizations_url": "https://api.github.com/users/mrshenli/orgs",
+        "repos_url": "https://api.github.com/users/mrshenli/repos",
+        "events_url": "https://api.github.com/users/mrshenli/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/mrshenli/received_events",
+        "type": "User",
+        "site_admin": false
+      },
+      "labels": [
+        {
+          "id": 443484135,
+          "node_id": "MDU6TGFiZWw0NDM0ODQxMzU=",
+          "url": "https://api.github.com/repos/pytorch/pytorch/labels/high%20priority",
+          "name": "high priority",
+          "color": "F22613",
+          "default": false,
+          "description": null
+        },
+        {
+          "id": 1536612774,
+          "node_id": "MDU6TGFiZWwxNTM2NjEyNzc0",
+          "url": "https://api.github.com/repos/pytorch/pytorch/labels/module:%20rpc",
+          "name": "module: rpc",
+          "color": "f7e101",
+          "default": false,
+          "description": "Related to RPC, distributed autograd, RRef, and distributed optimizer"
+        },
+        {
+          "id": 1301397902,
+          "node_id": "MDU6TGFiZWwxMzAxMzk3OTAy",
+          "url": "https://api.github.com/repos/pytorch/pytorch/labels/topic:%20flaky-tests",
+          "name": "topic: flaky-tests",
+          "color": "0e8a16",
+          "default": false,
+          "description": "Problem is a flaky test in CI"
+        },
+        {
+          "id": 466131885,
+          "node_id": "MDU6TGFiZWw0NjYxMzE4ODU=",
+          "url": "https://api.github.com/repos/pytorch/pytorch/labels/triage%20review",
+          "name": "triage review",
+          "color": "cc317c",
+          "default": false,
+          "description": ""
+        },
+        {
+          "id": 1301347167,
+          "node_id": "MDU6TGFiZWwxMzAxMzQ3MTY3",
+          "url": "https://api.github.com/repos/pytorch/pytorch/labels/triaged",
+          "name": "triaged",
+          "color": "006b75",
+          "default": false,
+          "description": "This issue has been looked at a team member, and triaged and prioritized into an appropriate module"
+        }
+      ],
+      "state": "open",
+      "locked": false,
+      "assignee": null,
+      "assignees": [
+
+      ],
+      "milestone": null,
+      "comments": 0,
+      "created_at": "2020-03-13T15:31:38Z",
+      "updated_at": "2020-03-13T15:31:46Z",
+      "closed_at": null,
+      "author_association": "CONTRIBUTOR",
+      "body": "This is still flaky after #34505 \r\n\r\nhttps://app.circleci.com/pipelines/github/pytorch/pytorch/139235/workflows/eedfde36-e956-4d3f-952b-24fd62639d14/jobs/4801429\r\n\r\n```\r\nMar 13 15:10:46 .Process process 2:\r\nMar 13 15:10:46 Traceback (most recent call last):\r\nMar 13 15:10:46   File \"/opt/conda/lib/python3.6/multiprocessing/process.py\", line 258, in _bootstrap\r\nMar 13 15:10:46     self.run()\r\nMar 13 15:10:46   File \"/opt/conda/lib/python3.6/multiprocessing/process.py\", line 93, in run\r\nMar 13 15:10:46     self._target(*self._args, **self._kwargs)\r\nMar 13 15:10:46   File \"/opt/conda/lib/python3.6/site-packages/torch/testing/_internal/common_distributed.py\", line 243, in _run\r\nMar 13 15:10:46     getattr(self, test_name)()\r\nMar 13 15:10:46   File \"/opt/conda/lib/python3.6/site-packages/torch/testing/_internal/dist_utils.py\", line 68, in new_test_method\r\nMar 13 15:10:46     return_value = old_test_method(self, *arg, **kwargs)\r\nMar 13 15:10:46   File \"/opt/conda/lib/python3.6/site-packages/torch/testing/_internal/distributed/rpc/rpc_test.py\", line 856, in test_stress_heavy_rpc_torchscript\r\nMar 13 15:10:46     self._stress_test_rpc(heavy_rpc_torchscript, repeat=20, args=(torch.ones(100, 100),))\r\nMar 13 15:10:46   File \"/opt/conda/lib/python3.6/site-packages/torch/testing/_internal/distributed/rpc/rpc_test.py\", line 838, in _stress_test_rpc\r\nMar 13 15:10:46     self.assertEqual(fut.wait(), 0)\r\nMar 13 15:10:46 RuntimeError: RPC ran for more than 60000 milliseconds and timed out.\r\nMar 13 15:11:25 Timing out after 100 seconds and killing subprocesses.\r\nMar 13 15:11:27 ERank 2 finished testing 1000 times in 0.6682846546173096 seconds.\r\nMar 13 15:11:27 Rank 1 finished testing 1000 times in 0.6684725284576416 seconds.\r\nMar 13 15:11:27 Rank 0 finished testing 1000 times in 0.34218406677246094 seconds.\r\nMar 13 15:11:27 Rank 3 finished testing 1000 times in 0.4612858295440674 seconds.\r\nMar 13 15:11:31 ......\r\nMar 13 15:11:31 ======================================================================\r\nMar 13 15:11:31 ERROR [100.092s]: test_stress_heavy_rpc_torchscript (__main__.RpcTestWithSpawn)\r\nMar 13 15:11:31 ----------------------------------------------------------------------\r\nMar 13 15:11:31 Traceback (most recent call last):\r\nMar 13 15:11:31   File \"/opt/conda/lib/python3.6/site-packages/torch/testing/_internal/common_distributed.py\", line 175, in wrapper\r\nMar 13 15:11:31     self._join_processes(fn)\r\nMar 13 15:11:31   File \"/opt/conda/lib/python3.6/site-packages/torch/testing/_internal/common_distributed.py\", line 285, in _join_processes\r\nMar 13 15:11:31     self._check_return_codes(elapsed_time)\r\nMar 13 15:11:31   File \"/opt/conda/lib/python3.6/site-packages/torch/testing/_internal/common_distributed.py\", line 323, in _check_return_codes\r\nMar 13 15:11:31     raise RuntimeError('Process {} terminated or timed out after {} seconds'.format(i, elapsed_time))\r\nMar 13 15:11:31 RuntimeError: Process 0 terminated or timed out after 100.08271050453186 seconds\r\n```\n\ncc @ezyang @gchanan @zou3519 @pietern @mrshenli @pritamdamania87 @zhaojuanmao @satgera @gqchen @aazzolini @rohan-varma @xush6528 @jjlilley @osalpekar",
       "score": 0.0
     },
     {
