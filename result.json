@@ -1,5 +1,5 @@
 {
-  "total_count": 8,
+  "total_count": 9,
   "incomplete_results": false,
   "items": [
     {
@@ -84,6 +84,99 @@
       "closed_at": null,
       "author_association": "CONTRIBUTOR",
       "body": "Try if our chrono job also works for tests from other repo.\r\n\r\nhttps://app.circleci.com/jobs/github/pytorch/pytorch/4693216\r\n\r\nThe failure is due to torchvision dataset downloads from `http://yann.lecun.com/exdb/mnist/`. We can reenable this after torchvision dataset is switched to S3 mirror.\r\n\r\n```\r\nMar 04 21:01:04 ======================================================================\r\nMar 04 21:01:04 ERROR: test_accurracy (__main__.TrainMnist)\r\nMar 04 21:01:04 ----------------------------------------------------------------------\r\nMar 04 21:01:04 Traceback (most recent call last):\r\nMar 04 21:01:04   File \"test/test_train_mnist.py\", line 186, in test_accurracy\r\nMar 04 21:01:04     self.assertGreaterEqual(train_mnist(), FLAGS.target_accuracy)\r\nMar 04 21:01:04   File \"test/test_train_mnist.py\", line 74, in train_mnist\r\nMar 04 21:01:04     transforms.Normalize((0.1307,), (0.3081,))]))\r\nMar 04 21:01:04   File \"/var/lib/jenkins/.local/lib/python3.6/site-packages/torchvision/datasets/mnist.py\", line 70, in __init__\r\nMar 04 21:01:04     self.download()\r\nMar 04 21:01:04   File \"/var/lib/jenkins/.local/lib/python3.6/site-packages/torchvision/datasets/mnist.py\", line 137, in download\r\nMar 04 21:01:04     download_and_extract_archive(url, download_root=self.raw_folder, filename=filename, md5=md5)\r\nMar 04 21:01:04   File \"/var/lib/jenkins/.local/lib/python3.6/site-packages/torchvision/datasets/utils.py\", line 260, in download_and_extract_archive\r\nMar 04 21:01:04     download_url(url, download_root, filename, md5)\r\nMar 04 21:01:04   File \"/var/lib/jenkins/.local/lib/python3.6/site-packages/torchvision/datasets/utils.py\", line 97, in download_url\r\nMar 04 21:01:04     raise e\r\nMar 04 21:01:04   File \"/var/lib/jenkins/.local/lib/python3.6/site-packages/torchvision/datasets/utils.py\", line 85, in download_url\r\nMar 04 21:01:04     reporthook=gen_bar_updater()\r\nMar 04 21:01:04   File \"/opt/conda/lib/python3.6/urllib/request.py\", line 248, in urlretrieve\r\nMar 04 21:01:04     with contextlib.closing(urlopen(url, data)) as fp:\r\nMar 04 21:01:04   File \"/opt/conda/lib/python3.6/urllib/request.py\", line 223, in urlopen\r\nMar 04 21:01:04     return opener.open(url, data, timeout)\r\nMar 04 21:01:04   File \"/opt/conda/lib/python3.6/urllib/request.py\", line 532, in open\r\nMar 04 21:01:04     response = meth(req, response)\r\nMar 04 21:01:04   File \"/opt/conda/lib/python3.6/urllib/request.py\", line 642, in http_response\r\nMar 04 21:01:04     'http', request, response, code, msg, hdrs)\r\nMar 04 21:01:04   File \"/opt/conda/lib/python3.6/urllib/request.py\", line 570, in error\r\nMar 04 21:01:04     return self._call_chain(*args)\r\nMar 04 21:01:04   File \"/opt/conda/lib/python3.6/urllib/request.py\", line 504, in _call_chain\r\nMar 04 21:01:04     result = func(*args)\r\nMar 04 21:01:04   File \"/opt/conda/lib/python3.6/urllib/request.py\", line 650, in http_error_default\r\nMar 04 21:01:04     raise HTTPError(req.full_url, code, msg, hdrs, fp)\r\nMar 04 21:01:04 urllib.error.HTTPError: HTTP Error 403: Forbidden\r\n```\r\n\r\ncc @ezyang @gchanan @zou3519 @ailzhang",
+      "score": 0.0
+    },
+    {
+      "url": "https://api.github.com/repos/pytorch/pytorch/issues/34952",
+      "repository_url": "https://api.github.com/repos/pytorch/pytorch",
+      "labels_url": "https://api.github.com/repos/pytorch/pytorch/issues/34952/labels{/name}",
+      "comments_url": "https://api.github.com/repos/pytorch/pytorch/issues/34952/comments",
+      "events_url": "https://api.github.com/repos/pytorch/pytorch/issues/34952/events",
+      "html_url": "https://github.com/pytorch/pytorch/issues/34952",
+      "id": 583722672,
+      "node_id": "MDU6SXNzdWU1ODM3MjI2NzI=",
+      "number": 34952,
+      "title": "DISABLED test_backward_node_failure (__main__.DistAutogradTestWithSpawn)",
+      "user": {
+        "login": "mrshenli",
+        "id": 16999635,
+        "node_id": "MDQ6VXNlcjE2OTk5NjM1",
+        "avatar_url": "https://avatars2.githubusercontent.com/u/16999635?v=4",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/mrshenli",
+        "html_url": "https://github.com/mrshenli",
+        "followers_url": "https://api.github.com/users/mrshenli/followers",
+        "following_url": "https://api.github.com/users/mrshenli/following{/other_user}",
+        "gists_url": "https://api.github.com/users/mrshenli/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/mrshenli/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/mrshenli/subscriptions",
+        "organizations_url": "https://api.github.com/users/mrshenli/orgs",
+        "repos_url": "https://api.github.com/users/mrshenli/repos",
+        "events_url": "https://api.github.com/users/mrshenli/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/mrshenli/received_events",
+        "type": "User",
+        "site_admin": false
+      },
+      "labels": [
+        {
+          "id": 443484135,
+          "node_id": "MDU6TGFiZWw0NDM0ODQxMzU=",
+          "url": "https://api.github.com/repos/pytorch/pytorch/labels/high%20priority",
+          "name": "high priority",
+          "color": "F22613",
+          "default": false,
+          "description": null
+        },
+        {
+          "id": 1536612774,
+          "node_id": "MDU6TGFiZWwxNTM2NjEyNzc0",
+          "url": "https://api.github.com/repos/pytorch/pytorch/labels/module:%20rpc",
+          "name": "module: rpc",
+          "color": "f7e101",
+          "default": false,
+          "description": "Related to RPC, distributed autograd, RRef, and distributed optimizer"
+        },
+        {
+          "id": 1301397902,
+          "node_id": "MDU6TGFiZWwxMzAxMzk3OTAy",
+          "url": "https://api.github.com/repos/pytorch/pytorch/labels/topic:%20flaky-tests",
+          "name": "topic: flaky-tests",
+          "color": "0e8a16",
+          "default": false,
+          "description": "Problem is a flaky test in CI"
+        },
+        {
+          "id": 466131885,
+          "node_id": "MDU6TGFiZWw0NjYxMzE4ODU=",
+          "url": "https://api.github.com/repos/pytorch/pytorch/labels/triage%20review",
+          "name": "triage review",
+          "color": "cc317c",
+          "default": false,
+          "description": ""
+        },
+        {
+          "id": 1301347167,
+          "node_id": "MDU6TGFiZWwxMzAxMzQ3MTY3",
+          "url": "https://api.github.com/repos/pytorch/pytorch/labels/triaged",
+          "name": "triaged",
+          "color": "006b75",
+          "default": false,
+          "description": "This issue has been looked at a team member, and triaged and prioritized into an appropriate module"
+        }
+      ],
+      "state": "open",
+      "locked": false,
+      "assignee": null,
+      "assignees": [
+
+      ],
+      "milestone": null,
+      "comments": 0,
+      "created_at": "2020-03-18T13:19:48Z",
+      "updated_at": "2020-03-18T13:19:56Z",
+      "closed_at": null,
+      "author_association": "CONTRIBUTOR",
+      "body": "https://app.circleci.com/pipelines/github/pytorch/pytorch/141441/workflows/a4d5bdb8-6425-4c59-9997-a468ad951b01/jobs/4854537\r\n\r\n```\r\nMar 18 11:19:47 ----------------------------------------------------------------------\r\nMar 18 11:20:06 ............[E request_callback_impl.cpp:94] Received error while processing request type 15: TypeError: 'NoneType' object is not callable\r\nMar 18 11:20:48 F.....................Warning: Using sparse tensors in TorchScript is experimental. Many optimization pathways have not been thoroughly tested with sparse tensors. Please include the fact that the network is running sparse tensors in any bug reports submitted. (operator() at /var/lib/jenkins/workspace/torch/csrc/jit/python/pybind_utils.h:684)\r\nMar 18 11:20:48 Warning: Using sparse tensors in TorchScript is experimental. Many optimization pathways have not been thoroughly tested with sparse tensors. Please include the fact that the network is running sparse tensors in any bug reports submitted. (operator() at /var/lib/jenkins/workspace/torch/csrc/jit/python/pybind_utils.h:684)\r\nMar 18 11:20:48 Warning: Using sparse tensors in TorchScript is experimental. Many optimization pathways have not been thoroughly tested with sparse tensors. Please include the fact that the network is running sparse tensors in any bug reports submitted. (operator() at /var/lib/jenkins/workspace/torch/csrc/jit/python/pybind_utils.h:684)\r\nMar 18 11:20:48 Warning: Using sparse tensors in TorchScript is experimental. Many optimization pathways have not been thoroughly tested with sparse tensors. Please include the fact that the network is running sparse tensors in any bug reports submitted. (operator() at /var/lib/jenkins/workspace/torch/csrc/jit/python/pybind_utils.h:684)\r\nMar 18 11:20:49 .[E request_callback_impl.cpp:94] Received error while processing request type 15: size mismatch, m1: [3 x 3], m2: [6 x 6] at /var/lib/jenkins/workspace/aten/src/TH/generic/THTensorMath.cpp:41\r\nMar 18 11:20:49 [E request_callback_impl.cpp:94] Received error while processing request type 15: size mismatch, m1: [3 x 3], m2: [6 x 6] at /var/lib/jenkins/workspace/aten/src/TH/generic/THTensorMath.cpp:41\r\nMar 18 11:20:49 [E request_callback_impl.cpp:94] Received error while processing request type 15: size mismatch, m1: [3 x 3], m2: [6 x 6] at /var/lib/jenkins/workspace/aten/src/TH/generic/THTensorMath.cpp:41\r\nMar 18 11:20:49 [E request_callback_impl.cpp:94] Received error while processing request type 15: size mismatch, m1: [3 x 3], m2: [6 x 6] at /var/lib/jenkins/workspace/aten/src/TH/generic/THTensorMath.cpp:41\r\nMar 18 11:20:50 .Warning: Using sparse tensors in TorchScript is experimental. Many optimization pathways have not been thoroughly tested with sparse tensors. Please include the fact that the network is running sparse tensors in any bug reports submitted. (operator() at /var/lib/jenkins/workspace/torch/csrc/jit/python/pybind_utils.h:684)\r\nMar 18 11:20:50 Warning: Using sparse tensors in TorchScript is experimental. Many optimization pathways have not been thoroughly tested with sparse tensors. Please include the fact that the network is running sparse tensors in any bug reports submitted. (operator() at /var/lib/jenkins/workspace/torch/csrc/jit/python/pybind_utils.h:684)\r\nMar 18 11:20:50 Warning: Using sparse tensors in TorchScript is experimental. Many optimization pathways have not been thoroughly tested with sparse tensors. Please include the fact that the network is running sparse tensors in any bug reports submitted. (operator() at /var/lib/jenkins/workspace/torch/csrc/jit/python/pybind_utils.h:684)\r\nMar 18 11:20:50 Warning: Using sparse tensors in TorchScript is experimental. Many optimization pathways have not been thoroughly tested with sparse tensors. Please include the fact that the network is running sparse tensors in any bug reports submitted. (operator() at /var/lib/jenkins/workspace/torch/csrc/jit/python/pybind_utils.h:684)\r\nMar 18 11:20:50 /opt/conda/lib/python3.6/site-packages/torch/nn/functional.py:1816: UserWarning: Argument order of nn.functional.embedding_bag was changed. Usage `embedding_bag(weight, input, ...)` is deprecated, and should now be `embedding_bag(input, weight, ...)`.\r\nMar 18 11:20:50   warnings.warn(\"Argument order of nn.functional.embedding_bag was changed. \"\r\nMar 18 11:20:50 /opt/conda/lib/python3.6/site-packages/torch/nn/functional.py:1816: UserWarning: Argument order of nn.functional.embedding_bag was changed. Usage `embedding_bag(weight, input, ...)` is deprecated, and should now be `embedding_bag(input, weight, ...)`.\r\nMar 18 11:20:50   warnings.warn(\"Argument order of nn.functional.embedding_bag was changed. \"\r\nMar 18 11:20:50 /opt/conda/lib/python3.6/site-packages/torch/nn/functional.py:1816: UserWarning: Argument order of nn.functional.embedding_bag was changed. Usage `embedding_bag(weight, input, ...)` is deprecated, and should now be `embedding_bag(input, weight, ...)`.\r\nMar 18 11:20:50   warnings.warn(\"Argument order of nn.functional.embedding_bag was changed. \"\r\nMar 18 11:20:50 /opt/conda/lib/python3.6/site-packages/torch/nn/functional.py:1816: UserWarning: Argument order of nn.functional.embedding_bag was changed. Usage `embedding_bag(weight, input, ...)` is deprecated, and should now be `embedding_bag(input, weight, ...)`.\r\nMar 18 11:20:50   warnings.warn(\"Argument order of nn.functional.embedding_bag was changed. \"\r\nMar 18 11:21:14 .................Warning: Using sparse tensors in TorchScript is experimental. Many optimization pathways have not been thoroughly tested with sparse tensors. Please include the fact that the network is running sparse tensors in any bug reports submitted. (operator() at /var/lib/jenkins/workspace/torch/csrc/jit/python/pybind_utils.h:684)\r\nMar 18 11:21:14 Warning: Using sparse tensors in TorchScript is experimental. Many optimization pathways have not been thoroughly tested with sparse tensors. Please include the fact that the network is running sparse tensors in any bug reports submitted. (operator() at /var/lib/jenkins/workspace/torch/csrc/jit/python/pybind_utils.h:684)\r\nMar 18 11:21:14 Warning: Using sparse tensors in TorchScript is experimental. Many optimization pathways have not been thoroughly tested with sparse tensors. Please include the fact that the network is running sparse tensors in any bug reports submitted. (operator() at /var/lib/jenkins/workspace/torch/csrc/jit/python/pybind_utils.h:684)\r\nMar 18 11:21:14 Warning: Using sparse tensors in TorchScript is experimental. Many optimization pathways have not been thoroughly tested with sparse tensors. Please include the fact that the network is running sparse tensors in any bug reports submitted. (operator() at /var/lib/jenkins/workspace/torch/csrc/jit/python/pybind_utils.h:684)\r\nMar 18 11:21:14 /opt/conda/lib/python3.6/site-packages/torch/nn/functional.py:1816: UserWarning: Argument order of nn.functional.embedding_bag was changed. Usage `embedding_bag(weight, input, ...)` is deprecated, and should now be `embedding_bag(input, weight, ...)`.\r\nMar 18 11:21:14   warnings.warn(\"Argument order of nn.functional.embedding_bag was changed. \"\r\nMar 18 11:21:14 /opt/conda/lib/python3.6/site-packages/torch/nn/functional.py:1816: UserWarning: Argument order of nn.functional.embedding_bag was changed. Usage `embedding_bag(weight, input, ...)` is deprecated, and should now be `embedding_bag(input, weight, ...)`.\r\nMar 18 11:21:14   warnings.warn(\"Argument order of nn.functional.embedding_bag was changed. \"\r\nMar 18 11:21:14 /opt/conda/lib/python3.6/site-packages/torch/nn/functional.py:1816: UserWarning: Argument order of nn.functional.embedding_bag was changed. Usage `embedding_bag(weight, input, ...)` is deprecated, and should now be `embedding_bag(input, weight, ...)`.\r\nMar 18 11:21:14   warnings.warn(\"Argument order of nn.functional.embedding_bag was changed. \"\r\nMar 18 11:21:14 /opt/conda/lib/python3.6/site-packages/torch/nn/functional.py:1816: UserWarning: Argument order of nn.functional.embedding_bag was changed. Usage `embedding_bag(weight, input, ...)` is deprecated, and should now be `embedding_bag(input, weight, ...)`.\r\nMar 18 11:21:14   warnings.warn(\"Argument order of nn.functional.embedding_bag was changed. \"\r\nMar 18 11:21:23 ........\r\nMar 18 11:21:23 ======================================================================\r\nMar 18 11:21:23 FAIL [6.131s]: test_backward_node_failure (__main__.DistAutogradTestWithSpawn)\r\nMar 18 11:21:23 ----------------------------------------------------------------------\r\nMar 18 11:21:23 Traceback (most recent call last):\r\nMar 18 11:21:23   File \"/opt/conda/lib/python3.6/site-packages/torch/testing/_internal/common_distributed.py\", line 175, in wrapper\r\nMar 18 11:21:23     self._join_processes(fn)\r\nMar 18 11:21:23   File \"/opt/conda/lib/python3.6/site-packages/torch/testing/_internal/common_distributed.py\", line 285, in _join_processes\r\nMar 18 11:21:23     self._check_return_codes(elapsed_time)\r\nMar 18 11:21:23   File \"/opt/conda/lib/python3.6/site-packages/torch/testing/_internal/common_distributed.py\", line 324, in _check_return_codes\r\nMar 18 11:21:23     self.assertEqual(p.exitcode, first_process.exitcode)\r\nMar 18 11:21:23   File \"/opt/conda/lib/python3.6/site-packages/torch/testing/_internal/common_utils.py\", line 915, in assertEqual\r\nMar 18 11:21:23     super(TestCase, self).assertLessEqual(abs(x - y), prec, message)\r\nMar 18 11:21:23 AssertionError: 11 not less than or equal to 1e-05 : \r\n```\n\ncc @ezyang @gchanan @zou3519 @pietern @mrshenli @pritamdamania87 @zhaojuanmao @satgera @gqchen @aazzolini @rohan-varma @xush6528 @jjlilley @osalpekar",
       "score": 0.0
     },
     {
