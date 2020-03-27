@@ -1,7 +1,64 @@
 {
-  "total_count": 7,
+  "total_count": 8,
   "incomplete_results": false,
   "items": [
+    {
+      "url": "https://api.github.com/repos/pytorch/pytorch/issues/35575",
+      "repository_url": "https://api.github.com/repos/pytorch/pytorch",
+      "labels_url": "https://api.github.com/repos/pytorch/pytorch/issues/35575/labels{/name}",
+      "comments_url": "https://api.github.com/repos/pytorch/pytorch/issues/35575/comments",
+      "events_url": "https://api.github.com/repos/pytorch/pytorch/issues/35575/events",
+      "html_url": "https://github.com/pytorch/pytorch/issues/35575",
+      "id": 589428376,
+      "node_id": "MDU6SXNzdWU1ODk0MjgzNzY=",
+      "number": 35575,
+      "title": "DISABLED test_debug_info (__main__.DistAutogradTestWithSpawn)",
+      "user": {
+        "login": "xush6528",
+        "id": 7608630,
+        "node_id": "MDQ6VXNlcjc2MDg2MzA=",
+        "avatar_url": "https://avatars2.githubusercontent.com/u/7608630?v=4",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/xush6528",
+        "html_url": "https://github.com/xush6528",
+        "followers_url": "https://api.github.com/users/xush6528/followers",
+        "following_url": "https://api.github.com/users/xush6528/following{/other_user}",
+        "gists_url": "https://api.github.com/users/xush6528/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/xush6528/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/xush6528/subscriptions",
+        "organizations_url": "https://api.github.com/users/xush6528/orgs",
+        "repos_url": "https://api.github.com/users/xush6528/repos",
+        "events_url": "https://api.github.com/users/xush6528/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/xush6528/received_events",
+        "type": "User",
+        "site_admin": false
+      },
+      "labels": [
+        {
+          "id": 1536612774,
+          "node_id": "MDU6TGFiZWwxNTM2NjEyNzc0",
+          "url": "https://api.github.com/repos/pytorch/pytorch/labels/module:%20rpc",
+          "name": "module: rpc",
+          "color": "f7e101",
+          "default": false,
+          "description": "Related to RPC, distributed autograd, RRef, and distributed optimizer"
+        }
+      ],
+      "state": "open",
+      "locked": false,
+      "assignee": null,
+      "assignees": [
+
+      ],
+      "milestone": null,
+      "comments": 0,
+      "created_at": "2020-03-27T21:44:25Z",
+      "updated_at": "2020-03-27T21:44:27Z",
+      "closed_at": null,
+      "author_association": "CONTRIBUTOR",
+      "body": "Saw 2 instances on test, pytorch_linux_xenial_py3_6_gcc5_4_test\r\n\r\nhttps://app.circleci.com/pipelines/github/pytorch/pytorch/147576/workflows/ee6a83a9-b219-488c-8224-b1d8404ad9f1/jobs/4978490\r\n\r\nhttps://app.circleci.com/pipelines/github/pytorch/pytorch/147327/workflows/b0fd43f7-d18a-4b47-a6c2-8c881c1cac63/jobs/4972041\n\ncc @pietern @mrshenli @pritamdamania87 @zhaojuanmao @satgera @gqchen @aazzolini @rohan-varma @xush6528 @jjlilley @osalpekar",
+      "score": 0.0
+    },
     {
       "url": "https://api.github.com/repos/pytorch/pytorch/issues/34952",
       "repository_url": "https://api.github.com/repos/pytorch/pytorch",
