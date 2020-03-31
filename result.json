@@ -1,5 +1,5 @@
 {
-  "total_count": 8,
+  "total_count": 9,
   "incomplete_results": false,
   "items": [
     {
@@ -263,6 +263,55 @@
       "closed_at": null,
       "author_association": "CONTRIBUTOR",
       "body": "## 🐛 Bug\r\n\r\nhttps://app.circleci.com/pipelines/github/pytorch/pytorch/138566/workflows/850299ec-3258-4e78-b680-cfad253c746a/jobs/4782754/parallel-runs/0/steps/0-105\r\n\r\n```\r\nMar 12 17:35:27 =================================== FAILURES ===================================\r\nMar 12 17:35:27 __________________ TestONNXRuntime_opset11.test_keypoint_rcnn __________________\r\nMar 12 17:35:27 \r\nMar 12 17:35:27 self = <test_pytorch_onnx_onnxruntime.TestONNXRuntime_opset11 testMethod=test_keypoint_rcnn>\r\nMar 12 17:35:27 \r\nMar 12 17:35:27     def wrapper(self):\r\nMar 12 17:35:27         if self.opset_version < min_opset_version:\r\nMar 12 17:35:27             raise unittest.SkipTest(\"Skip verify test for unsupported opset_version\")\r\nMar 12 17:35:27 >       return func(self)\r\nMar 12 17:35:27 \r\nMar 12 17:35:27 test/onnx/test_pytorch_common.py:54: \r\n```\r\n\n\ncc @houseroad @spandantiwari @lara-hdr @BowenBao @neginraoof",
+      "score": 0.0
+    },
+    {
+      "url": "https://api.github.com/repos/pytorch/pytorch/issues/35761",
+      "repository_url": "https://api.github.com/repos/pytorch/pytorch",
+      "labels_url": "https://api.github.com/repos/pytorch/pytorch/issues/35761/labels{/name}",
+      "comments_url": "https://api.github.com/repos/pytorch/pytorch/issues/35761/comments",
+      "events_url": "https://api.github.com/repos/pytorch/pytorch/issues/35761/events",
+      "html_url": "https://github.com/pytorch/pytorch/issues/35761",
+      "id": 591252770,
+      "node_id": "MDU6SXNzdWU1OTEyNTI3NzA=",
+      "number": 35761,
+      "title": "Allow shuffle when auto-batching disabled in `DataLoader`",
+      "user": {
+        "login": "huww98",
+        "id": 15710934,
+        "node_id": "MDQ6VXNlcjE1NzEwOTM0",
+        "avatar_url": "https://avatars2.githubusercontent.com/u/15710934?v=4",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/huww98",
+        "html_url": "https://github.com/huww98",
+        "followers_url": "https://api.github.com/users/huww98/followers",
+        "following_url": "https://api.github.com/users/huww98/following{/other_user}",
+        "gists_url": "https://api.github.com/users/huww98/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/huww98/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/huww98/subscriptions",
+        "organizations_url": "https://api.github.com/users/huww98/orgs",
+        "repos_url": "https://api.github.com/users/huww98/repos",
+        "events_url": "https://api.github.com/users/huww98/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/huww98/received_events",
+        "type": "User",
+        "site_admin": false
+      },
+      "labels": [
+
+      ],
+      "state": "open",
+      "locked": false,
+      "assignee": null,
+      "assignees": [
+
+      ],
+      "milestone": null,
+      "comments": 0,
+      "created_at": "2020-03-31T16:37:09Z",
+      "updated_at": "2020-03-31T16:37:09Z",
+      "closed_at": null,
+      "author_association": "NONE",
+      "body": "## 🚀 Feature\r\nAllow `DataLoader(batch_size=None, shuffle=True)`\r\n\r\n## Motivation\r\n\r\n<!-- Please outline the motivation for the proposal. Is your feature request related to a problem? e.g., I'm always frustrated when [...]. If this is related to another GitHub issue, please link here too -->\r\nMy model handles one sample a time. So, I don't need auto-batching, but I want my dataset to be shuffled. However, when I use `DataLoader(batch_size=None, shuffle=True)`, it raises `batch_size=None option disables auto-batching and is mutually exclusive with shuffle, and drop_last`.\r\n\r\nBut I can't see why they are mutually exclusive.\r\n\r\n## Pitch\r\n\r\n<!-- A clear and concise description of what you want to happen. -->\r\nAllow `DataLoader(batch_size=None, shuffle=True)`.\r\n\r\nBasically, just remove the `shuffle` check from this line:  https://github.com/pytorch/pytorch/blob/ada647214f3c39b3fdf624dd62f8295c92144617/torch/utils/data/dataloader.py#L202\r\n\r\n## Alternatives\r\n\r\n<!-- A clear and concise description of any alternative solutions or features you've considered, if any. -->\r\nI can:\r\n* Use `batch_size=1` then remove the batching dimension afterwards\r\n* Use `sampler=RandomSampler(dataset)`\r\n\r\nBut these makes me feel like I'm fighting with DataLoader. Why I cannot just use `shuffle=True`?\r\n\r\n## Additional context\r\n\r\n<!-- Add any other context or screenshots about the feature request here. -->\r\n",
       "score": 0.0
     },
     {
