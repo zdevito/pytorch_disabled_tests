@@ -218,9 +218,9 @@
         }
       ],
       "milestone": null,
-      "comments": 1,
+      "comments": 2,
       "created_at": "2020-04-30T02:36:33Z",
-      "updated_at": "2020-04-30T23:13:12Z",
+      "updated_at": "2020-04-30T23:57:10Z",
       "closed_at": null,
       "author_association": "CONTRIBUTOR",
       "body": "https://app.circleci.com/pipelines/github/pytorch/pytorch/162157/workflows/2caf287f-13ef-487f-a2e6-e28381d35869/jobs/5301310/steps\r\n\r\n```\r\nApr 30 02:22:58   test_profiler_with_async_rpc_builtin (__main__.RpcTestWithSpawn) ... [W record_function.cpp:97] Callbacks changed while running a record function, you might be partially overlapping a record function with a profiling scope\r\nApr 30 02:22:58 ERROR:root:Caught exception: \r\nApr 30 02:22:58 Traceback (most recent call last):\r\nApr 30 02:22:58   File \"/opt/python/nightly/lib/python3.7/site-packages/torch/testing/_internal/common_distributed.py\", line 187, in wrapper\r\nApr 30 02:22:58     fn()\r\nApr 30 02:22:58   File \"/opt/python/nightly/lib/python3.7/site-packages/torch/testing/_internal/dist_utils.py\", line 80, in new_test_method\r\nApr 30 02:22:58     return_value = old_test_method(self, *arg, **kwargs)\r\nApr 30 02:22:58   File \"/opt/python/nightly/lib/python3.7/site-packages/torch/testing/_internal/distributed/rpc/rpc_test.py\", line 895, in test_profiler_with_async_rpc_builtin\r\nApr 30 02:22:58     RPCExecMode.ASYNC, torch.add, args=(torch.ones(1), torch.ones(1))\r\nApr 30 02:22:58   File \"/opt/python/nightly/lib/python3.7/site-packages/torch/testing/_internal/distributed/rpc/rpc_test.py\", line 844, in _profiler_test_with_rpc\r\nApr 30 02:22:58     rpc_event = get_function_event(events, rpc_exec_mode.value)\r\nApr 30 02:22:58   File \"/opt/python/nightly/lib/python3.7/site-packages/torch/testing/_internal/dist_utils.py\", line 214, in get_function_event\r\nApr 30 02:22:58     event = [event for event in function_events if partial_event_name in event.name][0]\r\nApr 30 02:22:58 IndexError: list index out of range\r\nApr 30 02:22:58 exiting process with exit code: 10\r\nApr 30 02:22:59 Some process exited badly, terminating rest.\r\nApr 30 02:22:59 ERROR (1.020s)\r\n```\n\ncc @ezyang @gchanan @zou3519 @pietern @mrshenli @pritamdamania87 @zhaojuanmao @satgera @gqchen @aazzolini @rohan-varma @xush6528 @jjlilley @osalpekar",
