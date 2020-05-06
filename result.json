@@ -1,5 +1,5 @@
 {
-  "total_count": 15,
+  "total_count": 16,
   "incomplete_results": false,
   "items": [
     {
@@ -1020,6 +1020,90 @@
       "closed_at": null,
       "author_association": "MEMBER",
       "body": "## 🐛 Bug\r\n\r\ntes_quantized_rnn is flaky, see https://app.circleci.com/jobs/github/pytorch/pytorch/4343194\r\nSee example failure: \r\n```\r\nJan 26 08:10:23 ======================================================================\r\nJan 26 08:10:23 ERROR [0.186s]: test_quantized_rnn (__main__.PostTrainingDynamicQuantTest)\r\nJan 26 08:10:23 ----------------------------------------------------------------------\r\nJan 26 08:10:23 Traceback (most recent call last):\r\nJan 26 08:10:23   File \"test_quantization.py\", line 722, in test_quantized_rnn\r\nJan 26 08:10:23     y, (h, c) = cell_dq(x, (h, c))\r\nJan 26 08:10:23   File \"/opt/conda/lib/python3.6/site-packages/torch/nn/modules/module.py\", line 540, in __call__\r\nJan 26 08:10:23     result = self.forward(*input, **kwargs)\r\nJan 26 08:10:23   File \"/opt/conda/lib/python3.6/site-packages/torch/nn/quantized/dynamic/modules/rnn.py\", line 373, in forward\r\nJan 26 08:10:23     return self.forward_tensor(input, hx)\r\nJan 26 08:10:23   File \"/opt/conda/lib/python3.6/site-packages/torch/nn/quantized/dynamic/modules/rnn.py\", line 334, in forward_tensor\r\nJan 26 08:10:23     input, hx, batch_sizes, max_batch_size, sorted_indices)\r\nJan 26 08:10:23   File \"/opt/conda/lib/python3.6/site-packages/torch/nn/quantized/dynamic/modules/rnn.py\", line 315, in forward_impl\r\nJan 26 08:10:23     self.batch_first, dtype=self.dtype, use_dynamic=True)\r\nJan 26 08:10:23 RuntimeError: quantization scale should be > 0\r\n```\n\ncc @ezyang @gchanan @zou3519 @jerryzh168 @jianyuh @dzhulgakov @raghuramank100 @jamesr66a",
+      "score": 0.0
+    },
+    {
+      "url": "https://api.github.com/repos/pytorch/pytorch/issues/37889",
+      "repository_url": "https://api.github.com/repos/pytorch/pytorch",
+      "labels_url": "https://api.github.com/repos/pytorch/pytorch/issues/37889/labels{/name}",
+      "comments_url": "https://api.github.com/repos/pytorch/pytorch/issues/37889/comments",
+      "events_url": "https://api.github.com/repos/pytorch/pytorch/issues/37889/events",
+      "html_url": "https://github.com/pytorch/pytorch/issues/37889",
+      "id": 612947225,
+      "node_id": "MDU6SXNzdWU2MTI5NDcyMjU=",
+      "number": 37889,
+      "title": "DISABLED test_profiler_with_async_rpc_udf (__main__.RpcTestWithSpawn) is flaky",
+      "user": {
+        "login": "ezyang",
+        "id": 13564,
+        "node_id": "MDQ6VXNlcjEzNTY0",
+        "avatar_url": "https://avatars0.githubusercontent.com/u/13564?v=4",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/ezyang",
+        "html_url": "https://github.com/ezyang",
+        "followers_url": "https://api.github.com/users/ezyang/followers",
+        "following_url": "https://api.github.com/users/ezyang/following{/other_user}",
+        "gists_url": "https://api.github.com/users/ezyang/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/ezyang/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/ezyang/subscriptions",
+        "organizations_url": "https://api.github.com/users/ezyang/orgs",
+        "repos_url": "https://api.github.com/users/ezyang/repos",
+        "events_url": "https://api.github.com/users/ezyang/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/ezyang/received_events",
+        "type": "User",
+        "site_admin": false
+      },
+      "labels": [
+        {
+          "id": 443484135,
+          "node_id": "MDU6TGFiZWw0NDM0ODQxMzU=",
+          "url": "https://api.github.com/repos/pytorch/pytorch/labels/high%20priority",
+          "name": "high priority",
+          "color": "F22613",
+          "default": false,
+          "description": null
+        },
+        {
+          "id": 1536612774,
+          "node_id": "MDU6TGFiZWwxNTM2NjEyNzc0",
+          "url": "https://api.github.com/repos/pytorch/pytorch/labels/module:%20rpc",
+          "name": "module: rpc",
+          "color": "f7e101",
+          "default": false,
+          "description": "Related to RPC, distributed autograd, RRef, and distributed optimizer"
+        },
+        {
+          "id": 1301397902,
+          "node_id": "MDU6TGFiZWwxMzAxMzk3OTAy",
+          "url": "https://api.github.com/repos/pytorch/pytorch/labels/topic:%20flaky-tests",
+          "name": "topic: flaky-tests",
+          "color": "0e8a16",
+          "default": false,
+          "description": "Problem is a flaky test in CI"
+        },
+        {
+          "id": 466131885,
+          "node_id": "MDU6TGFiZWw0NjYxMzE4ODU=",
+          "url": "https://api.github.com/repos/pytorch/pytorch/labels/triage%20review",
+          "name": "triage review",
+          "color": "cc317c",
+          "default": false,
+          "description": ""
+        }
+      ],
+      "state": "open",
+      "locked": false,
+      "assignee": null,
+      "assignees": [
+
+      ],
+      "milestone": null,
+      "comments": 1,
+      "created_at": "2020-05-05T23:05:08Z",
+      "updated_at": "2020-05-05T23:58:14Z",
+      "closed_at": null,
+      "author_association": "CONTRIBUTOR",
+      "body": "```\r\n\r\nMay 05 15:30:34   test_profiler_with_async_rpc_udf (__main__.RpcTestWithSpawn) ... ERROR:root:Caught exception: \r\nMay 05 15:30:34 Traceback (most recent call last):\r\nMay 05 15:30:34   File \"/Users/distiller/workspace/miniconda3/lib/python3.7/site-packages/torch/testing/_internal/common_distributed.py\", line 187, in wrapper\r\nMay 05 15:30:34     fn()\r\nMay 05 15:30:34   File \"/Users/distiller/workspace/miniconda3/lib/python3.7/site-packages/torch/testing/_internal/dist_utils.py\", line 85, in new_test_method\r\nMay 05 15:30:34     return_value = old_test_method(self, *arg, **kwargs)\r\nMay 05 15:30:34   File \"/Users/distiller/workspace/miniconda3/lib/python3.7/site-packages/torch/testing/_internal/distributed/rpc/rpc_test.py\", line 888, in test_profiler_with_async_rpc_udf\r\nMay 05 15:30:34     self._profiler_test_with_rpc(RPCExecMode.ASYNC, my_sleep_func, args=(1,))\r\nMay 05 15:30:34   File \"/Users/distiller/workspace/miniconda3/lib/python3.7/site-packages/torch/testing/_internal/distributed/rpc/rpc_test.py\", line 844, in _profiler_test_with_rpc\r\nMay 05 15:30:34     rpc_event = get_function_event(events, rpc_exec_mode.value)\r\nMay 05 15:30:34   File \"/Users/distiller/workspace/miniconda3/lib/python3.7/site-packages/torch/testing/_internal/dist_utils.py\", line 231, in get_function_event\r\nMay 05 15:30:34     event = [event for event in function_events if partial_event_name in event.name][0]\r\nMay 05 15:30:34 IndexError: list index out of range\r\nMay 05 15:30:34 exiting process with exit code: 10\r\nMay 05 15:30:34 Some process exited badly, terminating rest.\r\nMay 05 15:30:34 ERROR (2.414s)\r\n```\r\n\r\nsample job\r\n\r\nhttps://circleci.com/gh/pytorch/pytorch/5356816?utm_campaign=vcs-integration-link&utm_medium=referral&utm_source=github-build-link\n\ncc @ezyang @gchanan @zou3519 @pietern @mrshenli @pritamdamania87 @zhaojuanmao @satgera @gqchen @aazzolini @rohan-varma @xush6528 @jjlilley @osalpekar",
       "score": 0.0
     },
     {
