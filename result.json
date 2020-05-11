@@ -1,5 +1,5 @@
 {
-  "total_count": 19,
+  "total_count": 18,
   "incomplete_results": false,
   "items": [
     {
@@ -421,99 +421,6 @@
       "closed_at": null,
       "author_association": "CONTRIBUTOR",
       "body": "Saw 2 instances on test, pytorch_linux_xenial_py3_6_gcc5_4_test\r\n\r\nhttps://app.circleci.com/pipelines/github/pytorch/pytorch/147576/workflows/ee6a83a9-b219-488c-8224-b1d8404ad9f1/jobs/4978490\r\n\r\nhttps://app.circleci.com/pipelines/github/pytorch/pytorch/147327/workflows/b0fd43f7-d18a-4b47-a6c2-8c881c1cac63/jobs/4972041\n\ncc @pietern @mrshenli @pritamdamania87 @zhaojuanmao @satgera @gqchen @aazzolini @rohan-varma @xush6528 @jjlilley @osalpekar",
-      "score": 0.0
-    },
-    {
-      "url": "https://api.github.com/repos/pytorch/pytorch/issues/38236",
-      "repository_url": "https://api.github.com/repos/pytorch/pytorch",
-      "labels_url": "https://api.github.com/repos/pytorch/pytorch/issues/38236/labels{/name}",
-      "comments_url": "https://api.github.com/repos/pytorch/pytorch/issues/38236/comments",
-      "events_url": "https://api.github.com/repos/pytorch/pytorch/issues/38236/events",
-      "html_url": "https://github.com/pytorch/pytorch/issues/38236",
-      "id": 615974616,
-      "node_id": "MDU6SXNzdWU2MTU5NzQ2MTY=",
-      "number": 38236,
-      "title": "DISABLED test_self_remote_rref_as_rpc_arg (__main__.RpcTestWithSpawn)",
-      "user": {
-        "login": "mrshenli",
-        "id": 16999635,
-        "node_id": "MDQ6VXNlcjE2OTk5NjM1",
-        "avatar_url": "https://avatars2.githubusercontent.com/u/16999635?v=4",
-        "gravatar_id": "",
-        "url": "https://api.github.com/users/mrshenli",
-        "html_url": "https://github.com/mrshenli",
-        "followers_url": "https://api.github.com/users/mrshenli/followers",
-        "following_url": "https://api.github.com/users/mrshenli/following{/other_user}",
-        "gists_url": "https://api.github.com/users/mrshenli/gists{/gist_id}",
-        "starred_url": "https://api.github.com/users/mrshenli/starred{/owner}{/repo}",
-        "subscriptions_url": "https://api.github.com/users/mrshenli/subscriptions",
-        "organizations_url": "https://api.github.com/users/mrshenli/orgs",
-        "repos_url": "https://api.github.com/users/mrshenli/repos",
-        "events_url": "https://api.github.com/users/mrshenli/events{/privacy}",
-        "received_events_url": "https://api.github.com/users/mrshenli/received_events",
-        "type": "User",
-        "site_admin": false
-      },
-      "labels": [
-        {
-          "id": 443484135,
-          "node_id": "MDU6TGFiZWw0NDM0ODQxMzU=",
-          "url": "https://api.github.com/repos/pytorch/pytorch/labels/high%20priority",
-          "name": "high priority",
-          "color": "F22613",
-          "default": false,
-          "description": null
-        },
-        {
-          "id": 1536612774,
-          "node_id": "MDU6TGFiZWwxNTM2NjEyNzc0",
-          "url": "https://api.github.com/repos/pytorch/pytorch/labels/module:%20rpc",
-          "name": "module: rpc",
-          "color": "f7e101",
-          "default": false,
-          "description": "Related to RPC, distributed autograd, RRef, and distributed optimizer"
-        },
-        {
-          "id": 1301397902,
-          "node_id": "MDU6TGFiZWwxMzAxMzk3OTAy",
-          "url": "https://api.github.com/repos/pytorch/pytorch/labels/topic:%20flaky-tests",
-          "name": "topic: flaky-tests",
-          "color": "0e8a16",
-          "default": false,
-          "description": "Problem is a flaky test in CI"
-        },
-        {
-          "id": 466131885,
-          "node_id": "MDU6TGFiZWw0NjYxMzE4ODU=",
-          "url": "https://api.github.com/repos/pytorch/pytorch/labels/triage%20review",
-          "name": "triage review",
-          "color": "cc317c",
-          "default": false,
-          "description": ""
-        },
-        {
-          "id": 1301347167,
-          "node_id": "MDU6TGFiZWwxMzAxMzQ3MTY3",
-          "url": "https://api.github.com/repos/pytorch/pytorch/labels/triaged",
-          "name": "triaged",
-          "color": "006b75",
-          "default": false,
-          "description": "This issue has been looked at a team member, and triaged and prioritized into an appropriate module"
-        }
-      ],
-      "state": "open",
-      "locked": false,
-      "assignee": null,
-      "assignees": [
-
-      ],
-      "milestone": null,
-      "comments": 0,
-      "created_at": "2020-05-11T15:28:27Z",
-      "updated_at": "2020-05-11T15:28:32Z",
-      "closed_at": null,
-      "author_association": "CONTRIBUTOR",
-      "body": "Same error as #37795. Looks like the GIL fix is not sufficient. \r\n\r\nhttps://app.circleci.com/pipelines/github/pytorch/pytorch/166686/workflows/dab671cc-3e57-460d-b588-85c1c7715fd4/jobs/5401139/steps\r\n\r\n```\r\nMay 08 05:16:00   test_self_remote_rref_as_rpc_arg (__main__.RpcTestWithSpawn) ... ERROR:root:Caught exception: \r\nMay 08 05:16:00 Traceback (most recent call last):\r\nMay 08 05:16:00   File \"/opt/conda/lib/python3.6/site-packages/torch/testing/_internal/common_distributed.py\", line 187, in wrapper\r\nMay 08 05:16:00     fn()\r\nMay 08 05:16:00   File \"/opt/conda/lib/python3.6/site-packages/torch/testing/_internal/dist_utils.py\", line 85, in new_test_method\r\nMay 08 05:16:00     return_value = old_test_method(self, *arg, **kwargs)\r\nMay 08 05:16:00   File \"/opt/conda/lib/python3.6/site-packages/torch/testing/_internal/distributed/rpc/rpc_test.py\", line 360, in test_self_remote_rref_as_rpc_arg\r\nMay 08 05:16:00     self._test_self_remote_rref_as_rpc_arg(dst)\r\nMay 08 05:16:00   File \"/opt/conda/lib/python3.6/site-packages/torch/testing/_internal/distributed/rpc/rpc_test.py\", line 354, in _test_self_remote_rref_as_rpc_arg\r\nMay 08 05:16:00     self.assertEqual(ret, torch.ones(2, 2) + 1 + 3 + torch.ones(2, 2) + 1)\r\nMay 08 05:16:00   File \"/opt/conda/lib/python3.6/site-packages/torch/testing/_internal/common_utils.py\", line 883, in assertEqual\r\nMay 08 05:16:00     (rtol, atol) = self.get_default_tolerance(x, y)\r\nMay 08 05:16:00   File \"/opt/conda/lib/python3.6/site-packages/torch/testing/_internal/common_utils.py\", line 869, in get_default_tolerance\r\nMay 08 05:16:00     a_tol = self.get_default_tolerance(a)\r\nMay 08 05:16:00   File \"/opt/conda/lib/python3.6/site-packages/torch/testing/_internal/common_utils.py\", line 855, in get_default_tolerance\r\nMay 08 05:16:00     dtype = a.dtype\r\n```\r\n\r\n```\r\nMay 08 05:16:25 ======================================================================\r\nMay 08 05:16:25 ERROR [1.224s]: test_self_remote_rref_as_rpc_arg (__main__.RpcTestWithSpawn)\r\nMay 08 05:16:25 ----------------------------------------------------------------------\r\nMay 08 05:16:25 Traceback (most recent call last):\r\nMay 08 05:16:25   File \"/opt/conda/lib/python3.6/site-packages/torch/testing/_internal/common_distributed.py\", line 184, in wrapper\r\nMay 08 05:16:25     self._join_processes(fn)\r\nMay 08 05:16:25   File \"/opt/conda/lib/python3.6/site-packages/torch/testing/_internal/common_distributed.py\", line 286, in _join_processes\r\nMay 08 05:16:25     self._check_return_codes(elapsed_time)\r\nMay 08 05:16:25   File \"/opt/conda/lib/python3.6/site-packages/torch/testing/_internal/common_distributed.py\", line 319, in _check_return_codes\r\nMay 08 05:16:25     raise RuntimeError(error)\r\nMay 08 05:16:25 RuntimeError: Processes 2 exited with error code 10\r\n```\n\ncc @ezyang @gchanan @zou3519 @pietern @mrshenli @pritamdamania87 @zhaojuanmao @satgera @gqchen @aazzolini @rohan-varma @xush6528 @jjlilley @osalpekar",
       "score": 0.0
     },
     {
