@@ -320,9 +320,9 @@
         }
       ],
       "milestone": null,
-      "comments": 1,
+      "comments": 2,
       "created_at": "2020-04-09T19:36:45Z",
-      "updated_at": "2020-05-06T20:15:43Z",
+      "updated_at": "2020-05-19T22:50:22Z",
       "closed_at": null,
       "author_association": "CONTRIBUTOR",
       "body": "https://app.circleci.com/pipelines/github/pytorch/pytorch/153028/workflows/c3ba2031-4e43-41d4-8399-c69cd09b49d7/jobs/5100538\r\n\r\n```\r\nApr 09 11:58:38 ======================================================================\r\nApr 09 11:58:38 ERROR [100.118s]: test_check_failed_messages (__main__.FaultyAgentRpcTestWithSpawn)\r\nApr 09 11:58:38 ----------------------------------------------------------------------\r\nApr 09 11:58:38 Traceback (most recent call last):\r\nApr 09 11:58:38   File \"/Users/distiller/workspace/miniconda3/lib/python3.7/site-packages/torch/testing/_internal/common_distributed.py\", line 175, in wrapper\r\nApr 09 11:58:38     self._join_processes(fn)\r\nApr 09 11:58:38   File \"/Users/distiller/workspace/miniconda3/lib/python3.7/site-packages/torch/testing/_internal/common_distributed.py\", line 285, in _join_processes\r\nApr 09 11:58:38     self._check_return_codes(elapsed_time)\r\nApr 09 11:58:38   File \"/Users/distiller/workspace/miniconda3/lib/python3.7/site-packages/torch/testing/_internal/common_distributed.py\", line 323, in _check_return_codes\r\nApr 09 11:58:38     raise RuntimeError('Process {} terminated or timed out after {} seconds'.format(i, elapsed_time))\r\nApr 09 11:58:38 RuntimeError: Process 1 terminated or timed out after 100.0106930732727 seconds\r\n```\n\ncc @ezyang @gchanan @zou3519 @pietern @mrshenli @pritamdamania87 @zhaojuanmao @satgera @gqchen @aazzolini @rohan-varma @xush6528 @jjlilley @osalpekar",
