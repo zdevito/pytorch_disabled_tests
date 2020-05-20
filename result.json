@@ -1,5 +1,5 @@
 {
-  "total_count": 13,
+  "total_count": 16,
   "incomplete_results": false,
   "items": [
     {
@@ -93,6 +93,210 @@
       "closed_at": null,
       "author_association": "CONTRIBUTOR",
       "body": "https://app.circleci.com/pipelines/github/pytorch/pytorch/169923/workflows/d66ca278-d55c-462b-96cb-55623ce713f7/jobs/5472514/steps\r\n\r\n```\r\nMay 14 07:37:27 =================================== FAILURES ===================================\r\nMay 14 07:37:27 ______________ ParallelWorkersTest.testParallelWorkersShutdownFun ______________\r\nMay 14 07:37:27 \r\nMay 14 07:37:27 self = <caffe2.python.parallel_workers_test.ParallelWorkersTest testMethod=testParallelWorkersShutdownFun>\r\nMay 14 07:37:27 \r\nMay 14 07:37:27     def testParallelWorkersShutdownFun(self):\r\nMay 14 07:37:27         workspace.ResetWorkspace()\r\nMay 14 07:37:27     \r\nMay 14 07:37:27         queue = create_queue()\r\nMay 14 07:37:27         dummy_worker = create_worker(queue, lambda worker_id: str(worker_id))\r\nMay 14 07:37:27         workspace.FeedBlob('data', 'not shutdown')\r\nMay 14 07:37:27     \r\nMay 14 07:37:27         def shutdown_fun():\r\nMay 14 07:37:27             workspace.FeedBlob('data', 'shutdown')\r\nMay 14 07:37:27     \r\nMay 14 07:37:27         worker_coordinator = parallel_workers.init_workers(\r\nMay 14 07:37:27             dummy_worker, shutdown_fun=shutdown_fun\r\nMay 14 07:37:27         )\r\nMay 14 07:37:27         worker_coordinator.start()\r\nMay 14 07:37:27     \r\nMay 14 07:37:27 >       self.assertTrue(worker_coordinator.stop())\r\nMay 14 07:37:27 E       AssertionError: False is not true\r\nMay 14 07:37:27 \r\nMay 14 07:37:27 ../.local/lib/python3.6/site-packages/caffe2/python/parallel_workers_test.py:116: AssertionError\r\nMay 14 07:37:27 ----------------------------- Captured stdout call -----------------------------\r\n```\n\ncc @ezyang @gchanan @zou3519 @houseroad @spandantiwari @lara-hdr @BowenBao @neginraoof",
+      "score": 0.0
+    },
+    {
+      "url": "https://api.github.com/repos/pytorch/pytorch/issues/38758",
+      "repository_url": "https://api.github.com/repos/pytorch/pytorch",
+      "labels_url": "https://api.github.com/repos/pytorch/pytorch/issues/38758/labels{/name}",
+      "comments_url": "https://api.github.com/repos/pytorch/pytorch/issues/38758/comments",
+      "events_url": "https://api.github.com/repos/pytorch/pytorch/issues/38758/events",
+      "html_url": "https://github.com/pytorch/pytorch/issues/38758",
+      "id": 621408319,
+      "node_id": "MDU6SXNzdWU2MjE0MDgzMTk=",
+      "number": 38758,
+      "title": "DISABLED test_trainer_ps (__main__.TensorPipeAgentDistAutogradTestWithSpawn)",
+      "user": {
+        "login": "mrshenli",
+        "id": 16999635,
+        "node_id": "MDQ6VXNlcjE2OTk5NjM1",
+        "avatar_url": "https://avatars2.githubusercontent.com/u/16999635?v=4",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/mrshenli",
+        "html_url": "https://github.com/mrshenli",
+        "followers_url": "https://api.github.com/users/mrshenli/followers",
+        "following_url": "https://api.github.com/users/mrshenli/following{/other_user}",
+        "gists_url": "https://api.github.com/users/mrshenli/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/mrshenli/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/mrshenli/subscriptions",
+        "organizations_url": "https://api.github.com/users/mrshenli/orgs",
+        "repos_url": "https://api.github.com/users/mrshenli/repos",
+        "events_url": "https://api.github.com/users/mrshenli/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/mrshenli/received_events",
+        "type": "User",
+        "site_admin": false
+      },
+      "labels": [
+        {
+          "id": 443484135,
+          "node_id": "MDU6TGFiZWw0NDM0ODQxMzU=",
+          "url": "https://api.github.com/repos/pytorch/pytorch/labels/high%20priority",
+          "name": "high priority",
+          "color": "F22613",
+          "default": false,
+          "description": null
+        },
+        {
+          "id": 1536612774,
+          "node_id": "MDU6TGFiZWwxNTM2NjEyNzc0",
+          "url": "https://api.github.com/repos/pytorch/pytorch/labels/module:%20rpc",
+          "name": "module: rpc",
+          "color": "f7e101",
+          "default": false,
+          "description": "Related to RPC, distributed autograd, RRef, and distributed optimizer"
+        },
+        {
+          "id": 1986434179,
+          "node_id": "MDU6TGFiZWwxOTg2NDM0MTc5",
+          "url": "https://api.github.com/repos/pytorch/pytorch/labels/module:%20tensorpipe",
+          "name": "module: tensorpipe",
+          "color": "f7e845",
+          "default": false,
+          "description": "Related to Tensorpipe RPC Agent"
+        },
+        {
+          "id": 1301397902,
+          "node_id": "MDU6TGFiZWwxMzAxMzk3OTAy",
+          "url": "https://api.github.com/repos/pytorch/pytorch/labels/topic:%20flaky-tests",
+          "name": "topic: flaky-tests",
+          "color": "0e8a16",
+          "default": false,
+          "description": "Problem is a flaky test in CI"
+        },
+        {
+          "id": 466131885,
+          "node_id": "MDU6TGFiZWw0NjYxMzE4ODU=",
+          "url": "https://api.github.com/repos/pytorch/pytorch/labels/triage%20review",
+          "name": "triage review",
+          "color": "cc317c",
+          "default": false,
+          "description": ""
+        },
+        {
+          "id": 1301347167,
+          "node_id": "MDU6TGFiZWwxMzAxMzQ3MTY3",
+          "url": "https://api.github.com/repos/pytorch/pytorch/labels/triaged",
+          "name": "triaged",
+          "color": "006b75",
+          "default": false,
+          "description": "This issue has been looked at a team member, and triaged and prioritized into an appropriate module"
+        }
+      ],
+      "state": "open",
+      "locked": false,
+      "assignee": null,
+      "assignees": [
+
+      ],
+      "milestone": null,
+      "comments": 0,
+      "created_at": "2020-05-20T02:19:48Z",
+      "updated_at": "2020-05-20T02:19:51Z",
+      "closed_at": null,
+      "author_association": "CONTRIBUTOR",
+      "body": "https://app.circleci.com/pipelines/github/pytorch/pytorch/171959/workflows/3211d854-a984-469e-8984-602211e6a3d6/jobs/5528985/steps\r\n\r\n```\r\nMay 20 01:54:09 ======================================================================\r\nMay 20 01:54:09 FAIL [1.415s]: test_trainer_ps (__main__.TensorPipeAgentDistAutogradTestWithSpawn)\r\nMay 20 01:54:09 ----------------------------------------------------------------------\r\nMay 20 01:54:09 Traceback (most recent call last):\r\nMay 20 01:54:09   File \"/opt/conda/lib/python3.6/site-packages/torch/testing/_internal/common_distributed.py\", line 204, in wrapper\r\nMay 20 01:54:09     self._join_processes(fn)\r\nMay 20 01:54:09   File \"/opt/conda/lib/python3.6/site-packages/torch/testing/_internal/common_distributed.py\", line 306, in _join_processes\r\nMay 20 01:54:09     self._check_return_codes(elapsed_time)\r\nMay 20 01:54:09   File \"/opt/conda/lib/python3.6/site-packages/torch/testing/_internal/common_distributed.py\", line 349, in _check_return_codes\r\nMay 20 01:54:09     i, first_process.exitcode, p.exitcode\r\nMay 20 01:54:09   File \"/opt/conda/lib/python3.6/site-packages/torch/testing/_internal/common_utils.py\", line 1116, in assertEqual\r\nMay 20 01:54:09     self.assertTrue(result, msg=message)\r\nMay 20 01:54:09 AssertionError: False is not true : Expect process 3 exit code to match Process 0 exit code of 0, but got -6\r\n```\r\n\r\n```\r\nMay 20 01:54:04   test_trainer_ps (__main__.TensorPipeAgentDistAutogradTestWithSpawn) ... [W tensorpipe_agent.cpp:222] RPC agent is being closed. Skip sending rpc response\r\nMay 20 01:54:04 [E request_callback_impl.cpp:96] Received error while processing request type 19: currentRpcAgent_ INTERNAL ASSERT FAILED at \"/var/lib/jenkins/workspace/torch/csrc/distributed/rpc/rpc_agent.cpp\":246, please report a bug to PyTorch. Current RPC agent is not set!\r\nMay 20 01:54:04 Exception raised from getCurrentRpcAgent at /var/lib/jenkins/workspace/torch/csrc/distributed/rpc/rpc_agent.cpp:246 (most recent call first):\r\nMay 20 01:54:04 frame #0: c10::Error::Error(c10::SourceLocation, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) + 0x6b (0x7f9ba771714b in /opt/conda/lib/python3.6/site-packages/torch/lib/libc10.so)\r\nMay 20 01:54:04 frame #1: torch::distributed::rpc::RpcAgent::getCurrentRpcAgent() + 0x404 (0x7f9bb4e89f44 in /opt/conda/lib/python3.6/site-packages/torch/lib/libtorch_cpu.so)\r\nMay 20 01:54:04 frame #2: torch::distributed::autograd::CleanupAutogradContextReq::fromMessage(torch::distributed::rpc::Message const&) + 0x64 (0x7f9bb4e7c494 in /opt/conda/lib/python3.6/site-packages/torch/lib/libtorch_cpu.so)\r\nMay 20 01:54:04 frame #3: torch::distributed::rpc::deserializeRequest(torch::distributed::rpc::Message const&) + 0x5f (0x7f9bb4ec60cf in /opt/conda/lib/python3.6/site-packages/torch/lib/libtorch_cpu.so)\r\nMay 20 01:54:04 frame #4: torch::distributed::rpc::RequestCallbackImpl::processMessage(torch::distributed::rpc::Message&) const + 0xf8 (0x7f9bbadab518 in /opt/conda/lib/python3.6/site-packages/torch/lib/libtorch_python.so)\r\nMay 20 01:54:04 frame #5: torch::distributed::rpc::RequestCallback::operator()(torch::distributed::rpc::Message&) const + 0x1e (0x7f9bb4e88bfe in /opt/conda/lib/python3.6/site-packages/torch/lib/libtorch_cpu.so)\r\nMay 20 01:54:04 frame #6: <unknown function> + 0xb80a65 (0x7f9bbadb4a65 in /opt/conda/lib/python3.6/site-packages/torch/lib/libtorch_python.so)\r\nMay 20 01:54:04 frame #7: c10::ThreadPool::main_loop(unsigned long) + 0x2b3 (0x7f9ba7704f93 in /opt/conda/lib/python3.6/site-packages/torch/lib/libc10.so)\r\nMay 20 01:54:04 frame #8: <unknown function> + 0xc819d (0x7f9bbc40419d in /opt/conda/lib/libstdc++.so.6)\r\nMay 20 01:54:04 frame #9: <unknown function> + 0x76ba (0x7f9be64266ba in /lib/x86_64-linux-gnu/libpthread.so.0)\r\nMay 20 01:54:04 frame #10: clone + 0x6d (0x7f9be615c41d in /lib/x86_64-linux-gnu/libc.so.6)\r\nMay 20 01:54:04 \r\nMay 20 01:54:04 [E request_callback_impl.cpp:96] Received error while processing request type 19: currentRpcAgent_ INTERNAL ASSERT FAILED at \"/var/lib/jenkins/workspace/torch/csrc/distributed/rpc/rpc_agent.cpp\":246, please report a bug to PyTorch. Current RPC agent is not set!\r\nMay 20 01:54:04 Exception raised from getCurrentRpcAgent at /var/lib/jenkins/workspace/torch/csrc/distributed/rpc/rpc_agent.cpp:246 (most recent call first):\r\nMay 20 01:54:04 frame #0: c10::Error::Error(c10::SourceLocation, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) + 0x6b (0x7f878b3da14b in /opt/conda/lib/python3.6/site-packages/torch/lib/libc10.so)\r\nMay 20 01:54:04 frame #1: torch::distributed::rpc::RpcAgent::getCurrentRpcAgent() + 0x404 (0x7f8798b4cf44 in /opt/conda/lib/python3.6/site-packages/torch/lib/libtorch_cpu.so)\r\nMay 20 01:54:04 frame #2: torch::distributed::autograd::CleanupAutogradContextReq::fromMessage(torch::distributed::rpc::Message const&) + 0x64 (0x7f8798b3f494 in /opt/conda/lib/python3.6/site-packages/torch/lib/libtorch_cpu.so)\r\nMay 20 01:54:04 frame #3: torch::distributed::rpc::deserializeRequest(torch::distributed::rpc::Message const&) + 0x5f (0x7f8798b890cf in /opt/conda/lib/python3.6/site-packages/torch/lib/libtorch_cpu.so)\r\nMay 20 01:54:04 frame #4: torch::distributed::rpc::RequestCallbackImpl::processMessage(torch::distributed::rpc::Message&) const + 0xf8 (0x7f879ea6e518 in /opt/conda/lib/python3.6/site-packages/torch/lib/libtorch_python.so)\r\nMay 20 01:54:04 frame #5: torch::distributed::rpc::RequestCallback::operator()(torch::distributed::rpc::Message&) const + 0x1e (0x7f8798b4bbfe in /opt/conda/lib/python3.6/site-packages/torch/lib/libtorch_cpu.so)\r\nMay 20 01:54:04 frame #6: <unknown function> + 0xb80a65 (0x7f879ea77a65 in /opt/conda/lib/python3.6/site-packages/torch/lib/libtorch_python.so)\r\nMay 20 01:54:04 frame #7: c10::ThreadPool::main_loop(unsigned long) + 0x2b3 (0x7f878b3c7f93 in /opt/conda/lib/python3.6/site-packages/torch/lib/libc10.so)\r\nMay 20 01:54:04 frame #8: <unknown function> + 0xc819d (0x7f87a00c719d in /opt/conda/lib/libstdc++.so.6)\r\nMay 20 01:54:04 frame #9: <unknown function> + 0x76ba (0x7f87ca0e96ba in /lib/x86_64-linux-gnu/libpthread.so.0)\r\nMay 20 01:54:04 frame #10: clone + 0x6d (0x7f87c9e1f41d in /lib/x86_64-linux-gnu/libc.so.6)\r\n```\n\ncc @ezyang @gchanan @zou3519 @pietern @mrshenli @pritamdamania87 @zhaojuanmao @satgera @gqchen @aazzolini @rohan-varma @xush6528 @jjlilley @osalpekar @jiayisuse @lw @beauby",
+      "score": 0.0
+    },
+    {
+      "url": "https://api.github.com/repos/pytorch/pytorch/issues/38756",
+      "repository_url": "https://api.github.com/repos/pytorch/pytorch",
+      "labels_url": "https://api.github.com/repos/pytorch/pytorch/issues/38756/labels{/name}",
+      "comments_url": "https://api.github.com/repos/pytorch/pytorch/issues/38756/comments",
+      "events_url": "https://api.github.com/repos/pytorch/pytorch/issues/38756/events",
+      "html_url": "https://github.com/pytorch/pytorch/issues/38756",
+      "id": 621405124,
+      "node_id": "MDU6SXNzdWU2MjE0MDUxMjQ=",
+      "number": 38756,
+      "title": "DISABLED test_rref_proxy_reuse (__main__.TensorPipeAgentRpcTestWithSpawn)",
+      "user": {
+        "login": "mrshenli",
+        "id": 16999635,
+        "node_id": "MDQ6VXNlcjE2OTk5NjM1",
+        "avatar_url": "https://avatars2.githubusercontent.com/u/16999635?v=4",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/mrshenli",
+        "html_url": "https://github.com/mrshenli",
+        "followers_url": "https://api.github.com/users/mrshenli/followers",
+        "following_url": "https://api.github.com/users/mrshenli/following{/other_user}",
+        "gists_url": "https://api.github.com/users/mrshenli/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/mrshenli/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/mrshenli/subscriptions",
+        "organizations_url": "https://api.github.com/users/mrshenli/orgs",
+        "repos_url": "https://api.github.com/users/mrshenli/repos",
+        "events_url": "https://api.github.com/users/mrshenli/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/mrshenli/received_events",
+        "type": "User",
+        "site_admin": false
+      },
+      "labels": [
+        {
+          "id": 443484135,
+          "node_id": "MDU6TGFiZWw0NDM0ODQxMzU=",
+          "url": "https://api.github.com/repos/pytorch/pytorch/labels/high%20priority",
+          "name": "high priority",
+          "color": "F22613",
+          "default": false,
+          "description": null
+        },
+        {
+          "id": 1536612774,
+          "node_id": "MDU6TGFiZWwxNTM2NjEyNzc0",
+          "url": "https://api.github.com/repos/pytorch/pytorch/labels/module:%20rpc",
+          "name": "module: rpc",
+          "color": "f7e101",
+          "default": false,
+          "description": "Related to RPC, distributed autograd, RRef, and distributed optimizer"
+        },
+        {
+          "id": 1986434179,
+          "node_id": "MDU6TGFiZWwxOTg2NDM0MTc5",
+          "url": "https://api.github.com/repos/pytorch/pytorch/labels/module:%20tensorpipe",
+          "name": "module: tensorpipe",
+          "color": "f7e845",
+          "default": false,
+          "description": "Related to Tensorpipe RPC Agent"
+        },
+        {
+          "id": 1301397902,
+          "node_id": "MDU6TGFiZWwxMzAxMzk3OTAy",
+          "url": "https://api.github.com/repos/pytorch/pytorch/labels/topic:%20flaky-tests",
+          "name": "topic: flaky-tests",
+          "color": "0e8a16",
+          "default": false,
+          "description": "Problem is a flaky test in CI"
+        },
+        {
+          "id": 466131885,
+          "node_id": "MDU6TGFiZWw0NjYxMzE4ODU=",
+          "url": "https://api.github.com/repos/pytorch/pytorch/labels/triage%20review",
+          "name": "triage review",
+          "color": "cc317c",
+          "default": false,
+          "description": ""
+        },
+        {
+          "id": 1301347167,
+          "node_id": "MDU6TGFiZWwxMzAxMzQ3MTY3",
+          "url": "https://api.github.com/repos/pytorch/pytorch/labels/triaged",
+          "name": "triaged",
+          "color": "006b75",
+          "default": false,
+          "description": "This issue has been looked at a team member, and triaged and prioritized into an appropriate module"
+        }
+      ],
+      "state": "open",
+      "locked": false,
+      "assignee": null,
+      "assignees": [
+
+      ],
+      "milestone": null,
+      "comments": 0,
+      "created_at": "2020-05-20T02:11:00Z",
+      "updated_at": "2020-05-20T02:11:04Z",
+      "closed_at": null,
+      "author_association": "CONTRIBUTOR",
+      "body": "https://app.circleci.com/pipelines/github/pytorch/pytorch/171962/workflows/ae1c1fcb-e266-41d7-9219-f5ea466bd250/jobs/5529141/steps\r\n\r\n```\r\nMay 20 01:25:50 ======================================================================\r\nMay 20 01:25:50 FAIL [2.023s]: test_rref_proxy_reuse (__main__.TensorPipeAgentRpcTestWithSpawn)\r\nMay 20 01:25:50 ----------------------------------------------------------------------\r\nMay 20 01:25:50 Traceback (most recent call last):\r\nMay 20 01:25:50   File \"/opt/conda/lib/python3.6/site-packages/torch/testing/_internal/common_distributed.py\", line 204, in wrapper\r\nMay 20 01:25:50     self._join_processes(fn)\r\nMay 20 01:25:50   File \"/opt/conda/lib/python3.6/site-packages/torch/testing/_internal/common_distributed.py\", line 306, in _join_processes\r\nMay 20 01:25:50     self._check_return_codes(elapsed_time)\r\nMay 20 01:25:50   File \"/opt/conda/lib/python3.6/site-packages/torch/testing/_internal/common_distributed.py\", line 349, in _check_return_codes\r\nMay 20 01:25:50     i, first_process.exitcode, p.exitcode\r\nMay 20 01:25:50   File \"/opt/conda/lib/python3.6/site-packages/torch/testing/_internal/common_utils.py\", line 1116, in assertEqual\r\nMay 20 01:25:50     self.assertTrue(result, msg=message)\r\nMay 20 01:25:50 AssertionError: False is not true : Expect process 1 exit code to match Process 0 exit code of -6, but got 0\r\n```\r\n\r\n```\r\nMay 20 01:25:08   test_rref_proxy_reuse (__main__.TensorPipeAgentRpcTestWithSpawn) ... [W tensorpipe_agent.cpp:222] RPC agent is being closed. Skip sending rpc response\r\nMay 20 01:25:08 [W tensorpipe_agent.cpp:383] Read response error: EOF: end of file\r\nMay 20 01:25:08 terminate called after throwing an instance of '[W tensorpipe_agent.cpp:258] Server read message: EOF: end of file\r\nMay 20 01:25:08 std::runtime_error'\r\nMay 20 01:25:08   what():  EOF: end of file\r\nMay 20 01:25:08 [W tensorpipe_agent.cpp:258] Server read message: EOF: end of file\r\nMay 20 01:25:08 FAIL (2.023s)\r\n```\n\ncc @pietern @mrshenli @pritamdamania87 @zhaojuanmao @satgera @gqchen @aazzolini @rohan-varma @xush6528 @jjlilley @osalpekar @jiayisuse @lw @beauby",
       "score": 0.0
     },
     {
@@ -428,6 +632,108 @@
       "closed_at": null,
       "author_association": "CONTRIBUTOR",
       "body": "https://app.circleci.com/pipelines/github/pytorch/pytorch/153028/workflows/c3ba2031-4e43-41d4-8399-c69cd09b49d7/jobs/5100538\r\n\r\n```\r\nApr 09 11:58:38 ======================================================================\r\nApr 09 11:58:38 ERROR [100.118s]: test_check_failed_messages (__main__.FaultyAgentRpcTestWithSpawn)\r\nApr 09 11:58:38 ----------------------------------------------------------------------\r\nApr 09 11:58:38 Traceback (most recent call last):\r\nApr 09 11:58:38   File \"/Users/distiller/workspace/miniconda3/lib/python3.7/site-packages/torch/testing/_internal/common_distributed.py\", line 175, in wrapper\r\nApr 09 11:58:38     self._join_processes(fn)\r\nApr 09 11:58:38   File \"/Users/distiller/workspace/miniconda3/lib/python3.7/site-packages/torch/testing/_internal/common_distributed.py\", line 285, in _join_processes\r\nApr 09 11:58:38     self._check_return_codes(elapsed_time)\r\nApr 09 11:58:38   File \"/Users/distiller/workspace/miniconda3/lib/python3.7/site-packages/torch/testing/_internal/common_distributed.py\", line 323, in _check_return_codes\r\nApr 09 11:58:38     raise RuntimeError('Process {} terminated or timed out after {} seconds'.format(i, elapsed_time))\r\nApr 09 11:58:38 RuntimeError: Process 1 terminated or timed out after 100.0106930732727 seconds\r\n```\n\ncc @ezyang @gchanan @zou3519 @pietern @mrshenli @pritamdamania87 @zhaojuanmao @satgera @gqchen @aazzolini @rohan-varma @xush6528 @jjlilley @osalpekar",
+      "score": 0.0
+    },
+    {
+      "url": "https://api.github.com/repos/pytorch/pytorch/issues/38757",
+      "repository_url": "https://api.github.com/repos/pytorch/pytorch",
+      "labels_url": "https://api.github.com/repos/pytorch/pytorch/issues/38757/labels{/name}",
+      "comments_url": "https://api.github.com/repos/pytorch/pytorch/issues/38757/comments",
+      "events_url": "https://api.github.com/repos/pytorch/pytorch/issues/38757/events",
+      "html_url": "https://github.com/pytorch/pytorch/issues/38757",
+      "id": 621407256,
+      "node_id": "MDU6SXNzdWU2MjE0MDcyNTY=",
+      "number": 38757,
+      "title": "DISABLED test_call_method_on_rref (__main__.TensorPipeAgentRpcTestWithSpawn)",
+      "user": {
+        "login": "mrshenli",
+        "id": 16999635,
+        "node_id": "MDQ6VXNlcjE2OTk5NjM1",
+        "avatar_url": "https://avatars2.githubusercontent.com/u/16999635?v=4",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/mrshenli",
+        "html_url": "https://github.com/mrshenli",
+        "followers_url": "https://api.github.com/users/mrshenli/followers",
+        "following_url": "https://api.github.com/users/mrshenli/following{/other_user}",
+        "gists_url": "https://api.github.com/users/mrshenli/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/mrshenli/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/mrshenli/subscriptions",
+        "organizations_url": "https://api.github.com/users/mrshenli/orgs",
+        "repos_url": "https://api.github.com/users/mrshenli/repos",
+        "events_url": "https://api.github.com/users/mrshenli/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/mrshenli/received_events",
+        "type": "User",
+        "site_admin": false
+      },
+      "labels": [
+        {
+          "id": 443484135,
+          "node_id": "MDU6TGFiZWw0NDM0ODQxMzU=",
+          "url": "https://api.github.com/repos/pytorch/pytorch/labels/high%20priority",
+          "name": "high priority",
+          "color": "F22613",
+          "default": false,
+          "description": null
+        },
+        {
+          "id": 1536612774,
+          "node_id": "MDU6TGFiZWwxNTM2NjEyNzc0",
+          "url": "https://api.github.com/repos/pytorch/pytorch/labels/module:%20rpc",
+          "name": "module: rpc",
+          "color": "f7e101",
+          "default": false,
+          "description": "Related to RPC, distributed autograd, RRef, and distributed optimizer"
+        },
+        {
+          "id": 1986434179,
+          "node_id": "MDU6TGFiZWwxOTg2NDM0MTc5",
+          "url": "https://api.github.com/repos/pytorch/pytorch/labels/module:%20tensorpipe",
+          "name": "module: tensorpipe",
+          "color": "f7e845",
+          "default": false,
+          "description": "Related to Tensorpipe RPC Agent"
+        },
+        {
+          "id": 1301397902,
+          "node_id": "MDU6TGFiZWwxMzAxMzk3OTAy",
+          "url": "https://api.github.com/repos/pytorch/pytorch/labels/topic:%20flaky-tests",
+          "name": "topic: flaky-tests",
+          "color": "0e8a16",
+          "default": false,
+          "description": "Problem is a flaky test in CI"
+        },
+        {
+          "id": 466131885,
+          "node_id": "MDU6TGFiZWw0NjYxMzE4ODU=",
+          "url": "https://api.github.com/repos/pytorch/pytorch/labels/triage%20review",
+          "name": "triage review",
+          "color": "cc317c",
+          "default": false,
+          "description": ""
+        },
+        {
+          "id": 1301347167,
+          "node_id": "MDU6TGFiZWwxMzAxMzQ3MTY3",
+          "url": "https://api.github.com/repos/pytorch/pytorch/labels/triaged",
+          "name": "triaged",
+          "color": "006b75",
+          "default": false,
+          "description": "This issue has been looked at a team member, and triaged and prioritized into an appropriate module"
+        }
+      ],
+      "state": "open",
+      "locked": false,
+      "assignee": null,
+      "assignees": [
+
+      ],
+      "milestone": null,
+      "comments": 0,
+      "created_at": "2020-05-20T02:17:09Z",
+      "updated_at": "2020-05-20T02:17:14Z",
+      "closed_at": null,
+      "author_association": "CONTRIBUTOR",
+      "body": "https://app.circleci.com/pipelines/github/pytorch/pytorch/171959/workflows/3211d854-a984-469e-8984-602211e6a3d6/jobs/5528991/steps\r\n\r\n```\r\nMay 20 01:59:05 ======================================================================\r\nMay 20 01:59:05 FAIL [1.215s]: test_call_method_on_rref (__main__.TensorPipeAgentRpcTestWithSpawn)\r\nMay 20 01:59:05 ----------------------------------------------------------------------\r\nMay 20 01:59:05 Traceback (most recent call last):\r\nMay 20 01:59:05   File \"/opt/conda/lib/python3.6/site-packages/torch/testing/_internal/common_distributed.py\", line 204, in wrapper\r\nMay 20 01:59:05     self._join_processes(fn)\r\nMay 20 01:59:05   File \"/opt/conda/lib/python3.6/site-packages/torch/testing/_internal/common_distributed.py\", line 306, in _join_processes\r\nMay 20 01:59:05     self._check_return_codes(elapsed_time)\r\nMay 20 01:59:05   File \"/opt/conda/lib/python3.6/site-packages/torch/testing/_internal/common_distributed.py\", line 349, in _check_return_codes\r\nMay 20 01:59:05     i, first_process.exitcode, p.exitcode\r\nMay 20 01:59:05   File \"/opt/conda/lib/python3.6/site-packages/torch/testing/_internal/common_utils.py\", line 1116, in assertEqual\r\nMay 20 01:59:05     self.assertTrue(result, msg=message)\r\nMay 20 01:59:05 AssertionError: False is not true : Expect process 1 exit code to match Process 0 exit code of -6, but got 0\r\n```\r\n\r\n```\r\nMay 20 01:56:59   test_call_method_on_rref (__main__.TensorPipeAgentRpcTestWithSpawn) ... [W tensorpipe_agent.cpp:222] RPC agent is being closed. Skip sending rpc response\r\nMay 20 01:56:59 [W tensorpipe_agent.cpp:258] Server read message: EOF: end of file\r\nMay 20 01:56:59 [W tensorpipe_agent.cpp:258] Server read message: EOF: end of file\r\nMay 20 01:56:59 [W tensorpipe_agent.cpp:383] Read response error: EOF: end of file\r\nMay 20 01:56:59 terminate called after throwing an instance of 'std::runtime_error'\r\nMay 20 01:56:59   what():  EOF: end of file\r\n```\n\ncc @ezyang @gchanan @zou3519 @pietern @mrshenli @pritamdamania87 @zhaojuanmao @satgera @gqchen @aazzolini @rohan-varma @xush6528 @jjlilley @osalpekar @jiayisuse @lw @beauby",
       "score": 0.0
     },
     {
