@@ -1,5 +1,5 @@
 {
-  "total_count": 17,
+  "total_count": 16,
   "incomplete_results": false,
   "items": [
     {
@@ -93,119 +93,6 @@
       "closed_at": null,
       "author_association": "CONTRIBUTOR",
       "body": "https://app.circleci.com/pipelines/github/pytorch/pytorch/169923/workflows/d66ca278-d55c-462b-96cb-55623ce713f7/jobs/5472514/steps\r\n\r\n```\r\nMay 14 07:37:27 =================================== FAILURES ===================================\r\nMay 14 07:37:27 ______________ ParallelWorkersTest.testParallelWorkersShutdownFun ______________\r\nMay 14 07:37:27 \r\nMay 14 07:37:27 self = <caffe2.python.parallel_workers_test.ParallelWorkersTest testMethod=testParallelWorkersShutdownFun>\r\nMay 14 07:37:27 \r\nMay 14 07:37:27     def testParallelWorkersShutdownFun(self):\r\nMay 14 07:37:27         workspace.ResetWorkspace()\r\nMay 14 07:37:27     \r\nMay 14 07:37:27         queue = create_queue()\r\nMay 14 07:37:27         dummy_worker = create_worker(queue, lambda worker_id: str(worker_id))\r\nMay 14 07:37:27         workspace.FeedBlob('data', 'not shutdown')\r\nMay 14 07:37:27     \r\nMay 14 07:37:27         def shutdown_fun():\r\nMay 14 07:37:27             workspace.FeedBlob('data', 'shutdown')\r\nMay 14 07:37:27     \r\nMay 14 07:37:27         worker_coordinator = parallel_workers.init_workers(\r\nMay 14 07:37:27             dummy_worker, shutdown_fun=shutdown_fun\r\nMay 14 07:37:27         )\r\nMay 14 07:37:27         worker_coordinator.start()\r\nMay 14 07:37:27     \r\nMay 14 07:37:27 >       self.assertTrue(worker_coordinator.stop())\r\nMay 14 07:37:27 E       AssertionError: False is not true\r\nMay 14 07:37:27 \r\nMay 14 07:37:27 ../.local/lib/python3.6/site-packages/caffe2/python/parallel_workers_test.py:116: AssertionError\r\nMay 14 07:37:27 ----------------------------- Captured stdout call -----------------------------\r\n```\n\ncc @ezyang @gchanan @zou3519 @houseroad @spandantiwari @lara-hdr @BowenBao @neginraoof",
-      "score": 0.0
-    },
-    {
-      "url": "https://api.github.com/repos/pytorch/pytorch/issues/38799",
-      "repository_url": "https://api.github.com/repos/pytorch/pytorch",
-      "labels_url": "https://api.github.com/repos/pytorch/pytorch/issues/38799/labels{/name}",
-      "comments_url": "https://api.github.com/repos/pytorch/pytorch/issues/38799/comments",
-      "events_url": "https://api.github.com/repos/pytorch/pytorch/issues/38799/events",
-      "html_url": "https://github.com/pytorch/pytorch/issues/38799",
-      "id": 621991570,
-      "node_id": "MDU6SXNzdWU2MjE5OTE1NzA=",
-      "number": 38799,
-      "title": "DISABLED test_memory_profiler (__main__.TestAutograd)",
-      "user": {
-        "login": "pritamdamania87",
-        "id": 9958665,
-        "node_id": "MDQ6VXNlcjk5NTg2NjU=",
-        "avatar_url": "https://avatars1.githubusercontent.com/u/9958665?v=4",
-        "gravatar_id": "",
-        "url": "https://api.github.com/users/pritamdamania87",
-        "html_url": "https://github.com/pritamdamania87",
-        "followers_url": "https://api.github.com/users/pritamdamania87/followers",
-        "following_url": "https://api.github.com/users/pritamdamania87/following{/other_user}",
-        "gists_url": "https://api.github.com/users/pritamdamania87/gists{/gist_id}",
-        "starred_url": "https://api.github.com/users/pritamdamania87/starred{/owner}{/repo}",
-        "subscriptions_url": "https://api.github.com/users/pritamdamania87/subscriptions",
-        "organizations_url": "https://api.github.com/users/pritamdamania87/orgs",
-        "repos_url": "https://api.github.com/users/pritamdamania87/repos",
-        "events_url": "https://api.github.com/users/pritamdamania87/events{/privacy}",
-        "received_events_url": "https://api.github.com/users/pritamdamania87/received_events",
-        "type": "User",
-        "site_admin": false
-      },
-      "labels": [
-        {
-          "id": 443484135,
-          "node_id": "MDU6TGFiZWw0NDM0ODQxMzU=",
-          "url": "https://api.github.com/repos/pytorch/pytorch/labels/high%20priority",
-          "name": "high priority",
-          "color": "F22613",
-          "default": false,
-          "description": null
-        },
-        {
-          "id": 1301397902,
-          "node_id": "MDU6TGFiZWwxMzAxMzk3OTAy",
-          "url": "https://api.github.com/repos/pytorch/pytorch/labels/topic:%20flaky-tests",
-          "name": "topic: flaky-tests",
-          "color": "0e8a16",
-          "default": false,
-          "description": "Problem is a flaky test in CI"
-        },
-        {
-          "id": 466131885,
-          "node_id": "MDU6TGFiZWw0NjYxMzE4ODU=",
-          "url": "https://api.github.com/repos/pytorch/pytorch/labels/triage%20review",
-          "name": "triage review",
-          "color": "cc317c",
-          "default": false,
-          "description": ""
-        }
-      ],
-      "state": "open",
-      "locked": false,
-      "assignee": {
-        "login": "ilia-cher",
-        "id": 30845429,
-        "node_id": "MDQ6VXNlcjMwODQ1NDI5",
-        "avatar_url": "https://avatars1.githubusercontent.com/u/30845429?v=4",
-        "gravatar_id": "",
-        "url": "https://api.github.com/users/ilia-cher",
-        "html_url": "https://github.com/ilia-cher",
-        "followers_url": "https://api.github.com/users/ilia-cher/followers",
-        "following_url": "https://api.github.com/users/ilia-cher/following{/other_user}",
-        "gists_url": "https://api.github.com/users/ilia-cher/gists{/gist_id}",
-        "starred_url": "https://api.github.com/users/ilia-cher/starred{/owner}{/repo}",
-        "subscriptions_url": "https://api.github.com/users/ilia-cher/subscriptions",
-        "organizations_url": "https://api.github.com/users/ilia-cher/orgs",
-        "repos_url": "https://api.github.com/users/ilia-cher/repos",
-        "events_url": "https://api.github.com/users/ilia-cher/events{/privacy}",
-        "received_events_url": "https://api.github.com/users/ilia-cher/received_events",
-        "type": "User",
-        "site_admin": false
-      },
-      "assignees": [
-        {
-          "login": "ilia-cher",
-          "id": 30845429,
-          "node_id": "MDQ6VXNlcjMwODQ1NDI5",
-          "avatar_url": "https://avatars1.githubusercontent.com/u/30845429?v=4",
-          "gravatar_id": "",
-          "url": "https://api.github.com/users/ilia-cher",
-          "html_url": "https://github.com/ilia-cher",
-          "followers_url": "https://api.github.com/users/ilia-cher/followers",
-          "following_url": "https://api.github.com/users/ilia-cher/following{/other_user}",
-          "gists_url": "https://api.github.com/users/ilia-cher/gists{/gist_id}",
-          "starred_url": "https://api.github.com/users/ilia-cher/starred{/owner}{/repo}",
-          "subscriptions_url": "https://api.github.com/users/ilia-cher/subscriptions",
-          "organizations_url": "https://api.github.com/users/ilia-cher/orgs",
-          "repos_url": "https://api.github.com/users/ilia-cher/repos",
-          "events_url": "https://api.github.com/users/ilia-cher/events{/privacy}",
-          "received_events_url": "https://api.github.com/users/ilia-cher/received_events",
-          "type": "User",
-          "site_admin": false
-        }
-      ],
-      "milestone": null,
-      "comments": 1,
-      "created_at": "2020-05-20T18:22:31Z",
-      "updated_at": "2020-05-20T19:01:30Z",
-      "closed_at": null,
-      "author_association": "NONE",
-      "body": "Consistently failing for py3.6-clang7-rocmdeb-ubuntu16.04-test2, examples:\r\n\r\nhttps://ci.pytorch.org/jenkins/job/pytorch-builds/job/py3.6-clang7-rocmdeb-ubuntu16.04-test2/28568//console\r\nhttps://ci.pytorch.org/jenkins/job/pytorch-builds/job/py3.6-clang7-rocmdeb-ubuntu16.04-test2/28632//console\r\nhttps://ci.pytorch.org/jenkins/job/pytorch-builds/job/py3.6-clang7-rocmdeb-ubuntu16.04-test2/28631//console\n\ncc @ezyang @gchanan @zou3519",
       "score": 0.0
     },
     {
