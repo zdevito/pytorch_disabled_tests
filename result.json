@@ -164,7 +164,7 @@
       "milestone": null,
       "comments": 3,
       "created_at": "2020-05-20T23:23:22Z",
-      "updated_at": "2020-05-21T01:34:43Z",
+      "updated_at": "2020-05-21T01:45:14Z",
       "closed_at": null,
       "author_association": "NONE",
       "body": "https://ci.pytorch.org/jenkins/job/pytorch-builds/job/py3.6-clang7-rocmdeb-ubuntu16.04-test2/28226//console\r\nhttps://ci.pytorch.org/jenkins/job/pytorch-builds/job/py3.6-clang7-rocmdeb-ubuntu16.04-test2/28233//console\r\nhttps://ci.pytorch.org/jenkins/job/pytorch-builds/job/py3.6-clang7-rocmdeb-ubuntu16.04-test2/28234//console\n\ncc @ezyang @gchanan @zou3519",
