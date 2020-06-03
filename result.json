@@ -1068,9 +1068,9 @@
 
       ],
       "milestone": null,
-      "comments": 1,
+      "comments": 2,
       "created_at": "2020-03-31T16:37:09Z",
-      "updated_at": "2020-06-03T19:53:32Z",
+      "updated_at": "2020-06-03T20:20:16Z",
       "closed_at": null,
       "author_association": "NONE",
       "body": "## 🚀 Feature\r\nAllow `DataLoader(batch_size=None, shuffle=True)`\r\n\r\n## Motivation\r\n\r\n<!-- Please outline the motivation for the proposal. Is your feature request related to a problem? e.g., I'm always frustrated when [...]. If this is related to another GitHub issue, please link here too -->\r\nMy model handles one sample a time. So, I don't need auto-batching, but I want my dataset to be shuffled. However, when I use `DataLoader(batch_size=None, shuffle=True)`, it raises `batch_size=None option disables auto-batching and is mutually exclusive with shuffle, and drop_last`.\r\n\r\nBut I can't see why they are mutually exclusive.\r\n\r\n## Pitch\r\n\r\n<!-- A clear and concise description of what you want to happen. -->\r\nAllow `DataLoader(batch_size=None, shuffle=True)`.\r\n\r\nBasically, just remove the `shuffle` check from this line:  https://github.com/pytorch/pytorch/blob/ada647214f3c39b3fdf624dd62f8295c92144617/torch/utils/data/dataloader.py#L202\r\n\r\n## Alternatives\r\n\r\n<!-- A clear and concise description of any alternative solutions or features you've considered, if any. -->\r\nI can:\r\n* Use `batch_size=1` then remove the batching dimension afterwards\r\n* Use `sampler=RandomSampler(dataset)`\r\n\r\nBut these makes me feel like I'm fighting with DataLoader. Why I cannot just use `shuffle=True`?\r\n\r\n## Additional context\r\n\r\n<!-- Add any other context or screenshots about the feature request here. -->\r\n\n\ncc @SsnL",
