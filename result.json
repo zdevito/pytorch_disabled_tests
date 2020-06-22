@@ -907,73 +907,6 @@
       "score": 0.0
     },
     {
-      "url": "https://api.github.com/repos/pytorch/pytorch/issues/37409",
-      "repository_url": "https://api.github.com/repos/pytorch/pytorch",
-      "labels_url": "https://api.github.com/repos/pytorch/pytorch/issues/37409/labels{/name}",
-      "comments_url": "https://api.github.com/repos/pytorch/pytorch/issues/37409/comments",
-      "events_url": "https://api.github.com/repos/pytorch/pytorch/issues/37409/events",
-      "html_url": "https://github.com/pytorch/pytorch/issues/37409",
-      "id": 608167791,
-      "node_id": "MDU6SXNzdWU2MDgxNjc3OTE=",
-      "number": 37409,
-      "title": "Compatibility of subset dataset with disabled batch sampling",
-      "user": {
-        "login": "dvirginz",
-        "id": 31047807,
-        "node_id": "MDQ6VXNlcjMxMDQ3ODA3",
-        "avatar_url": "https://avatars2.githubusercontent.com/u/31047807?v=4",
-        "gravatar_id": "",
-        "url": "https://api.github.com/users/dvirginz",
-        "html_url": "https://github.com/dvirginz",
-        "followers_url": "https://api.github.com/users/dvirginz/followers",
-        "following_url": "https://api.github.com/users/dvirginz/following{/other_user}",
-        "gists_url": "https://api.github.com/users/dvirginz/gists{/gist_id}",
-        "starred_url": "https://api.github.com/users/dvirginz/starred{/owner}{/repo}",
-        "subscriptions_url": "https://api.github.com/users/dvirginz/subscriptions",
-        "organizations_url": "https://api.github.com/users/dvirginz/orgs",
-        "repos_url": "https://api.github.com/users/dvirginz/repos",
-        "events_url": "https://api.github.com/users/dvirginz/events{/privacy}",
-        "received_events_url": "https://api.github.com/users/dvirginz/received_events",
-        "type": "User",
-        "site_admin": false
-      },
-      "labels": [
-        {
-          "id": 1076923878,
-          "node_id": "MDU6TGFiZWwxMDc2OTIzODc4",
-          "url": "https://api.github.com/repos/pytorch/pytorch/labels/module:%20dataloader",
-          "name": "module: dataloader",
-          "color": "f7e101",
-          "default": false,
-          "description": "Related to torch.utils.data.DataLoader and Sampler"
-        },
-        {
-          "id": 1301347167,
-          "node_id": "MDU6TGFiZWwxMzAxMzQ3MTY3",
-          "url": "https://api.github.com/repos/pytorch/pytorch/labels/triaged",
-          "name": "triaged",
-          "color": "006b75",
-          "default": false,
-          "description": "This issue has been looked at a team member, and triaged and prioritized into an appropriate module"
-        }
-      ],
-      "state": "open",
-      "locked": false,
-      "assignee": null,
-      "assignees": [
-
-      ],
-      "milestone": null,
-      "comments": 3,
-      "created_at": "2020-04-28T09:32:27Z",
-      "updated_at": "2020-04-29T07:52:13Z",
-      "closed_at": null,
-      "author_association": "NONE",
-      "active_lock_reason": null,
-      "body": "I think there is a compatibility issue with disabled batch sampling and subset dataset\r\nThe use-case - define custom batch sampling, and split the dataset using PyTorch split utility function\r\nHere's a minimal working example\r\n```\r\nself.train_dataset, self.val_dataset, self.test_dataset = torch.utils.data.random_split(\r\n            self.dataset, [100, 100, 100])\r\n\r\nloader = DataLoader(\r\n                dataset=self.train_dataset,\r\n                batch_size=None,\r\n                batch_sampler=None,\r\n                sampler=BatchSampler(\r\n                    SequentialSampler(dataset), batch_size=self.hparams.batch_size, drop_last=False),\r\n                num_workers=self.hparams.num_data_workers,\r\n            )\r\n```\r\nAnd when iterating the subset datasets this is the error\r\n```\r\nException has occurred: TypeError\r\nlist indices must be integers or slices, not list\r\n  File \"/path/utils/data/dataset.py\", line 257, in __getitem__\r\n    return self.dataset[self.indices[idx]]\r\n  File \"/path/utils/data/_utils/fetch.py\", line 46, in fetch\r\n    data = self.dataset[possibly_batched_index]\r\n  File \"/path/utils/data/dataloader.py\", line 385, in _next_data\r\n    data = self._dataset_fetcher.fetch(index)  # may raise StopIteration\r\n  File \"/path/utils/data/dataloader.py\", line 345, in __next__\r\n    data = self._next_data()\r\n  File \"/path/lib/python3.7/site-packages/pytorch_lightning/trainer/evaluation_loop.py\", line 251, in _evaluate\r\n    for batch_idx, batch in enumerate(dataloader):\r\n  File \"/path/lib/python3.7/site-packages/pytorch_lightning/trainer/trainer.py\", line 843, in run_pretrain_routine\r\n    False)\r\n  File \"/path/lib/python3.7/site-packages/pytorch_lightning/trainer/distrib_parts.py\", line 477, in single_gpu_train\r\n    self.run_pretrain_routine(model)\r\n  File \"/path/lib/python3.7/site-packages/pytorch_lightning/trainer/trainer.py\", line 704, in fit\r\n    self.single_gpu_train(model)\r\n  File \"/path/train.py\", line 152, in main_train\r\n    trainer.fit(model)\r\n  File \"/path/train.py\", line 66, in main\r\n    main_train(model_class_pointer, hyperparams, logger)\r\n  File \"/path/train.py\", line 161, in <module>\r\n    main()\r\n  File \"/path/lib/python3.7/runpy.py\", line 85, in _run_code\r\n    exec(code, run_globals)\r\n  File \"/path/lib/python3.7/runpy.py\", line 96, in _run_module_code\r\n    mod_name, mod_spec, pkg_name, script_name)\r\n  File \"/path/lib/python3.7/runpy.py\", line 263, in run_path\r\n    pkg_name=pkg_name, script_name=fname)\r\n  File \"/path/lib/python3.7/runpy.py\", line 85, in _run_code\r\n    exec(code, run_globals)\r\n  File \"/path/lib/python3.7/runpy.py\", line 193, in _run_module_as_main\r\n    \"__main__\", mod_spec)\r\n```\r\n\r\nAs the self.indices of the `subset` object is a simple python list.\r\n\r\nPlease refer to the forum post, where @ptrblck  approves reproducing the bug and offering a workaround.\n\ncc @SsnL",
-      "score": 0.0
-    },
-    {
       "url": "https://api.github.com/repos/pytorch/pytorch/issues/34658",
       "repository_url": "https://api.github.com/repos/pytorch/pytorch",
       "labels_url": "https://api.github.com/repos/pytorch/pytorch/issues/34658/labels{/name}",
@@ -1038,6 +971,73 @@
       "author_association": "CONTRIBUTOR",
       "active_lock_reason": null,
       "body": "## 🐛 Bug\r\n\r\nhttps://app.circleci.com/pipelines/github/pytorch/pytorch/138566/workflows/850299ec-3258-4e78-b680-cfad253c746a/jobs/4782754/parallel-runs/0/steps/0-105\r\n\r\n```\r\nMar 12 17:35:27 =================================== FAILURES ===================================\r\nMar 12 17:35:27 __________________ TestONNXRuntime_opset11.test_keypoint_rcnn __________________\r\nMar 12 17:35:27 \r\nMar 12 17:35:27 self = <test_pytorch_onnx_onnxruntime.TestONNXRuntime_opset11 testMethod=test_keypoint_rcnn>\r\nMar 12 17:35:27 \r\nMar 12 17:35:27     def wrapper(self):\r\nMar 12 17:35:27         if self.opset_version < min_opset_version:\r\nMar 12 17:35:27             raise unittest.SkipTest(\"Skip verify test for unsupported opset_version\")\r\nMar 12 17:35:27 >       return func(self)\r\nMar 12 17:35:27 \r\nMar 12 17:35:27 test/onnx/test_pytorch_common.py:54: \r\n```\r\n\n\ncc @houseroad @spandantiwari @lara-hdr @BowenBao @neginraoof",
+      "score": 0.0
+    },
+    {
+      "url": "https://api.github.com/repos/pytorch/pytorch/issues/37409",
+      "repository_url": "https://api.github.com/repos/pytorch/pytorch",
+      "labels_url": "https://api.github.com/repos/pytorch/pytorch/issues/37409/labels{/name}",
+      "comments_url": "https://api.github.com/repos/pytorch/pytorch/issues/37409/comments",
+      "events_url": "https://api.github.com/repos/pytorch/pytorch/issues/37409/events",
+      "html_url": "https://github.com/pytorch/pytorch/issues/37409",
+      "id": 608167791,
+      "node_id": "MDU6SXNzdWU2MDgxNjc3OTE=",
+      "number": 37409,
+      "title": "Compatibility of subset dataset with disabled batch sampling",
+      "user": {
+        "login": "dvirginz",
+        "id": 31047807,
+        "node_id": "MDQ6VXNlcjMxMDQ3ODA3",
+        "avatar_url": "https://avatars2.githubusercontent.com/u/31047807?v=4",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/dvirginz",
+        "html_url": "https://github.com/dvirginz",
+        "followers_url": "https://api.github.com/users/dvirginz/followers",
+        "following_url": "https://api.github.com/users/dvirginz/following{/other_user}",
+        "gists_url": "https://api.github.com/users/dvirginz/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/dvirginz/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/dvirginz/subscriptions",
+        "organizations_url": "https://api.github.com/users/dvirginz/orgs",
+        "repos_url": "https://api.github.com/users/dvirginz/repos",
+        "events_url": "https://api.github.com/users/dvirginz/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/dvirginz/received_events",
+        "type": "User",
+        "site_admin": false
+      },
+      "labels": [
+        {
+          "id": 1076923878,
+          "node_id": "MDU6TGFiZWwxMDc2OTIzODc4",
+          "url": "https://api.github.com/repos/pytorch/pytorch/labels/module:%20dataloader",
+          "name": "module: dataloader",
+          "color": "f7e101",
+          "default": false,
+          "description": "Related to torch.utils.data.DataLoader and Sampler"
+        },
+        {
+          "id": 1301347167,
+          "node_id": "MDU6TGFiZWwxMzAxMzQ3MTY3",
+          "url": "https://api.github.com/repos/pytorch/pytorch/labels/triaged",
+          "name": "triaged",
+          "color": "006b75",
+          "default": false,
+          "description": "This issue has been looked at a team member, and triaged and prioritized into an appropriate module"
+        }
+      ],
+      "state": "open",
+      "locked": false,
+      "assignee": null,
+      "assignees": [
+
+      ],
+      "milestone": null,
+      "comments": 3,
+      "created_at": "2020-04-28T09:32:27Z",
+      "updated_at": "2020-04-29T07:52:13Z",
+      "closed_at": null,
+      "author_association": "NONE",
+      "active_lock_reason": null,
+      "body": "I think there is a compatibility issue with disabled batch sampling and subset dataset\r\nThe use-case - define custom batch sampling, and split the dataset using PyTorch split utility function\r\nHere's a minimal working example\r\n```\r\nself.train_dataset, self.val_dataset, self.test_dataset = torch.utils.data.random_split(\r\n            self.dataset, [100, 100, 100])\r\n\r\nloader = DataLoader(\r\n                dataset=self.train_dataset,\r\n                batch_size=None,\r\n                batch_sampler=None,\r\n                sampler=BatchSampler(\r\n                    SequentialSampler(dataset), batch_size=self.hparams.batch_size, drop_last=False),\r\n                num_workers=self.hparams.num_data_workers,\r\n            )\r\n```\r\nAnd when iterating the subset datasets this is the error\r\n```\r\nException has occurred: TypeError\r\nlist indices must be integers or slices, not list\r\n  File \"/path/utils/data/dataset.py\", line 257, in __getitem__\r\n    return self.dataset[self.indices[idx]]\r\n  File \"/path/utils/data/_utils/fetch.py\", line 46, in fetch\r\n    data = self.dataset[possibly_batched_index]\r\n  File \"/path/utils/data/dataloader.py\", line 385, in _next_data\r\n    data = self._dataset_fetcher.fetch(index)  # may raise StopIteration\r\n  File \"/path/utils/data/dataloader.py\", line 345, in __next__\r\n    data = self._next_data()\r\n  File \"/path/lib/python3.7/site-packages/pytorch_lightning/trainer/evaluation_loop.py\", line 251, in _evaluate\r\n    for batch_idx, batch in enumerate(dataloader):\r\n  File \"/path/lib/python3.7/site-packages/pytorch_lightning/trainer/trainer.py\", line 843, in run_pretrain_routine\r\n    False)\r\n  File \"/path/lib/python3.7/site-packages/pytorch_lightning/trainer/distrib_parts.py\", line 477, in single_gpu_train\r\n    self.run_pretrain_routine(model)\r\n  File \"/path/lib/python3.7/site-packages/pytorch_lightning/trainer/trainer.py\", line 704, in fit\r\n    self.single_gpu_train(model)\r\n  File \"/path/train.py\", line 152, in main_train\r\n    trainer.fit(model)\r\n  File \"/path/train.py\", line 66, in main\r\n    main_train(model_class_pointer, hyperparams, logger)\r\n  File \"/path/train.py\", line 161, in <module>\r\n    main()\r\n  File \"/path/lib/python3.7/runpy.py\", line 85, in _run_code\r\n    exec(code, run_globals)\r\n  File \"/path/lib/python3.7/runpy.py\", line 96, in _run_module_code\r\n    mod_name, mod_spec, pkg_name, script_name)\r\n  File \"/path/lib/python3.7/runpy.py\", line 263, in run_path\r\n    pkg_name=pkg_name, script_name=fname)\r\n  File \"/path/lib/python3.7/runpy.py\", line 85, in _run_code\r\n    exec(code, run_globals)\r\n  File \"/path/lib/python3.7/runpy.py\", line 193, in _run_module_as_main\r\n    \"__main__\", mod_spec)\r\n```\r\n\r\nAs the self.indices of the `subset` object is a simple python list.\r\n\r\nPlease refer to the forum post, where @ptrblck  approves reproducing the bug and offering a workaround.\n\ncc @SsnL",
       "score": 0.0
     },
     {
