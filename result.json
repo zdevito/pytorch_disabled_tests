@@ -1,7 +1,110 @@
 {
-  "total_count": 17,
+  "total_count": 19,
   "incomplete_results": false,
   "items": [
+    {
+      "url": "https://api.github.com/repos/pytorch/pytorch/issues/40434",
+      "repository_url": "https://api.github.com/repos/pytorch/pytorch",
+      "labels_url": "https://api.github.com/repos/pytorch/pytorch/issues/40434/labels{/name}",
+      "comments_url": "https://api.github.com/repos/pytorch/pytorch/issues/40434/comments",
+      "events_url": "https://api.github.com/repos/pytorch/pytorch/issues/40434/events",
+      "html_url": "https://github.com/pytorch/pytorch/issues/40434",
+      "id": 643908803,
+      "node_id": "MDU6SXNzdWU2NDM5MDg4MDM=",
+      "number": 40434,
+      "title": "DISABLED test_backward_ddp_inside (__main__.TestDdpUnderDistAutogradWrapper)",
+      "user": {
+        "login": "mrshenli",
+        "id": 16999635,
+        "node_id": "MDQ6VXNlcjE2OTk5NjM1",
+        "avatar_url": "https://avatars2.githubusercontent.com/u/16999635?v=4",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/mrshenli",
+        "html_url": "https://github.com/mrshenli",
+        "followers_url": "https://api.github.com/users/mrshenli/followers",
+        "following_url": "https://api.github.com/users/mrshenli/following{/other_user}",
+        "gists_url": "https://api.github.com/users/mrshenli/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/mrshenli/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/mrshenli/subscriptions",
+        "organizations_url": "https://api.github.com/users/mrshenli/orgs",
+        "repos_url": "https://api.github.com/users/mrshenli/repos",
+        "events_url": "https://api.github.com/users/mrshenli/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/mrshenli/received_events",
+        "type": "User",
+        "site_admin": false
+      },
+      "labels": [
+        {
+          "id": 443484135,
+          "node_id": "MDU6TGFiZWw0NDM0ODQxMzU=",
+          "url": "https://api.github.com/repos/pytorch/pytorch/labels/high%20priority",
+          "name": "high priority",
+          "color": "F22613",
+          "default": false,
+          "description": null
+        },
+        {
+          "id": 679953883,
+          "node_id": "MDU6TGFiZWw2Nzk5NTM4ODM=",
+          "url": "https://api.github.com/repos/pytorch/pytorch/labels/module:%20distributed",
+          "name": "module: distributed",
+          "color": "f7e101",
+          "default": false,
+          "description": "Related to torch.distributed"
+        },
+        {
+          "id": 1536612774,
+          "node_id": "MDU6TGFiZWwxNTM2NjEyNzc0",
+          "url": "https://api.github.com/repos/pytorch/pytorch/labels/module:%20rpc",
+          "name": "module: rpc",
+          "color": "f7e101",
+          "default": false,
+          "description": "Related to RPC, distributed autograd, RRef, and distributed optimizer"
+        },
+        {
+          "id": 1301397902,
+          "node_id": "MDU6TGFiZWwxMzAxMzk3OTAy",
+          "url": "https://api.github.com/repos/pytorch/pytorch/labels/topic:%20flaky-tests",
+          "name": "topic: flaky-tests",
+          "color": "0e8a16",
+          "default": false,
+          "description": "Problem is a flaky test in CI"
+        },
+        {
+          "id": 466131885,
+          "node_id": "MDU6TGFiZWw0NjYxMzE4ODU=",
+          "url": "https://api.github.com/repos/pytorch/pytorch/labels/triage%20review",
+          "name": "triage review",
+          "color": "cc317c",
+          "default": false,
+          "description": ""
+        },
+        {
+          "id": 1301347167,
+          "node_id": "MDU6TGFiZWwxMzAxMzQ3MTY3",
+          "url": "https://api.github.com/repos/pytorch/pytorch/labels/triaged",
+          "name": "triaged",
+          "color": "006b75",
+          "default": false,
+          "description": "This issue has been looked at a team member, and triaged and prioritized into an appropriate module"
+        }
+      ],
+      "state": "open",
+      "locked": false,
+      "assignee": null,
+      "assignees": [
+
+      ],
+      "milestone": null,
+      "comments": 0,
+      "created_at": "2020-06-23T14:51:40Z",
+      "updated_at": "2020-06-23T14:51:46Z",
+      "closed_at": null,
+      "author_association": "CONTRIBUTOR",
+      "active_lock_reason": null,
+      "body": "https://app.circleci.com/pipelines/github/pytorch/pytorch/184349/workflows/b01c5601-2b54-4717-89a6-0e66284d487c/jobs/5970923/steps\r\n\r\n```\r\nJun 22 20:31:55 ======================================================================\r\nJun 22 20:31:55 ERROR [61.489s]: test_backward_ddp_inside (__main__.TestDdpUnderDistAutogradWrapper)\r\nJun 22 20:31:55 ----------------------------------------------------------------------\r\nJun 22 20:31:55 Traceback (most recent call last):\r\nJun 22 20:31:55   File \"/Users/distiller/workspace/miniconda3/lib/python3.7/site-packages/torch/testing/_internal/common_distributed.py\", line 204, in wrapper\r\nJun 22 20:31:55     self._join_processes(fn)\r\nJun 22 20:31:55   File \"/Users/distiller/workspace/miniconda3/lib/python3.7/site-packages/torch/testing/_internal/common_distributed.py\", line 306, in _join_processes\r\nJun 22 20:31:55     self._check_return_codes(elapsed_time)\r\nJun 22 20:31:55   File \"/Users/distiller/workspace/miniconda3/lib/python3.7/site-packages/torch/testing/_internal/common_distributed.py\", line 339, in _check_return_codes\r\nJun 22 20:31:55     raise RuntimeError(error)\r\nJun 22 20:31:55 RuntimeError: Processes 5 exited with error code 10\r\n```\r\n\r\n```\r\nJun 22 20:30:53   test_backward_ddp_inside (__main__.TestDdpUnderDistAutogradWrapper) ... 2020-06-22 20:30:53,172 ddp_under_dist_autograd_test.py:327 INFO p:process 2 t:MainThread: Running the trainer #2...\r\nJun 22 20:30:53 2020-06-22 20:30:53,172 ddp_under_dist_autograd_test.py:329 INFO p:process 2 t:MainThread: Initing trainer process group by trainer #2 with ranks [0, 1, 2, 3]\r\nJun 22 20:30:53 2020-06-22 20:30:53,172 ddp_under_dist_autograd_test.py:327 INFO p:process 1 t:MainThread: Running the trainer #1...\r\nJun 22 20:30:53 2020-06-22 20:30:53,172 ddp_under_dist_autograd_test.py:329 INFO p:process 1 t:MainThread: Initing trainer process group by trainer #1 with ranks [0, 1, 2, 3]\r\nJun 22 20:30:53 2020-06-22 20:30:53,172 ddp_under_dist_autograd_test.py:314 INFO p:process 4 t:MainThread: The remote worker is running.\r\nJun 22 20:30:53 2020-06-22 20:30:53,172 ddp_under_dist_autograd_test.py:327 INFO p:process 3 t:MainThread: Running the trainer #3...\r\nJun 22 20:30:53 2020-06-22 20:30:53,173 ddp_under_dist_autograd_test.py:329 INFO p:process 3 t:MainThread: Initing trainer process group by trainer #3 with ranks [0, 1, 2, 3]\r\nJun 22 20:30:53 2020-06-22 20:30:53,173 ddp_under_dist_autograd_test.py:327 INFO p:process 0 t:MainThread: Running the trainer #0...\r\nJun 22 20:30:53 2020-06-22 20:30:53,173 ddp_under_dist_autograd_test.py:346 INFO p:process 5 t:MainThread: Running the master process...\r\nJun 22 20:30:53 2020-06-22 20:30:53,173 ddp_under_dist_autograd_test.py:329 INFO p:process 0 t:MainThread: Initing trainer process group by trainer #0 with ranks [0, 1, 2, 3]\r\nJun 22 20:30:53 2020-06-22 20:30:53,176 ddp_under_dist_autograd_test.py:337 INFO p:process 0 t:MainThread: Waiting for shutdown signal on trainer #0...\r\nJun 22 20:30:53 2020-06-22 20:30:53,176 ddp_under_dist_autograd_test.py:360 INFO p:process 5 t:MainThread: Created remote rrefs on master\r\nJun 22 20:30:53 2020-06-22 20:30:53,198 ddp_under_dist_autograd_test.py:98 INFO p:process 4 t:Dummy-1: Initing RemoteEM with 2 3\r\nJun 22 20:30:53 2020-06-22 20:30:53,199 ddp_under_dist_autograd_test.py:124 INFO p:process 4 t:Dummy-2: Initing RemoteNet with 5 3\r\nJun 22 20:30:53 2020-06-22 20:30:53,200 ddp_under_dist_autograd_test.py:337 INFO p:process 2 t:MainThread: Waiting for shutdown signal on trainer #2...\r\nJun 22 20:30:53 2020-06-22 20:30:53,204 ddp_under_dist_autograd_test.py:337 INFO p:process 1 t:MainThread: Waiting for shutdown signal on trainer #1...\r\nJun 22 20:30:53 2020-06-22 20:30:53,204 ddp_under_dist_autograd_test.py:337 INFO p:process 3 t:MainThread: Waiting for shutdown signal on trainer #3...\r\nJun 22 20:31:53 ERROR:root:Caught exception: \r\nJun 22 20:31:53 Traceback (most recent call last):\r\nJun 22 20:31:53   File \"/Users/distiller/workspace/miniconda3/lib/python3.7/site-packages/torch/testing/_internal/common_distributed.py\", line 207, in wrapper\r\nJun 22 20:31:53     fn()\r\nJun 22 20:31:53   File \"/Users/distiller/workspace/miniconda3/lib/python3.7/site-packages/torch/testing/_internal/dist_utils.py\", line 93, in new_test_method\r\nJun 22 20:31:53     return_value = old_test_method(self, *arg, **kwargs)\r\nJun 22 20:31:53   File \"/Users/distiller/workspace/miniconda3/lib/python3.7/site-packages/torch/testing/_internal/distributed/ddp_under_dist_autograd_test.py\", line 445, in test_backward_ddp_inside\r\nJun 22 20:31:53     self._do_test(DdpMode.INSIDE)\r\nJun 22 20:31:53   File \"/Users/distiller/workspace/miniconda3/lib/python3.7/site-packages/torch/testing/_internal/distributed/ddp_under_dist_autograd_test.py\", line 424, in _do_test\r\nJun 22 20:31:53     self._master_process(ddp_mode)\r\nJun 22 20:31:53   File \"/Users/distiller/workspace/miniconda3/lib/python3.7/site-packages/torch/testing/_internal/distributed/ddp_under_dist_autograd_test.py\", line 361, in _master_process\r\nJun 22 20:31:53     self.do_test_on_master(ddp_mode, remote_em_rref, remote_net_rref)\r\nJun 22 20:31:53   File \"/Users/distiller/workspace/miniconda3/lib/python3.7/site-packages/torch/testing/_internal/distributed/ddp_under_dist_autograd_test.py\", line 393, in do_test_on_master\r\nJun 22 20:31:53     ddp_grads, non_ddp_grads = future.wait()\r\nJun 22 20:31:53 RuntimeError: RPCErr:1:RPC ran for more than 60000 milliseconds and timed out.\r\nJun 22 20:31:53 exiting process with exit code: 10\r\nJun 22 20:31:53 Process 5 terminated with exit code 10, terminating remaining processes.\r\nJun 22 20:31:53 ERROR (61.489s)\r\n```\n\ncc @ezyang @gchanan @zou3519 @pietern @mrshenli @pritamdamania87 @zhaojuanmao @satgera @rohan-varma @gqchen @aazzolini @xush6528 @osalpekar @jjlilley",
+      "score": 0.0
+    },
     {
       "url": "https://api.github.com/repos/pytorch/pytorch/issues/40378",
       "repository_url": "https://api.github.com/repos/pytorch/pytorch",
@@ -620,6 +723,109 @@
       "author_association": "CONTRIBUTOR",
       "active_lock_reason": null,
       "body": "https://app.circleci.com/pipelines/github/pytorch/pytorch/179019/workflows/89ef9bec-c13c-4d81-a817-5de5fed67cdf/jobs/5772385/steps https://app.circleci.com/pipelines/github/pytorch/pytorch/179483/workflows/b1faffb1-687b-4000-bae1-37fa2c93d7f5/jobs/5787474/steps\r\n\r\n```\r\nJun 10 18:19:54   test_backward_node_failure (__main__.TensorPipeAgentDistAutogradTestWithSpawn) ... [W tensorpipe_agent.cpp:315] RPC agent for worker3 encountered error when reading incoming request: pipe closed\r\nJun 10 18:19:54 [W tensorpipe_agent.cpp:315] RPC agent for worker1 encountered error when reading incoming request: pipe closed\r\nJun 10 18:19:54 [E container.cpp:248] Could not release Dist Autograd Context on node 0: pipe closed\r\nJun 10 18:19:54 [E container.cpp:248] Could not release Dist Autograd Context on node 2: pipe closed\r\nJun 10 18:19:54 [W tensorpipe_agent.cpp:439] RPC agent for worker0 encountered error when writing outgoing request: EPIPE: broken pipe\r\nJun 10 18:19:54 [W tensorpipe_agent.cpp:439] RPC agent for worker2 encountered error when writing outgoing request: ECONNREFUSED: connection refused\r\nJun 10 18:19:54 [W tensorpipe_agent.cpp:315] RPC agent for worker0 encountered error when reading incoming request: EOF: end of file\r\nJun 10 18:19:54 [W tensorpipe_agent.cpp:439] RPC agent for worker0 encountered error when writing outgoing request: ECONNREFUSED: connection refused\r\nJun 10 18:19:54 [W tensorpipe_agent.cpp:439] RPC agent for worker0 encountered error when writing outgoing request: ECONNREFUSED: connection refused\r\nJun 10 18:19:54 [W tensorpipe_agent.cpp:283] RPC agent for worker0 encountered error when writing outgoing response: EOF: end of file\r\nJun 10 18:19:54 [W tensorpipe_agent.cpp:439] RPC agent for worker0 encountered error when writing outgoing request: EPIPE: broken pipe\r\nJun 10 18:19:54 [W tensorpipe_agent.cpp:439] RPC agent for worker2 encountered error when writing outgoing request: ECONNREFUSED: connection refused\r\nJun 10 18:19:54 [W tensorpipe_agent.cpp:315] RPC agent for worker2 encountered error when reading incoming request: EPIPE: broken pipe\r\nJun 10 18:19:54 [W tensorpipe_agent.cpp:439] RPC agent for worker0 encountered error when writing outgoing request: ECONNREFUSED: connection refused\r\nJun 10 18:19:54 [W tensorpipe_agent.cpp:439] RPC agent for worker0 encountered error when writing outgoing request: EPIPE: broken pipe\r\nJun 10 18:19:54 [E container.cpp:248] Could not release Dist Autograd Context on node 3: ECONNREFUSED: connection refused\r\nJun 10 18:19:54 [E container.cpp:248] Could not release Dist Autograd Context on node 1: EPIPE: broken pipe\r\nJun 10 18:19:54 [W tensorpipe_agent.cpp:283] RPC agent for worker2 encountered error when writing outgoing response: EPIPE: broken pipe\r\nJun 10 18:19:54 [W tensorpipe_agent.cpp:439] RPC agent for worker2 encountered error when writing outgoing request: EPIPE: broken pipe\r\nJun 10 18:19:54 [W tensorpipe_agent.cpp:439] RPC agent for worker2 encountered error when writing outgoing request: EPIPE: broken pipe\r\nJun 10 18:19:54 [W tensorpipe_agent.cpp:439] RPC agent for worker2 encountered error when writing outgoing request: ECONNREFUSED: connection refused\r\nJun 10 18:19:54 [W tensorpipe_agent.cpp:439] RPC agent for worker2 encountered error when writing outgoing request: EPIPE: broken pipe\r\nJun 10 18:21:33 Timing out after 100 seconds and killing subprocesses.\r\nJun 10 18:21:33 ERROR (100.075s)\r\n```\r\n\r\n```\r\nJun 10 18:24:42 ======================================================================\r\nJun 10 18:24:42 ERROR [100.075s]: test_backward_node_failure (__main__.TensorPipeAgentDistAutogradTestWithSpawn)\r\nJun 10 18:24:42 ----------------------------------------------------------------------\r\nJun 10 18:24:42 Traceback (most recent call last):\r\nJun 10 18:24:42   File \"/opt/conda/lib/python3.8/site-packages/torch/testing/_internal/common_distributed.py\", line 204, in wrapper\r\nJun 10 18:24:42     self._join_processes(fn)\r\nJun 10 18:24:42   File \"/opt/conda/lib/python3.8/site-packages/torch/testing/_internal/common_distributed.py\", line 306, in _join_processes\r\nJun 10 18:24:42     self._check_return_codes(elapsed_time)\r\nJun 10 18:24:42   File \"/opt/conda/lib/python3.8/site-packages/torch/testing/_internal/common_distributed.py\", line 344, in _check_return_codes\r\nJun 10 18:24:42     raise RuntimeError('Process {} terminated or timed out after {} seconds'.format(i, elapsed_time))\r\nJun 10 18:24:42 RuntimeError: Process 2 terminated or timed out after 100.05913996696472 seconds\r\nJun 10 18:24:42 \r\nJun 10 18:24:42 ----------------------------------------------------------------------\r\n```\n\ncc @ezyang @gchanan @zou3519 @SsnL @albanD @gqchen @pietern @mrshenli @pritamdamania87 @zhaojuanmao @satgera @aazzolini @rohan-varma @xush6528 @jjlilley @osalpekar @jiayisuse @lw @beauby",
+      "score": 0.0
+    },
+    {
+      "url": "https://api.github.com/repos/pytorch/pytorch/issues/40435",
+      "repository_url": "https://api.github.com/repos/pytorch/pytorch",
+      "labels_url": "https://api.github.com/repos/pytorch/pytorch/issues/40435/labels{/name}",
+      "comments_url": "https://api.github.com/repos/pytorch/pytorch/issues/40435/comments",
+      "events_url": "https://api.github.com/repos/pytorch/pytorch/issues/40435/events",
+      "html_url": "https://github.com/pytorch/pytorch/issues/40435",
+      "id": 643909989,
+      "node_id": "MDU6SXNzdWU2NDM5MDk5ODk=",
+      "number": 40435,
+      "title": "DISABLED test_ddp_dist_autograd_local_vs_remote (__main__.TestDdpComparison)",
+      "user": {
+        "login": "mrshenli",
+        "id": 16999635,
+        "node_id": "MDQ6VXNlcjE2OTk5NjM1",
+        "avatar_url": "https://avatars2.githubusercontent.com/u/16999635?v=4",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/mrshenli",
+        "html_url": "https://github.com/mrshenli",
+        "followers_url": "https://api.github.com/users/mrshenli/followers",
+        "following_url": "https://api.github.com/users/mrshenli/following{/other_user}",
+        "gists_url": "https://api.github.com/users/mrshenli/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/mrshenli/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/mrshenli/subscriptions",
+        "organizations_url": "https://api.github.com/users/mrshenli/orgs",
+        "repos_url": "https://api.github.com/users/mrshenli/repos",
+        "events_url": "https://api.github.com/users/mrshenli/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/mrshenli/received_events",
+        "type": "User",
+        "site_admin": false
+      },
+      "labels": [
+        {
+          "id": 443484135,
+          "node_id": "MDU6TGFiZWw0NDM0ODQxMzU=",
+          "url": "https://api.github.com/repos/pytorch/pytorch/labels/high%20priority",
+          "name": "high priority",
+          "color": "F22613",
+          "default": false,
+          "description": null
+        },
+        {
+          "id": 679953883,
+          "node_id": "MDU6TGFiZWw2Nzk5NTM4ODM=",
+          "url": "https://api.github.com/repos/pytorch/pytorch/labels/module:%20distributed",
+          "name": "module: distributed",
+          "color": "f7e101",
+          "default": false,
+          "description": "Related to torch.distributed"
+        },
+        {
+          "id": 1536612774,
+          "node_id": "MDU6TGFiZWwxNTM2NjEyNzc0",
+          "url": "https://api.github.com/repos/pytorch/pytorch/labels/module:%20rpc",
+          "name": "module: rpc",
+          "color": "f7e101",
+          "default": false,
+          "description": "Related to RPC, distributed autograd, RRef, and distributed optimizer"
+        },
+        {
+          "id": 1301397902,
+          "node_id": "MDU6TGFiZWwxMzAxMzk3OTAy",
+          "url": "https://api.github.com/repos/pytorch/pytorch/labels/topic:%20flaky-tests",
+          "name": "topic: flaky-tests",
+          "color": "0e8a16",
+          "default": false,
+          "description": "Problem is a flaky test in CI"
+        },
+        {
+          "id": 466131885,
+          "node_id": "MDU6TGFiZWw0NjYxMzE4ODU=",
+          "url": "https://api.github.com/repos/pytorch/pytorch/labels/triage%20review",
+          "name": "triage review",
+          "color": "cc317c",
+          "default": false,
+          "description": ""
+        },
+        {
+          "id": 1301347167,
+          "node_id": "MDU6TGFiZWwxMzAxMzQ3MTY3",
+          "url": "https://api.github.com/repos/pytorch/pytorch/labels/triaged",
+          "name": "triaged",
+          "color": "006b75",
+          "default": false,
+          "description": "This issue has been looked at a team member, and triaged and prioritized into an appropriate module"
+        }
+      ],
+      "state": "open",
+      "locked": false,
+      "assignee": null,
+      "assignees": [
+
+      ],
+      "milestone": null,
+      "comments": 0,
+      "created_at": "2020-06-23T14:53:11Z",
+      "updated_at": "2020-06-23T14:53:15Z",
+      "closed_at": null,
+      "author_association": "CONTRIBUTOR",
+      "active_lock_reason": null,
+      "body": "https://app.circleci.com/pipelines/github/pytorch/pytorch/184408/workflows/fc2c5be1-9269-4d74-9c9d-4f7947f9a2c8/jobs/5971378/steps\r\n\r\n```\r\nJun 22 21:21:42 ======================================================================\r\nJun 22 21:21:42 ERROR [61.059s]: test_ddp_dist_autograd_local_vs_remote (__main__.TestDdpComparison)\r\nJun 22 21:21:42 ----------------------------------------------------------------------\r\nJun 22 21:21:42 Traceback (most recent call last):\r\nJun 22 21:21:42   File \"/Users/distiller/workspace/miniconda3/lib/python3.7/site-packages/torch/testing/_internal/common_distributed.py\", line 204, in wrapper\r\nJun 22 21:21:42     self._join_processes(fn)\r\nJun 22 21:21:42   File \"/Users/distiller/workspace/miniconda3/lib/python3.7/site-packages/torch/testing/_internal/common_distributed.py\", line 306, in _join_processes\r\nJun 22 21:21:42     self._check_return_codes(elapsed_time)\r\nJun 22 21:21:42   File \"/Users/distiller/workspace/miniconda3/lib/python3.7/site-packages/torch/testing/_internal/common_distributed.py\", line 339, in _check_return_codes\r\nJun 22 21:21:42     raise RuntimeError(error)\r\nJun 22 21:21:42 RuntimeError: Processes 3 exited with error code 10\r\n```\r\n\r\n```\r\nJun 22 21:21:37   test_ddp_dist_autograd_local_vs_remote (__main__.TestDdpComparison) ... ERROR:root:Caught exception: \r\nJun 22 21:21:37 Traceback (most recent call last):\r\nJun 22 21:21:37   File \"/Users/distiller/workspace/miniconda3/lib/python3.7/site-packages/torch/testing/_internal/common_distributed.py\", line 207, in wrapper\r\nJun 22 21:21:37     fn()\r\nJun 22 21:21:37   File \"/Users/distiller/workspace/miniconda3/lib/python3.7/site-packages/torch/testing/_internal/dist_utils.py\", line 93, in new_test_method\r\nJun 22 21:21:37     return_value = old_test_method(self, *arg, **kwargs)\r\nJun 22 21:21:37   File \"/Users/distiller/workspace/miniconda3/lib/python3.7/site-packages/torch/testing/_internal/distributed/ddp_under_dist_autograd_test.py\", line 566, in test_ddp_dist_autograd_local_vs_remote\r\nJun 22 21:21:37     remote_layer1 = RemoteModule(\"worker0\", nn.Linear, args=(10, 5, False))\r\nJun 22 21:21:37   File \"/Users/distiller/workspace/miniconda3/lib/python3.7/site-packages/torch/distributed/nn/api/remote_module.py\", line 215, in __init__\r\nJun 22 21:21:37     super().__init__(on, module_cls, args, kwargs)\r\nJun 22 21:21:37   File \"/Users/distiller/workspace/miniconda3/lib/python3.7/site-packages/torch/distributed/nn/api/remote_module.py\", line 137, in __init__\r\nJun 22 21:21:37     (module_cls, args, kwargs, _module_interface_cls),\r\nJun 22 21:21:37   File \"/Users/distiller/workspace/miniconda3/lib/python3.7/site-packages/torch/distributed/rpc/api.py\", line 80, in wrapper\r\nJun 22 21:21:37     return func(*args, **kwargs)\r\nJun 22 21:21:37   File \"/Users/distiller/workspace/miniconda3/lib/python3.7/site-packages/torch/distributed/rpc/api.py\", line 711, in rpc_sync\r\nJun 22 21:21:37     return fut.wait()\r\nJun 22 21:21:37 RuntimeError: RPCErr:1:RPC ran for more than 60000 milliseconds and timed out.\r\nJun 22 21:21:37 exiting process with exit code: 10\r\nJun 22 21:21:37 Process 3 terminated with exit code 10, terminating remaining processes.\r\nJun 22 21:21:37 ERROR (61.059s)\r\n```\n\ncc @ezyang @gchanan @zou3519 @pietern @mrshenli @pritamdamania87 @zhaojuanmao @satgera @rohan-varma @gqchen @aazzolini @xush6528 @osalpekar @jjlilley",
       "score": 0.0
     },
     {
