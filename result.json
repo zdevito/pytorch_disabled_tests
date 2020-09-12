@@ -3,6 +3,92 @@
   "incomplete_results": false,
   "items": [
     {
+      "url": "https://api.github.com/repos/pytorch/pytorch/issues/38491",
+      "repository_url": "https://api.github.com/repos/pytorch/pytorch",
+      "labels_url": "https://api.github.com/repos/pytorch/pytorch/issues/38491/labels{/name}",
+      "comments_url": "https://api.github.com/repos/pytorch/pytorch/issues/38491/comments",
+      "events_url": "https://api.github.com/repos/pytorch/pytorch/issues/38491/events",
+      "html_url": "https://github.com/pytorch/pytorch/issues/38491",
+      "id": 618421559,
+      "node_id": "MDU6SXNzdWU2MTg0MjE1NTk=",
+      "number": 38491,
+      "title": "DISABLED ParallelWorkersTest.testParallelWorkersShutdownFun ",
+      "user": {
+        "login": "mrshenli",
+        "id": 16999635,
+        "node_id": "MDQ6VXNlcjE2OTk5NjM1",
+        "avatar_url": "https://avatars2.githubusercontent.com/u/16999635?v=4",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/mrshenli",
+        "html_url": "https://github.com/mrshenli",
+        "followers_url": "https://api.github.com/users/mrshenli/followers",
+        "following_url": "https://api.github.com/users/mrshenli/following{/other_user}",
+        "gists_url": "https://api.github.com/users/mrshenli/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/mrshenli/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/mrshenli/subscriptions",
+        "organizations_url": "https://api.github.com/users/mrshenli/orgs",
+        "repos_url": "https://api.github.com/users/mrshenli/repos",
+        "events_url": "https://api.github.com/users/mrshenli/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/mrshenli/received_events",
+        "type": "User",
+        "site_admin": false
+      },
+      "labels": [
+        {
+          "id": 443484135,
+          "node_id": "MDU6TGFiZWw0NDM0ODQxMzU=",
+          "url": "https://api.github.com/repos/pytorch/pytorch/labels/high%20priority",
+          "name": "high priority",
+          "color": "F22613",
+          "default": false,
+          "description": null
+        },
+        {
+          "id": 1301397902,
+          "node_id": "MDU6TGFiZWwxMzAxMzk3OTAy",
+          "url": "https://api.github.com/repos/pytorch/pytorch/labels/topic:%20flaky-tests",
+          "name": "topic: flaky-tests",
+          "color": "0e8a16",
+          "default": false,
+          "description": "Problem is a flaky test in CI"
+        },
+        {
+          "id": 466131885,
+          "node_id": "MDU6TGFiZWw0NjYxMzE4ODU=",
+          "url": "https://api.github.com/repos/pytorch/pytorch/labels/triage%20review",
+          "name": "triage review",
+          "color": "cc317c",
+          "default": false,
+          "description": ""
+        },
+        {
+          "id": 1301347167,
+          "node_id": "MDU6TGFiZWwxMzAxMzQ3MTY3",
+          "url": "https://api.github.com/repos/pytorch/pytorch/labels/triaged",
+          "name": "triaged",
+          "color": "006b75",
+          "default": false,
+          "description": "This issue has been looked at a team member, and triaged and prioritized into an appropriate module"
+        }
+      ],
+      "state": "open",
+      "locked": false,
+      "assignee": null,
+      "assignees": [
+
+      ],
+      "milestone": null,
+      "comments": 0,
+      "created_at": "2020-05-14T17:45:34Z",
+      "updated_at": "2020-09-03T23:40:50Z",
+      "closed_at": null,
+      "author_association": "CONTRIBUTOR",
+      "active_lock_reason": null,
+      "body": "https://app.circleci.com/pipelines/github/pytorch/pytorch/169923/workflows/d66ca278-d55c-462b-96cb-55623ce713f7/jobs/5472514/steps\r\n\r\n```\r\nMay 14 07:37:27 =================================== FAILURES ===================================\r\nMay 14 07:37:27 ______________ ParallelWorkersTest.testParallelWorkersShutdownFun ______________\r\nMay 14 07:37:27 \r\nMay 14 07:37:27 self = <caffe2.python.parallel_workers_test.ParallelWorkersTest testMethod=testParallelWorkersShutdownFun>\r\nMay 14 07:37:27 \r\nMay 14 07:37:27     def testParallelWorkersShutdownFun(self):\r\nMay 14 07:37:27         workspace.ResetWorkspace()\r\nMay 14 07:37:27     \r\nMay 14 07:37:27         queue = create_queue()\r\nMay 14 07:37:27         dummy_worker = create_worker(queue, lambda worker_id: str(worker_id))\r\nMay 14 07:37:27         workspace.FeedBlob('data', 'not shutdown')\r\nMay 14 07:37:27     \r\nMay 14 07:37:27         def shutdown_fun():\r\nMay 14 07:37:27             workspace.FeedBlob('data', 'shutdown')\r\nMay 14 07:37:27     \r\nMay 14 07:37:27         worker_coordinator = parallel_workers.init_workers(\r\nMay 14 07:37:27             dummy_worker, shutdown_fun=shutdown_fun\r\nMay 14 07:37:27         )\r\nMay 14 07:37:27         worker_coordinator.start()\r\nMay 14 07:37:27     \r\nMay 14 07:37:27 >       self.assertTrue(worker_coordinator.stop())\r\nMay 14 07:37:27 E       AssertionError: False is not true\r\nMay 14 07:37:27 \r\nMay 14 07:37:27 ../.local/lib/python3.6/site-packages/caffe2/python/parallel_workers_test.py:116: AssertionError\r\nMay 14 07:37:27 ----------------------------- Captured stdout call -----------------------------\r\n```\n\ncc @ezyang @gchanan @zou3519 @houseroad @spandantiwari @lara-hdr @BowenBao @neginraoof",
+      "performed_via_github_app": null,
+      "score": 0.0
+    },
+    {
       "url": "https://api.github.com/repos/pytorch/pytorch/issues/43368",
       "repository_url": "https://api.github.com/repos/pytorch/pytorch",
       "labels_url": "https://api.github.com/repos/pytorch/pytorch/issues/43368/labels{/name}",
@@ -114,92 +200,6 @@
       "author_association": "CONTRIBUTOR",
       "active_lock_reason": null,
       "body": "https://app.circleci.com/pipelines/github/pytorch/pytorch/202821/workflows/1f12878d-497a-4e55-99a8-5c2748d424a8/jobs/6846434/steps\r\n\r\n```\r\nAug 20 23:34:08 ======================================================================\r\nAug 20 23:34:08 FAIL [5.925s]: test_device_maps_remote (__main__.TensorPipeTensorPipeAgentRpcTestWithSpawn)\r\nAug 20 23:34:08 ----------------------------------------------------------------------\r\nAug 20 23:34:08 Traceback (most recent call last):\r\nAug 20 23:34:08   File \"/opt/conda/lib/python3.6/site-packages/torch/testing/_internal/common_distributed.py\", line 223, in wrapper\r\nAug 20 23:34:08     self._join_processes(fn)\r\nAug 20 23:34:08   File \"/opt/conda/lib/python3.6/site-packages/torch/testing/_internal/common_distributed.py\", line 330, in _join_processes\r\nAug 20 23:34:08     self._check_return_codes(elapsed_time)\r\nAug 20 23:34:08   File \"/opt/conda/lib/python3.6/site-packages/torch/testing/_internal/common_distributed.py\", line 373, in _check_return_codes\r\nAug 20 23:34:08     i, first_process.exitcode, p.exitcode\r\nAug 20 23:34:08   File \"/opt/conda/lib/python3.6/site-packages/torch/testing/_internal/common_utils.py\", line 1161, in assertEqual\r\nAug 20 23:34:08     self.assertTrue(result, msg=msg)\r\nAug 20 23:34:08 AssertionError: False is not true : Expect process 3 exit code to match Process 0 exit code of 0, but got -11\r\n```\r\n\r\n```\r\nAug 20 23:34:01   test_device_maps_remote (__main__.TensorPipeTensorPipeAgentRpcTestWithSpawn) ... [W tensorpipe_agent.cpp:576] RPC agent for worker0 encountered error when reading incoming request from worker2: EOF: end of file (this is expected to happen during shutdown)\r\nAug 20 23:34:01 [W tensorpipe_agent.cpp:576] RPC agent for worker0 encountered error when reading incoming request from worker3: EOF: end of file (this is expected to happen during shutdown)\r\nAug 20 23:34:01 [W tensorpipe_agent.cpp:529] RPC agent for worker0 encountered error when sending response to request #3 to worker3: EOF: end of file\r\nAug 20 23:34:02 [W tensorpipe_agent.cpp:576] RPC agent for worker1 encountered error when reading incoming request from worker0: EOF: end of file (this is expected to happen during shutdown)\r\nAug 20 23:34:02 [W tensorpipe_agent.cpp:529] RPC agent for worker1 encountered error when sending response to request #5 to worker0: EOF: end of file\r\nAug 20 23:34:02 [W tensorpipe_agent.cpp:718] RPC agent for worker1 encountered error when sending outgoing request #3 to worker2: EPIPE: broken pipe\r\nAug 20 23:34:02 FAIL (5.925s)\r\nAug 20 23:34:03   test_device_maps_return_to_gpu (__main__.TensorPipeTensorPipeAgentRpcTestWithSpawn) ... skip (0.913s)\r\nAug 20 23:34:04   test_device_maps_return_to_gpu_self (__main__.TensorPipeTensorPipeAgentRpcTestWithSpawn) ... skip (0.913s)\r\nAug 20 23:34:05   test_device_maps_wrong_worker_name (__main__.TensorPipeTensorPipeAgentRpcTestWithSpawn) ... [W tensorpipe_agent.cpp:576] RPC agent for worker2 encountered error when reading incoming request from worker0: EOF: end of file (this is expected to happen during shutdown)\r\nAug 20 23:34:05 [W tensorpipe_agent.cpp:576] RPC agent for worker0 encountered error when reading incoming request from worker3: EOF: end of file (this is expected to happen during shutdown)\r\nAug 20 23:34:05 [W tensorpipe_agent.cpp:576] RPC agent for worker0 encountered error when reading incoming request from worker2: EOF: end of file (this is expected to happen during shutdown)\r\n```\n\ncc @pietern @mrshenli @pritamdamania87 @zhaojuanmao @satgera @gqchen @aazzolini @rohan-varma @xush6528 @jjlilley @osalpekar @jiayisuse @lw @beauby",
-      "performed_via_github_app": null,
-      "score": 0.0
-    },
-    {
-      "url": "https://api.github.com/repos/pytorch/pytorch/issues/38491",
-      "repository_url": "https://api.github.com/repos/pytorch/pytorch",
-      "labels_url": "https://api.github.com/repos/pytorch/pytorch/issues/38491/labels{/name}",
-      "comments_url": "https://api.github.com/repos/pytorch/pytorch/issues/38491/comments",
-      "events_url": "https://api.github.com/repos/pytorch/pytorch/issues/38491/events",
-      "html_url": "https://github.com/pytorch/pytorch/issues/38491",
-      "id": 618421559,
-      "node_id": "MDU6SXNzdWU2MTg0MjE1NTk=",
-      "number": 38491,
-      "title": "DISABLED ParallelWorkersTest.testParallelWorkersShutdownFun ",
-      "user": {
-        "login": "mrshenli",
-        "id": 16999635,
-        "node_id": "MDQ6VXNlcjE2OTk5NjM1",
-        "avatar_url": "https://avatars2.githubusercontent.com/u/16999635?v=4",
-        "gravatar_id": "",
-        "url": "https://api.github.com/users/mrshenli",
-        "html_url": "https://github.com/mrshenli",
-        "followers_url": "https://api.github.com/users/mrshenli/followers",
-        "following_url": "https://api.github.com/users/mrshenli/following{/other_user}",
-        "gists_url": "https://api.github.com/users/mrshenli/gists{/gist_id}",
-        "starred_url": "https://api.github.com/users/mrshenli/starred{/owner}{/repo}",
-        "subscriptions_url": "https://api.github.com/users/mrshenli/subscriptions",
-        "organizations_url": "https://api.github.com/users/mrshenli/orgs",
-        "repos_url": "https://api.github.com/users/mrshenli/repos",
-        "events_url": "https://api.github.com/users/mrshenli/events{/privacy}",
-        "received_events_url": "https://api.github.com/users/mrshenli/received_events",
-        "type": "User",
-        "site_admin": false
-      },
-      "labels": [
-        {
-          "id": 443484135,
-          "node_id": "MDU6TGFiZWw0NDM0ODQxMzU=",
-          "url": "https://api.github.com/repos/pytorch/pytorch/labels/high%20priority",
-          "name": "high priority",
-          "color": "F22613",
-          "default": false,
-          "description": null
-        },
-        {
-          "id": 1301397902,
-          "node_id": "MDU6TGFiZWwxMzAxMzk3OTAy",
-          "url": "https://api.github.com/repos/pytorch/pytorch/labels/topic:%20flaky-tests",
-          "name": "topic: flaky-tests",
-          "color": "0e8a16",
-          "default": false,
-          "description": "Problem is a flaky test in CI"
-        },
-        {
-          "id": 466131885,
-          "node_id": "MDU6TGFiZWw0NjYxMzE4ODU=",
-          "url": "https://api.github.com/repos/pytorch/pytorch/labels/triage%20review",
-          "name": "triage review",
-          "color": "cc317c",
-          "default": false,
-          "description": ""
-        },
-        {
-          "id": 1301347167,
-          "node_id": "MDU6TGFiZWwxMzAxMzQ3MTY3",
-          "url": "https://api.github.com/repos/pytorch/pytorch/labels/triaged",
-          "name": "triaged",
-          "color": "006b75",
-          "default": false,
-          "description": "This issue has been looked at a team member, and triaged and prioritized into an appropriate module"
-        }
-      ],
-      "state": "open",
-      "locked": false,
-      "assignee": null,
-      "assignees": [
-
-      ],
-      "milestone": null,
-      "comments": 0,
-      "created_at": "2020-05-14T17:45:34Z",
-      "updated_at": "2020-09-03T23:40:50Z",
-      "closed_at": null,
-      "author_association": "CONTRIBUTOR",
-      "active_lock_reason": null,
-      "body": "https://app.circleci.com/pipelines/github/pytorch/pytorch/169923/workflows/d66ca278-d55c-462b-96cb-55623ce713f7/jobs/5472514/steps\r\n\r\n```\r\nMay 14 07:37:27 =================================== FAILURES ===================================\r\nMay 14 07:37:27 ______________ ParallelWorkersTest.testParallelWorkersShutdownFun ______________\r\nMay 14 07:37:27 \r\nMay 14 07:37:27 self = <caffe2.python.parallel_workers_test.ParallelWorkersTest testMethod=testParallelWorkersShutdownFun>\r\nMay 14 07:37:27 \r\nMay 14 07:37:27     def testParallelWorkersShutdownFun(self):\r\nMay 14 07:37:27         workspace.ResetWorkspace()\r\nMay 14 07:37:27     \r\nMay 14 07:37:27         queue = create_queue()\r\nMay 14 07:37:27         dummy_worker = create_worker(queue, lambda worker_id: str(worker_id))\r\nMay 14 07:37:27         workspace.FeedBlob('data', 'not shutdown')\r\nMay 14 07:37:27     \r\nMay 14 07:37:27         def shutdown_fun():\r\nMay 14 07:37:27             workspace.FeedBlob('data', 'shutdown')\r\nMay 14 07:37:27     \r\nMay 14 07:37:27         worker_coordinator = parallel_workers.init_workers(\r\nMay 14 07:37:27             dummy_worker, shutdown_fun=shutdown_fun\r\nMay 14 07:37:27         )\r\nMay 14 07:37:27         worker_coordinator.start()\r\nMay 14 07:37:27     \r\nMay 14 07:37:27 >       self.assertTrue(worker_coordinator.stop())\r\nMay 14 07:37:27 E       AssertionError: False is not true\r\nMay 14 07:37:27 \r\nMay 14 07:37:27 ../.local/lib/python3.6/site-packages/caffe2/python/parallel_workers_test.py:116: AssertionError\r\nMay 14 07:37:27 ----------------------------- Captured stdout call -----------------------------\r\n```\n\ncc @ezyang @gchanan @zou3519 @houseroad @spandantiwari @lara-hdr @BowenBao @neginraoof",
       "performed_via_github_app": null,
       "score": 0.0
     },
