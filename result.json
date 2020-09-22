@@ -1,5 +1,5 @@
 {
-  "total_count": 16,
+  "total_count": 17,
   "incomplete_results": false,
   "items": [
     {
@@ -200,6 +200,110 @@
       "author_association": "CONTRIBUTOR",
       "active_lock_reason": null,
       "body": "https://app.circleci.com/pipelines/github/pytorch/pytorch/202821/workflows/1f12878d-497a-4e55-99a8-5c2748d424a8/jobs/6846434/steps\r\n\r\n```\r\nAug 20 23:34:08 ======================================================================\r\nAug 20 23:34:08 FAIL [5.925s]: test_device_maps_remote (__main__.TensorPipeTensorPipeAgentRpcTestWithSpawn)\r\nAug 20 23:34:08 ----------------------------------------------------------------------\r\nAug 20 23:34:08 Traceback (most recent call last):\r\nAug 20 23:34:08   File \"/opt/conda/lib/python3.6/site-packages/torch/testing/_internal/common_distributed.py\", line 223, in wrapper\r\nAug 20 23:34:08     self._join_processes(fn)\r\nAug 20 23:34:08   File \"/opt/conda/lib/python3.6/site-packages/torch/testing/_internal/common_distributed.py\", line 330, in _join_processes\r\nAug 20 23:34:08     self._check_return_codes(elapsed_time)\r\nAug 20 23:34:08   File \"/opt/conda/lib/python3.6/site-packages/torch/testing/_internal/common_distributed.py\", line 373, in _check_return_codes\r\nAug 20 23:34:08     i, first_process.exitcode, p.exitcode\r\nAug 20 23:34:08   File \"/opt/conda/lib/python3.6/site-packages/torch/testing/_internal/common_utils.py\", line 1161, in assertEqual\r\nAug 20 23:34:08     self.assertTrue(result, msg=msg)\r\nAug 20 23:34:08 AssertionError: False is not true : Expect process 3 exit code to match Process 0 exit code of 0, but got -11\r\n```\r\n\r\n```\r\nAug 20 23:34:01   test_device_maps_remote (__main__.TensorPipeTensorPipeAgentRpcTestWithSpawn) ... [W tensorpipe_agent.cpp:576] RPC agent for worker0 encountered error when reading incoming request from worker2: EOF: end of file (this is expected to happen during shutdown)\r\nAug 20 23:34:01 [W tensorpipe_agent.cpp:576] RPC agent for worker0 encountered error when reading incoming request from worker3: EOF: end of file (this is expected to happen during shutdown)\r\nAug 20 23:34:01 [W tensorpipe_agent.cpp:529] RPC agent for worker0 encountered error when sending response to request #3 to worker3: EOF: end of file\r\nAug 20 23:34:02 [W tensorpipe_agent.cpp:576] RPC agent for worker1 encountered error when reading incoming request from worker0: EOF: end of file (this is expected to happen during shutdown)\r\nAug 20 23:34:02 [W tensorpipe_agent.cpp:529] RPC agent for worker1 encountered error when sending response to request #5 to worker0: EOF: end of file\r\nAug 20 23:34:02 [W tensorpipe_agent.cpp:718] RPC agent for worker1 encountered error when sending outgoing request #3 to worker2: EPIPE: broken pipe\r\nAug 20 23:34:02 FAIL (5.925s)\r\nAug 20 23:34:03   test_device_maps_return_to_gpu (__main__.TensorPipeTensorPipeAgentRpcTestWithSpawn) ... skip (0.913s)\r\nAug 20 23:34:04   test_device_maps_return_to_gpu_self (__main__.TensorPipeTensorPipeAgentRpcTestWithSpawn) ... skip (0.913s)\r\nAug 20 23:34:05   test_device_maps_wrong_worker_name (__main__.TensorPipeTensorPipeAgentRpcTestWithSpawn) ... [W tensorpipe_agent.cpp:576] RPC agent for worker2 encountered error when reading incoming request from worker0: EOF: end of file (this is expected to happen during shutdown)\r\nAug 20 23:34:05 [W tensorpipe_agent.cpp:576] RPC agent for worker0 encountered error when reading incoming request from worker3: EOF: end of file (this is expected to happen during shutdown)\r\nAug 20 23:34:05 [W tensorpipe_agent.cpp:576] RPC agent for worker0 encountered error when reading incoming request from worker2: EOF: end of file (this is expected to happen during shutdown)\r\n```\n\ncc @pietern @mrshenli @pritamdamania87 @zhaojuanmao @satgera @gqchen @aazzolini @rohan-varma @xush6528 @jjlilley @osalpekar @jiayisuse @lw @beauby",
+      "performed_via_github_app": null,
+      "score": 0.0
+    },
+    {
+      "url": "https://api.github.com/repos/pytorch/pytorch/issues/45105",
+      "repository_url": "https://api.github.com/repos/pytorch/pytorch",
+      "labels_url": "https://api.github.com/repos/pytorch/pytorch/issues/45105/labels{/name}",
+      "comments_url": "https://api.github.com/repos/pytorch/pytorch/issues/45105/comments",
+      "events_url": "https://api.github.com/repos/pytorch/pytorch/issues/45105/events",
+      "html_url": "https://github.com/pytorch/pytorch/issues/45105",
+      "id": 706054365,
+      "node_id": "MDU6SXNzdWU3MDYwNTQzNjU=",
+      "number": 45105,
+      "title": "DISABLED test_backward_ddp_outside_uneven_inputs (__main__.ProcessGroupDdpUnderDistAutogradTestWithSpawn)",
+      "user": {
+        "login": "mrshenli",
+        "id": 16999635,
+        "node_id": "MDQ6VXNlcjE2OTk5NjM1",
+        "avatar_url": "https://avatars2.githubusercontent.com/u/16999635?v=4",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/mrshenli",
+        "html_url": "https://github.com/mrshenli",
+        "followers_url": "https://api.github.com/users/mrshenli/followers",
+        "following_url": "https://api.github.com/users/mrshenli/following{/other_user}",
+        "gists_url": "https://api.github.com/users/mrshenli/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/mrshenli/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/mrshenli/subscriptions",
+        "organizations_url": "https://api.github.com/users/mrshenli/orgs",
+        "repos_url": "https://api.github.com/users/mrshenli/repos",
+        "events_url": "https://api.github.com/users/mrshenli/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/mrshenli/received_events",
+        "type": "User",
+        "site_admin": false
+      },
+      "labels": [
+        {
+          "id": 443484135,
+          "node_id": "MDU6TGFiZWw0NDM0ODQxMzU=",
+          "url": "https://api.github.com/repos/pytorch/pytorch/labels/high%20priority",
+          "name": "high priority",
+          "color": "F22613",
+          "default": false,
+          "description": null
+        },
+        {
+          "id": 679953883,
+          "node_id": "MDU6TGFiZWw2Nzk5NTM4ODM=",
+          "url": "https://api.github.com/repos/pytorch/pytorch/labels/module:%20distributed",
+          "name": "module: distributed",
+          "color": "f7e101",
+          "default": false,
+          "description": "Related to torch.distributed"
+        },
+        {
+          "id": 1536612774,
+          "node_id": "MDU6TGFiZWwxNTM2NjEyNzc0",
+          "url": "https://api.github.com/repos/pytorch/pytorch/labels/module:%20rpc",
+          "name": "module: rpc",
+          "color": "f7e101",
+          "default": false,
+          "description": "Related to RPC, distributed autograd, RRef, and distributed optimizer"
+        },
+        {
+          "id": 1301397902,
+          "node_id": "MDU6TGFiZWwxMzAxMzk3OTAy",
+          "url": "https://api.github.com/repos/pytorch/pytorch/labels/topic:%20flaky-tests",
+          "name": "topic: flaky-tests",
+          "color": "0e8a16",
+          "default": false,
+          "description": "Problem is a flaky test in CI"
+        },
+        {
+          "id": 466131885,
+          "node_id": "MDU6TGFiZWw0NjYxMzE4ODU=",
+          "url": "https://api.github.com/repos/pytorch/pytorch/labels/triage%20review",
+          "name": "triage review",
+          "color": "cc317c",
+          "default": false,
+          "description": ""
+        },
+        {
+          "id": 1301347167,
+          "node_id": "MDU6TGFiZWwxMzAxMzQ3MTY3",
+          "url": "https://api.github.com/repos/pytorch/pytorch/labels/triaged",
+          "name": "triaged",
+          "color": "006b75",
+          "default": false,
+          "description": "This issue has been looked at a team member, and triaged and prioritized into an appropriate module"
+        }
+      ],
+      "state": "open",
+      "locked": false,
+      "assignee": null,
+      "assignees": [
+
+      ],
+      "milestone": null,
+      "comments": 0,
+      "created_at": "2020-09-22T03:38:22Z",
+      "updated_at": "2020-09-22T03:38:29Z",
+      "closed_at": null,
+      "author_association": "CONTRIBUTOR",
+      "active_lock_reason": null,
+      "body": "https://app.circleci.com/pipelines/github/pytorch/pytorch/216783/workflows/07366a95-f646-498b-868a-51413a9879a0/jobs/7634221/steps\r\n\r\n```\r\nSep 21 12:44:02 ======================================================================\r\nSep 21 12:44:02 ERROR [2.142s]: test_backward_ddp_outside_uneven_inputs (__main__.ProcessGroupDdpUnderDistAutogradTestWithSpawn)\r\nSep 21 12:44:02 ----------------------------------------------------------------------\r\nSep 21 12:44:02 Traceback (most recent call last):\r\nSep 21 12:44:02   File \"/Users/distiller/workspace/miniconda3/lib/python3.7/site-packages/torch/testing/_internal/common_distributed.py\", line 243, in wrapper\r\nSep 21 12:44:02     self._join_processes(fn)\r\nSep 21 12:44:02   File \"/Users/distiller/workspace/miniconda3/lib/python3.7/site-packages/torch/testing/_internal/common_distributed.py\", line 360, in _join_processes\r\nSep 21 12:44:02     self._check_return_codes(elapsed_time)\r\nSep 21 12:44:02   File \"/Users/distiller/workspace/miniconda3/lib/python3.7/site-packages/torch/testing/_internal/common_distributed.py\", line 396, in _check_return_codes\r\nSep 21 12:44:02     raise RuntimeError(error)\r\nSep 21 12:44:02 RuntimeError: Processes 5 exited with error code 10\r\n```\r\n\r\n```\r\nSep 21 12:35:07   test_backward_ddp_outside_uneven_inputs (__main__.ProcessGroupDdpUnderDistAutogradTestWithSpawn) ... 2020-09-21 12:35:07,377 ddp_under_dist_autograd_test.py:342 INFO p:process 2 t:MainThread: Running the trainer #2...\r\nSep 21 12:35:07 2020-09-21 12:35:07,377 ddp_under_dist_autograd_test.py:328 INFO p:process 4 t:MainThread: The remote worker is running.\r\nSep 21 12:35:07 2020-09-21 12:35:07,377 ddp_under_dist_autograd_test.py:344 INFO p:process 2 t:MainThread: Initing trainer process group by trainer #2 with ranks [0, 1, 2, 3]\r\nSep 21 12:35:07 2020-09-21 12:35:07,377 ddp_under_dist_autograd_test.py:342 INFO p:process 1 t:MainThread: Running the trainer #1...\r\nSep 21 12:35:07 2020-09-21 12:35:07,377 ddp_under_dist_autograd_test.py:344 INFO p:process 1 t:MainThread: Initing trainer process group by trainer #1 with ranks [0, 1, 2, 3]\r\nSep 21 12:35:07 2020-09-21 12:35:07,377 ddp_under_dist_autograd_test.py:342 INFO p:process 0 t:MainThread: Running the trainer #0...\r\nSep 21 12:35:07 2020-09-21 12:35:07,378 ddp_under_dist_autograd_test.py:344 INFO p:process 0 t:MainThread: Initing trainer process group by trainer #0 with ranks [0, 1, 2, 3]\r\nSep 21 12:35:07 2020-09-21 12:35:07,378 ddp_under_dist_autograd_test.py:342 INFO p:process 3 t:MainThread: Running the trainer #3...\r\nSep 21 12:35:07 2020-09-21 12:35:07,378 ddp_under_dist_autograd_test.py:362 INFO p:process 5 t:MainThread: Running the master process...\r\nSep 21 12:35:07 2020-09-21 12:35:07,379 ddp_under_dist_autograd_test.py:344 INFO p:process 3 t:MainThread: Initing trainer process group by trainer #3 with ranks [0, 1, 2, 3]\r\nSep 21 12:35:07 2020-09-21 12:35:07,382 ddp_under_dist_autograd_test.py:353 INFO p:process 3 t:MainThread: Waiting for shutdown signal on trainer #3...\r\nSep 21 12:35:07 2020-09-21 12:35:07,382 ddp_under_dist_autograd_test.py:375 INFO p:process 5 t:MainThread: Created remote rrefs on master\r\nSep 21 12:35:07 2020-09-21 12:35:07,383 ddp_under_dist_autograd_test.py:389 INFO p:process 5 t:MainThread: Running DDP + RPC test with simulating uneven inputs across trainers.\r\nSep 21 12:35:07 2020-09-21 12:35:07,412 ddp_under_dist_autograd_test.py:93 INFO p:process 4 t:Dummy-1: Initing RemoteEM with 2 3\r\nSep 21 12:35:07 2020-09-21 12:35:07,413 ddp_under_dist_autograd_test.py:119 INFO p:process 4 t:Dummy-2: Initing RemoteNet with 5 3\r\nSep 21 12:35:07 2020-09-21 12:35:07,416 ddp_under_dist_autograd_test.py:353 INFO p:process 1 t:MainThread: Waiting for shutdown signal on trainer #1...\r\nSep 21 12:35:07 2020-09-21 12:35:07,416 ddp_under_dist_autograd_test.py:353 INFO p:process 2 t:MainThread: Waiting for shutdown signal on trainer #2...\r\nSep 21 12:35:07 2020-09-21 12:35:07,416 ddp_under_dist_autograd_test.py:353 INFO p:process 0 t:MainThread: Waiting for shutdown signal on trainer #0...\r\nSep 21 12:35:07 ERROR:root:Caught exception: \r\nSep 21 12:35:07 Traceback (most recent call last):\r\nSep 21 12:35:07   File \"/Users/distiller/workspace/miniconda3/lib/python3.7/site-packages/torch/testing/_internal/common_distributed.py\", line 246, in wrapper\r\nSep 21 12:35:07     fn()\r\nSep 21 12:35:07   File \"/Users/distiller/workspace/miniconda3/lib/python3.7/site-packages/torch/testing/_internal/dist_utils.py\", line 70, in new_test_method\r\nSep 21 12:35:07     return_value = old_test_method(self, *arg, **kwargs)\r\nSep 21 12:35:07   File \"/Users/distiller/workspace/miniconda3/lib/python3.7/site-packages/torch/testing/_internal/distributed/ddp_under_dist_autograd_test.py\", line 476, in test_backward_ddp_outside_uneven_inputs\r\nSep 21 12:35:07     self._do_test(DdpMode.OUTSIDE, simulate_uneven_inputs=True)\r\nSep 21 12:35:07   File \"/Users/distiller/workspace/miniconda3/lib/python3.7/site-packages/torch/testing/_internal/distributed/ddp_under_dist_autograd_test.py\", line 455, in _do_test\r\nSep 21 12:35:07     self._master_process(ddp_mode, simulate_uneven_inputs)\r\nSep 21 12:35:07   File \"/Users/distiller/workspace/miniconda3/lib/python3.7/site-packages/torch/testing/_internal/distributed/ddp_under_dist_autograd_test.py\", line 377, in _master_process\r\nSep 21 12:35:07     ddp_mode, simulate_uneven_inputs, remote_em_rref, remote_net_rref\r\nSep 21 12:35:07   File \"/Users/distiller/workspace/miniconda3/lib/python3.7/site-packages/torch/testing/_internal/distributed/ddp_under_dist_autograd_test.py\", line 423, in do_test_on_master\r\nSep 21 12:35:07     ddp_grads, non_ddp_grads = future.wait()\r\nSep 21 12:35:07   File \"/Users/distiller/workspace/miniconda3/lib/python3.7/site-packages/torch/distributed/rpc/internal.py\", line 177, in _handle_exception\r\nSep 21 12:35:07     raise result.exception_type(result.msg)\r\nSep 21 12:35:07 AssertionError: On WorkerInfo(id=0, name=worker0):\r\nSep 21 12:35:07 AssertionError('On WorkerInfo(id=0, name=worker0):\\nAssertionError(\\'Default process group is not initialized\\')\\nTraceback (most recent call last):\\n  File \"/Users/distiller/workspace/miniconda3/lib/python3.7/site-packages/torch/distributed/rpc/internal.py\", line 164, in _run_function\\n    result = python_udf.func(*python_udf.args, **python_udf.kwargs)\\n  File \"/Users/distiller/workspace/miniconda3/lib/python3.7/site-packages/torch/testing/_internal/distributed/ddp_under_dist_autograd_test.py\", line 186, in __init__\\n    if ddp_mode in (DdpMode.INSIDE, DdpMode.OUTSIDE)\\n  File \"/Users/distiller/workspace/miniconda3/lib/python3.7/site-packages/torch/distributed/distributed_c10d.py\", line 1979, in new_group\\n    _check_default_pg()\\n  File \"/Users/distiller/workspace/miniconda3/lib/python3.7/site-packages/torch/distributed/distributed_c10d.py\", line 211, in _check_default_pg\\n    \"Default process group is not initialized\"\\nAssertionError: Default process group is not initialized\\n')\r\nSep 21 12:35:07 Traceback (most recent call last):\r\nSep 21 12:35:07   File \"/Users/distiller/workspace/miniconda3/lib/python3.7/site-packages/torch/distributed/rpc/internal.py\", line 164, in _run_function\r\nSep 21 12:35:07     result = python_udf.func(*python_udf.args, **python_udf.kwargs)\r\nSep 21 12:35:07   File \"/Users/distiller/workspace/miniconda3/lib/python3.7/site-packages/torch/testing/_internal/distributed/ddp_under_dist_autograd_test.py\", line 78, in _call_method\r\nSep 21 12:35:07     return method(rref.local_value(), *args, **kwargs)\r\nSep 21 12:35:07   File \"/Users/distiller/workspace/miniconda3/lib/python3.7/site-packages/torch/distributed/rpc/internal.py\", line 177, in _handle_exception\r\nSep 21 12:35:07     raise result.exception_type(result.msg)\r\nSep 21 12:35:07 AssertionError: On WorkerInfo(id=0, name=worker0):\r\nSep 21 12:35:07 AssertionError('Default process group is not initialized')\r\nSep 21 12:35:07 Traceback (most recent call last):\r\nSep 21 12:35:07   File \"/Users/distiller/workspace/miniconda3/lib/python3.7/site-packages/torch/distributed/rpc/internal.py\", line 164, in _run_function\r\nSep 21 12:35:07     result = python_udf.func(*python_udf.args, **python_udf.kwargs)\r\nSep 21 12:35:07   File \"/Users/distiller/workspace/miniconda3/lib/python3.7/site-packages/torch/testing/_internal/distributed/ddp_under_dist_autograd_test.py\", line 186, in __init__\r\nSep 21 12:35:07     if ddp_mode in (DdpMode.INSIDE, DdpMode.OUTSIDE)\r\nSep 21 12:35:07   File \"/Users/distiller/workspace/miniconda3/lib/python3.7/site-packages/torch/distributed/distributed_c10d.py\", line 1979, in new_group\r\nSep 21 12:35:07     _check_default_pg()\r\nSep 21 12:35:07   File \"/Users/distiller/workspace/miniconda3/lib/python3.7/site-packages/torch/distributed/distributed_c10d.py\", line 211, in _check_default_pg\r\nSep 21 12:35:07     \"Default process group is not initialized\"\r\nSep 21 12:35:07 AssertionError: Default process group is not initialized\r\n```\n\ncc @ezyang @gchanan @zou3519 @pietern @mrshenli @pritamdamania87 @zhaojuanmao @satgera @rohan-varma @gqchen @aazzolini @xush6528 @osalpekar @jiayisuse @agolynski @jjlilley",
       "performed_via_github_app": null,
       "score": 0.0
     },
@@ -488,7 +592,7 @@
       "id": 643908803,
       "node_id": "MDU6SXNzdWU2NDM5MDg4MDM=",
       "number": 40434,
-      "title": "DISABLED test_backward_ddp_inside (__main__.TestDdpUnderDistAutogradWrapper)",
+      "title": "DISABLED test_backward_ddp_inside (__main__.ProcessGroupDdpUnderDistAutogradTestWithSpawn)",
       "user": {
         "login": "mrshenli",
         "id": 16999635,
@@ -612,7 +716,7 @@
       "milestone": null,
       "comments": 3,
       "created_at": "2020-06-23T14:51:40Z",
-      "updated_at": "2020-09-21T20:16:50Z",
+      "updated_at": "2020-09-22T03:36:29Z",
       "closed_at": null,
       "author_association": "CONTRIBUTOR",
       "active_lock_reason": null,
@@ -630,7 +734,7 @@
       "id": 643229664,
       "node_id": "MDU6SXNzdWU2NDMyMjk2NjQ=",
       "number": 40378,
-      "title": "DISABLED test_backward_ddp_outside (__main__.TestDdpUnderDistAutogradWrapper)",
+      "title": "DISABLED test_backward_ddp_outside (__main__.ProcessGroupDdpUnderDistAutogradTestWithSpawn)",
       "user": {
         "login": "rohan-varma",
         "id": 8039770,
@@ -745,7 +849,7 @@
       "milestone": null,
       "comments": 2,
       "created_at": "2020-06-22T17:03:46Z",
-      "updated_at": "2020-07-31T21:29:43Z",
+      "updated_at": "2020-09-22T03:35:40Z",
       "closed_at": null,
       "author_association": "MEMBER",
       "active_lock_reason": null,
