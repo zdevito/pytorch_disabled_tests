@@ -245,15 +245,6 @@
           "description": null
         },
         {
-          "id": 679953983,
-          "node_id": "MDU6TGFiZWw2Nzk5NTM5ODM=",
-          "url": "https://api.github.com/repos/pytorch/pytorch/labels/jit",
-          "name": "jit",
-          "color": "c5def5",
-          "default": false,
-          "description": null
-        },
-        {
           "id": 1536612774,
           "node_id": "MDU6TGFiZWwxNTM2NjEyNzc0",
           "url": "https://api.github.com/repos/pytorch/pytorch/labels/module:%20rpc",
@@ -261,6 +252,15 @@
           "color": "f7e101",
           "default": false,
           "description": "Related to RPC, distributed autograd, RRef, and distributed optimizer"
+        },
+        {
+          "id": 679953983,
+          "node_id": "MDU6TGFiZWw2Nzk5NTM5ODM=",
+          "url": "https://api.github.com/repos/pytorch/pytorch/labels/oncall:%20jit",
+          "name": "oncall: jit",
+          "color": "c5def5",
+          "default": false,
+          "description": ""
         },
         {
           "id": 1301397902,
@@ -703,8 +703,8 @@
         {
           "id": 1031340614,
           "node_id": "MDU6TGFiZWwxMDMxMzQwNjE0",
-          "url": "https://api.github.com/repos/pytorch/pytorch/labels/quantization",
-          "name": "quantization",
+          "url": "https://api.github.com/repos/pytorch/pytorch/labels/oncall:%20quantization",
+          "name": "oncall: quantization",
           "color": "f7e101",
           "default": false,
           "description": "Quantization support in PyTorch"
@@ -818,8 +818,8 @@
         {
           "id": 1031340614,
           "node_id": "MDU6TGFiZWwxMDMxMzQwNjE0",
-          "url": "https://api.github.com/repos/pytorch/pytorch/labels/quantization",
-          "name": "quantization",
+          "url": "https://api.github.com/repos/pytorch/pytorch/labels/oncall:%20quantization",
+          "name": "oncall: quantization",
           "color": "f7e101",
           "default": false,
           "description": "Quantization support in PyTorch"
@@ -1019,11 +1019,11 @@
         {
           "id": 679953983,
           "node_id": "MDU6TGFiZWw2Nzk5NTM5ODM=",
-          "url": "https://api.github.com/repos/pytorch/pytorch/labels/jit",
-          "name": "jit",
+          "url": "https://api.github.com/repos/pytorch/pytorch/labels/oncall:%20jit",
+          "name": "oncall: jit",
           "color": "c5def5",
           "default": false,
-          "description": null
+          "description": ""
         },
         {
           "id": 1301397902,
@@ -1211,11 +1211,11 @@
         {
           "id": 679953883,
           "node_id": "MDU6TGFiZWw2Nzk5NTM4ODM=",
-          "url": "https://api.github.com/repos/pytorch/pytorch/labels/module:%20distributed",
-          "name": "module: distributed",
+          "url": "https://api.github.com/repos/pytorch/pytorch/labels/oncall:%20distributed",
+          "name": "oncall: distributed",
           "color": "f7e101",
           "default": false,
-          "description": "Related to torch.distributed"
+          "description": "Add this issue/PR to distributed oncall triage queue"
         },
         {
           "id": 1301397902,
