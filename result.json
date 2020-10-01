@@ -260,7 +260,7 @@
           "name": "oncall: jit",
           "color": "c5def5",
           "default": false,
-          "description": ""
+          "description": "Add this issue/PR to JIT oncall triage queue"
         },
         {
           "id": 1301397902,
@@ -1023,7 +1023,7 @@
           "name": "oncall: jit",
           "color": "c5def5",
           "default": false,
-          "description": ""
+          "description": "Add this issue/PR to JIT oncall triage queue"
         },
         {
           "id": 1301397902,
