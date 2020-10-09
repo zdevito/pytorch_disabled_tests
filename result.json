@@ -3,6 +3,92 @@
   "incomplete_results": false,
   "items": [
     {
+      "url": "https://api.github.com/repos/pytorch/pytorch/issues/38491",
+      "repository_url": "https://api.github.com/repos/pytorch/pytorch",
+      "labels_url": "https://api.github.com/repos/pytorch/pytorch/issues/38491/labels{/name}",
+      "comments_url": "https://api.github.com/repos/pytorch/pytorch/issues/38491/comments",
+      "events_url": "https://api.github.com/repos/pytorch/pytorch/issues/38491/events",
+      "html_url": "https://github.com/pytorch/pytorch/issues/38491",
+      "id": 618421559,
+      "node_id": "MDU6SXNzdWU2MTg0MjE1NTk=",
+      "number": 38491,
+      "title": "DISABLED ParallelWorkersTest.testParallelWorkersShutdownFun ",
+      "user": {
+        "login": "mrshenli",
+        "id": 16999635,
+        "node_id": "MDQ6VXNlcjE2OTk5NjM1",
+        "avatar_url": "https://avatars2.githubusercontent.com/u/16999635?v=4",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/mrshenli",
+        "html_url": "https://github.com/mrshenli",
+        "followers_url": "https://api.github.com/users/mrshenli/followers",
+        "following_url": "https://api.github.com/users/mrshenli/following{/other_user}",
+        "gists_url": "https://api.github.com/users/mrshenli/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/mrshenli/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/mrshenli/subscriptions",
+        "organizations_url": "https://api.github.com/users/mrshenli/orgs",
+        "repos_url": "https://api.github.com/users/mrshenli/repos",
+        "events_url": "https://api.github.com/users/mrshenli/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/mrshenli/received_events",
+        "type": "User",
+        "site_admin": false
+      },
+      "labels": [
+        {
+          "id": 443484135,
+          "node_id": "MDU6TGFiZWw0NDM0ODQxMzU=",
+          "url": "https://api.github.com/repos/pytorch/pytorch/labels/high%20priority",
+          "name": "high priority",
+          "color": "F22613",
+          "default": false,
+          "description": null
+        },
+        {
+          "id": 1301397902,
+          "node_id": "MDU6TGFiZWwxMzAxMzk3OTAy",
+          "url": "https://api.github.com/repos/pytorch/pytorch/labels/topic:%20flaky-tests",
+          "name": "topic: flaky-tests",
+          "color": "0e8a16",
+          "default": false,
+          "description": "Problem is a flaky test in CI"
+        },
+        {
+          "id": 466131885,
+          "node_id": "MDU6TGFiZWw0NjYxMzE4ODU=",
+          "url": "https://api.github.com/repos/pytorch/pytorch/labels/triage%20review",
+          "name": "triage review",
+          "color": "cc317c",
+          "default": false,
+          "description": ""
+        },
+        {
+          "id": 1301347167,
+          "node_id": "MDU6TGFiZWwxMzAxMzQ3MTY3",
+          "url": "https://api.github.com/repos/pytorch/pytorch/labels/triaged",
+          "name": "triaged",
+          "color": "006b75",
+          "default": false,
+          "description": "This issue has been looked at a team member, and triaged and prioritized into an appropriate module"
+        }
+      ],
+      "state": "open",
+      "locked": false,
+      "assignee": null,
+      "assignees": [
+
+      ],
+      "milestone": null,
+      "comments": 0,
+      "created_at": "2020-05-14T17:45:34Z",
+      "updated_at": "2020-09-03T23:40:50Z",
+      "closed_at": null,
+      "author_association": "CONTRIBUTOR",
+      "active_lock_reason": null,
+      "body": "https://app.circleci.com/pipelines/github/pytorch/pytorch/169923/workflows/d66ca278-d55c-462b-96cb-55623ce713f7/jobs/5472514/steps\r\n\r\n```\r\nMay 14 07:37:27 =================================== FAILURES ===================================\r\nMay 14 07:37:27 ______________ ParallelWorkersTest.testParallelWorkersShutdownFun ______________\r\nMay 14 07:37:27 \r\nMay 14 07:37:27 self = <caffe2.python.parallel_workers_test.ParallelWorkersTest testMethod=testParallelWorkersShutdownFun>\r\nMay 14 07:37:27 \r\nMay 14 07:37:27     def testParallelWorkersShutdownFun(self):\r\nMay 14 07:37:27         workspace.ResetWorkspace()\r\nMay 14 07:37:27     \r\nMay 14 07:37:27         queue = create_queue()\r\nMay 14 07:37:27         dummy_worker = create_worker(queue, lambda worker_id: str(worker_id))\r\nMay 14 07:37:27         workspace.FeedBlob('data', 'not shutdown')\r\nMay 14 07:37:27     \r\nMay 14 07:37:27         def shutdown_fun():\r\nMay 14 07:37:27             workspace.FeedBlob('data', 'shutdown')\r\nMay 14 07:37:27     \r\nMay 14 07:37:27         worker_coordinator = parallel_workers.init_workers(\r\nMay 14 07:37:27             dummy_worker, shutdown_fun=shutdown_fun\r\nMay 14 07:37:27         )\r\nMay 14 07:37:27         worker_coordinator.start()\r\nMay 14 07:37:27     \r\nMay 14 07:37:27 >       self.assertTrue(worker_coordinator.stop())\r\nMay 14 07:37:27 E       AssertionError: False is not true\r\nMay 14 07:37:27 \r\nMay 14 07:37:27 ../.local/lib/python3.6/site-packages/caffe2/python/parallel_workers_test.py:116: AssertionError\r\nMay 14 07:37:27 ----------------------------- Captured stdout call -----------------------------\r\n```\n\ncc @ezyang @gchanan @zou3519 @houseroad @spandantiwari @lara-hdr @BowenBao @neginraoof",
+      "performed_via_github_app": null,
+      "score": 0.0
+    },
+    {
       "url": "https://api.github.com/repos/pytorch/pytorch/issues/45846",
       "repository_url": "https://api.github.com/repos/pytorch/pytorch",
       "labels_url": "https://api.github.com/repos/pytorch/pytorch/issues/45846/labels{/name}",
@@ -112,92 +198,6 @@
       "author_association": "CONTRIBUTOR",
       "active_lock_reason": null,
       "body": "```\r\nOct 03 06:32:41 ======================================================================\r\nOct 03 06:32:41 ERROR [1.738s]: test_backward_python_udf_error (__main__.TensorPipeDistAutogradTestWithSpawn)\r\nOct 03 06:32:41 ----------------------------------------------------------------------\r\nOct 03 06:32:41 Traceback (most recent call last):\r\nOct 03 06:32:41   File \"/opt/conda/lib/python3.6/site-packages/torch/testing/_internal/common_distributed.py\", line 256, in wrapper\r\nOct 03 06:32:41     self._join_processes(fn)\r\nOct 03 06:32:41   File \"/opt/conda/lib/python3.6/site-packages/torch/testing/_internal/common_distributed.py\", line 373, in _join_processes\r\nOct 03 06:32:41     self._check_return_codes(elapsed_time)\r\nOct 03 06:32:41   File \"/opt/conda/lib/python3.6/site-packages/torch/testing/_internal/common_distributed.py\", line 409, in _check_return_codes\r\nOct 03 06:32:41     raise RuntimeError(error)\r\nOct 03 06:32:41 RuntimeError: Processes 0 exited with error code 10\r\nOct 03 06:32:41 \r\nOct 03 06:32:41 ----------------------------------------------------------------------\r\n```\r\n\r\n```\r\nOct 03 06:21:23   test_backward_python_udf_error (__main__.TensorPipeDistAutogradTestWithSpawn) ... /opt/conda/lib/python3.6/site-packages/torch/cuda/__init__.py:52: UserWarning: CUDA initialization: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx (Triggered internally at  /var/lib/jenkins/workspace/c10/cuda/CUDAFunctions.cpp:100.)\r\nOct 03 06:21:23   return torch._C._cuda_getDeviceCount() > 0\r\nOct 03 06:21:23 ERROR:root:Caught exception: \r\nOct 03 06:21:23 RuntimeError: Error on Node 2: Error on Node 3: could not compute gradients for some functions\r\nOct 03 06:21:23 \r\nOct 03 06:21:23 During handling of the above exception, another exception occurred:\r\nOct 03 06:21:23 \r\nOct 03 06:21:23 Traceback (most recent call last):\r\nOct 03 06:21:23   File \"/opt/conda/lib/python3.6/site-packages/torch/testing/_internal/common_distributed.py\", line 259, in wrapper\r\nOct 03 06:21:23     fn()\r\nOct 03 06:21:23   File \"/opt/conda/lib/python3.6/site-packages/torch/testing/_internal/dist_utils.py\", line 90, in new_test_method\r\nOct 03 06:21:23     return_value = old_test_method(self, *arg, **kwargs)\r\nOct 03 06:21:23   File \"/opt/conda/lib/python3.6/site-packages/torch/testing/_internal/distributed/rpc/dist_autograd_test.py\", line 1420, in test_backward_python_udf_error\r\nOct 03 06:21:23     dist_autograd.backward(context_id, [loss.sum()])\r\nOct 03 06:21:23   File \"/opt/conda/lib/python3.6/unittest/case.py\", line 217, in __exit__\r\nOct 03 06:21:23     expected_regex.pattern, str(exc_value)))\r\nOct 03 06:21:23   File \"/opt/conda/lib/python3.6/unittest/case.py\", line 135, in _raiseFailure\r\nOct 03 06:21:23     raise self.test_case.failureException(msg)\r\nOct 03 06:21:23 AssertionError: \"Simulate error on backward pass\" does not match \"Error on Node 2: Error on Node 3: could not compute gradients for some functions\"\r\nOct 03 06:21:23 exiting process with exit code: 10\r\nOct 03 06:21:23 /opt/conda/lib/python3.6/site-packages/torch/cuda/__init__.py:52: UserWarning: CUDA initialization: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx (Triggered internally at  /var/lib/jenkins/workspace/c10/cuda/CUDAFunctions.cpp:100.)\r\nOct 03 06:21:23   return torch._C._cuda_getDeviceCount() > 0\r\nOct 03 06:21:23 ERROR:root:Caught exception: \r\nOct 03 06:21:23 RuntimeError: Error on Node 0: Error on Node 1: Error on Node 2: 'NoneType' object is not callable\r\nOct 03 06:21:23 \r\nOct 03 06:21:23 During handling of the above exception, another exception occurred:\r\nOct 03 06:21:23 \r\nOct 03 06:21:23 Traceback (most recent call last):\r\nOct 03 06:21:23   File \"/opt/conda/lib/python3.6/site-packages/torch/testing/_internal/common_distributed.py\", line 259, in wrapper\r\nOct 03 06:21:23     fn()\r\nOct 03 06:21:23   File \"/opt/conda/lib/python3.6/site-packages/torch/testing/_internal/dist_utils.py\", line 90, in new_test_method\r\nOct 03 06:21:23     return_value = old_test_method(self, *arg, **kwargs)\r\nOct 03 06:21:23   File \"/opt/conda/lib/python3.6/site-packages/torch/testing/_internal/distributed/rpc/dist_autograd_test.py\", line 1420, in test_backward_python_udf_error\r\nOct 03 06:21:23     dist_autograd.backward(context_id, [loss.sum()])\r\nOct 03 06:21:23   File \"/opt/conda/lib/python3.6/unittest/case.py\", line 217, in __exit__\r\nOct 03 06:21:23     expected_regex.pattern, str(exc_value)))\r\nOct 03 06:21:23   File \"/opt/conda/lib/python3.6/unittest/case.py\", line 135, in _raiseFailure\r\nOct 03 06:21:23     raise self.test_case.failureException(msg)\r\nOct 03 06:21:23 AssertionError: \"Simulate error on backward pass\" does not match \"Error on Node 0: Error on Node 1: Error on Node 2: 'NoneType' object is not callable\"\r\nOct 03 06:21:23 exiting process with exit code: 10\r\n```\n\ncc @ezyang @gchanan @zou3519 @pietern @mrshenli @pritamdamania87 @zhaojuanmao @satgera @gqchen @aazzolini @rohan-varma @xush6528 @jjlilley @osalpekar @jiayisuse @lw @beauby @agolynski",
-      "performed_via_github_app": null,
-      "score": 0.0
-    },
-    {
-      "url": "https://api.github.com/repos/pytorch/pytorch/issues/38491",
-      "repository_url": "https://api.github.com/repos/pytorch/pytorch",
-      "labels_url": "https://api.github.com/repos/pytorch/pytorch/issues/38491/labels{/name}",
-      "comments_url": "https://api.github.com/repos/pytorch/pytorch/issues/38491/comments",
-      "events_url": "https://api.github.com/repos/pytorch/pytorch/issues/38491/events",
-      "html_url": "https://github.com/pytorch/pytorch/issues/38491",
-      "id": 618421559,
-      "node_id": "MDU6SXNzdWU2MTg0MjE1NTk=",
-      "number": 38491,
-      "title": "DISABLED ParallelWorkersTest.testParallelWorkersShutdownFun ",
-      "user": {
-        "login": "mrshenli",
-        "id": 16999635,
-        "node_id": "MDQ6VXNlcjE2OTk5NjM1",
-        "avatar_url": "https://avatars2.githubusercontent.com/u/16999635?v=4",
-        "gravatar_id": "",
-        "url": "https://api.github.com/users/mrshenli",
-        "html_url": "https://github.com/mrshenli",
-        "followers_url": "https://api.github.com/users/mrshenli/followers",
-        "following_url": "https://api.github.com/users/mrshenli/following{/other_user}",
-        "gists_url": "https://api.github.com/users/mrshenli/gists{/gist_id}",
-        "starred_url": "https://api.github.com/users/mrshenli/starred{/owner}{/repo}",
-        "subscriptions_url": "https://api.github.com/users/mrshenli/subscriptions",
-        "organizations_url": "https://api.github.com/users/mrshenli/orgs",
-        "repos_url": "https://api.github.com/users/mrshenli/repos",
-        "events_url": "https://api.github.com/users/mrshenli/events{/privacy}",
-        "received_events_url": "https://api.github.com/users/mrshenli/received_events",
-        "type": "User",
-        "site_admin": false
-      },
-      "labels": [
-        {
-          "id": 443484135,
-          "node_id": "MDU6TGFiZWw0NDM0ODQxMzU=",
-          "url": "https://api.github.com/repos/pytorch/pytorch/labels/high%20priority",
-          "name": "high priority",
-          "color": "F22613",
-          "default": false,
-          "description": null
-        },
-        {
-          "id": 1301397902,
-          "node_id": "MDU6TGFiZWwxMzAxMzk3OTAy",
-          "url": "https://api.github.com/repos/pytorch/pytorch/labels/topic:%20flaky-tests",
-          "name": "topic: flaky-tests",
-          "color": "0e8a16",
-          "default": false,
-          "description": "Problem is a flaky test in CI"
-        },
-        {
-          "id": 466131885,
-          "node_id": "MDU6TGFiZWw0NjYxMzE4ODU=",
-          "url": "https://api.github.com/repos/pytorch/pytorch/labels/triage%20review",
-          "name": "triage review",
-          "color": "cc317c",
-          "default": false,
-          "description": ""
-        },
-        {
-          "id": 1301347167,
-          "node_id": "MDU6TGFiZWwxMzAxMzQ3MTY3",
-          "url": "https://api.github.com/repos/pytorch/pytorch/labels/triaged",
-          "name": "triaged",
-          "color": "006b75",
-          "default": false,
-          "description": "This issue has been looked at a team member, and triaged and prioritized into an appropriate module"
-        }
-      ],
-      "state": "open",
-      "locked": false,
-      "assignee": null,
-      "assignees": [
-
-      ],
-      "milestone": null,
-      "comments": 0,
-      "created_at": "2020-05-14T17:45:34Z",
-      "updated_at": "2020-09-03T23:40:50Z",
-      "closed_at": null,
-      "author_association": "CONTRIBUTOR",
-      "active_lock_reason": null,
-      "body": "https://app.circleci.com/pipelines/github/pytorch/pytorch/169923/workflows/d66ca278-d55c-462b-96cb-55623ce713f7/jobs/5472514/steps\r\n\r\n```\r\nMay 14 07:37:27 =================================== FAILURES ===================================\r\nMay 14 07:37:27 ______________ ParallelWorkersTest.testParallelWorkersShutdownFun ______________\r\nMay 14 07:37:27 \r\nMay 14 07:37:27 self = <caffe2.python.parallel_workers_test.ParallelWorkersTest testMethod=testParallelWorkersShutdownFun>\r\nMay 14 07:37:27 \r\nMay 14 07:37:27     def testParallelWorkersShutdownFun(self):\r\nMay 14 07:37:27         workspace.ResetWorkspace()\r\nMay 14 07:37:27     \r\nMay 14 07:37:27         queue = create_queue()\r\nMay 14 07:37:27         dummy_worker = create_worker(queue, lambda worker_id: str(worker_id))\r\nMay 14 07:37:27         workspace.FeedBlob('data', 'not shutdown')\r\nMay 14 07:37:27     \r\nMay 14 07:37:27         def shutdown_fun():\r\nMay 14 07:37:27             workspace.FeedBlob('data', 'shutdown')\r\nMay 14 07:37:27     \r\nMay 14 07:37:27         worker_coordinator = parallel_workers.init_workers(\r\nMay 14 07:37:27             dummy_worker, shutdown_fun=shutdown_fun\r\nMay 14 07:37:27         )\r\nMay 14 07:37:27         worker_coordinator.start()\r\nMay 14 07:37:27     \r\nMay 14 07:37:27 >       self.assertTrue(worker_coordinator.stop())\r\nMay 14 07:37:27 E       AssertionError: False is not true\r\nMay 14 07:37:27 \r\nMay 14 07:37:27 ../.local/lib/python3.6/site-packages/caffe2/python/parallel_workers_test.py:116: AssertionError\r\nMay 14 07:37:27 ----------------------------- Captured stdout call -----------------------------\r\n```\n\ncc @ezyang @gchanan @zou3519 @houseroad @spandantiwari @lara-hdr @BowenBao @neginraoof",
       "performed_via_github_app": null,
       "score": 0.0
     },
