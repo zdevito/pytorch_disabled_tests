@@ -1,5 +1,5 @@
 {
-  "total_count": 14,
+  "total_count": 13,
   "incomplete_results": false,
   "items": [
     {
@@ -710,74 +710,6 @@
       "author_association": "CONTRIBUTOR",
       "active_lock_reason": null,
       "body": "https://app.circleci.com/pipelines/github/pytorch/pytorch/179019/workflows/89ef9bec-c13c-4d81-a817-5de5fed67cdf/jobs/5772385/steps https://app.circleci.com/pipelines/github/pytorch/pytorch/179483/workflows/b1faffb1-687b-4000-bae1-37fa2c93d7f5/jobs/5787474/steps\r\n\r\n```\r\nJun 10 18:19:54   test_backward_node_failure (__main__.TensorPipeAgentDistAutogradTestWithSpawn) ... [W tensorpipe_agent.cpp:315] RPC agent for worker3 encountered error when reading incoming request: pipe closed\r\nJun 10 18:19:54 [W tensorpipe_agent.cpp:315] RPC agent for worker1 encountered error when reading incoming request: pipe closed\r\nJun 10 18:19:54 [E container.cpp:248] Could not release Dist Autograd Context on node 0: pipe closed\r\nJun 10 18:19:54 [E container.cpp:248] Could not release Dist Autograd Context on node 2: pipe closed\r\nJun 10 18:19:54 [W tensorpipe_agent.cpp:439] RPC agent for worker0 encountered error when writing outgoing request: EPIPE: broken pipe\r\nJun 10 18:19:54 [W tensorpipe_agent.cpp:439] RPC agent for worker2 encountered error when writing outgoing request: ECONNREFUSED: connection refused\r\nJun 10 18:19:54 [W tensorpipe_agent.cpp:315] RPC agent for worker0 encountered error when reading incoming request: EOF: end of file\r\nJun 10 18:19:54 [W tensorpipe_agent.cpp:439] RPC agent for worker0 encountered error when writing outgoing request: ECONNREFUSED: connection refused\r\nJun 10 18:19:54 [W tensorpipe_agent.cpp:439] RPC agent for worker0 encountered error when writing outgoing request: ECONNREFUSED: connection refused\r\nJun 10 18:19:54 [W tensorpipe_agent.cpp:283] RPC agent for worker0 encountered error when writing outgoing response: EOF: end of file\r\nJun 10 18:19:54 [W tensorpipe_agent.cpp:439] RPC agent for worker0 encountered error when writing outgoing request: EPIPE: broken pipe\r\nJun 10 18:19:54 [W tensorpipe_agent.cpp:439] RPC agent for worker2 encountered error when writing outgoing request: ECONNREFUSED: connection refused\r\nJun 10 18:19:54 [W tensorpipe_agent.cpp:315] RPC agent for worker2 encountered error when reading incoming request: EPIPE: broken pipe\r\nJun 10 18:19:54 [W tensorpipe_agent.cpp:439] RPC agent for worker0 encountered error when writing outgoing request: ECONNREFUSED: connection refused\r\nJun 10 18:19:54 [W tensorpipe_agent.cpp:439] RPC agent for worker0 encountered error when writing outgoing request: EPIPE: broken pipe\r\nJun 10 18:19:54 [E container.cpp:248] Could not release Dist Autograd Context on node 3: ECONNREFUSED: connection refused\r\nJun 10 18:19:54 [E container.cpp:248] Could not release Dist Autograd Context on node 1: EPIPE: broken pipe\r\nJun 10 18:19:54 [W tensorpipe_agent.cpp:283] RPC agent for worker2 encountered error when writing outgoing response: EPIPE: broken pipe\r\nJun 10 18:19:54 [W tensorpipe_agent.cpp:439] RPC agent for worker2 encountered error when writing outgoing request: EPIPE: broken pipe\r\nJun 10 18:19:54 [W tensorpipe_agent.cpp:439] RPC agent for worker2 encountered error when writing outgoing request: EPIPE: broken pipe\r\nJun 10 18:19:54 [W tensorpipe_agent.cpp:439] RPC agent for worker2 encountered error when writing outgoing request: ECONNREFUSED: connection refused\r\nJun 10 18:19:54 [W tensorpipe_agent.cpp:439] RPC agent for worker2 encountered error when writing outgoing request: EPIPE: broken pipe\r\nJun 10 18:21:33 Timing out after 100 seconds and killing subprocesses.\r\nJun 10 18:21:33 ERROR (100.075s)\r\n```\r\n\r\n```\r\nJun 10 18:24:42 ======================================================================\r\nJun 10 18:24:42 ERROR [100.075s]: test_backward_node_failure (__main__.TensorPipeAgentDistAutogradTestWithSpawn)\r\nJun 10 18:24:42 ----------------------------------------------------------------------\r\nJun 10 18:24:42 Traceback (most recent call last):\r\nJun 10 18:24:42   File \"/opt/conda/lib/python3.8/site-packages/torch/testing/_internal/common_distributed.py\", line 204, in wrapper\r\nJun 10 18:24:42     self._join_processes(fn)\r\nJun 10 18:24:42   File \"/opt/conda/lib/python3.8/site-packages/torch/testing/_internal/common_distributed.py\", line 306, in _join_processes\r\nJun 10 18:24:42     self._check_return_codes(elapsed_time)\r\nJun 10 18:24:42   File \"/opt/conda/lib/python3.8/site-packages/torch/testing/_internal/common_distributed.py\", line 344, in _check_return_codes\r\nJun 10 18:24:42     raise RuntimeError('Process {} terminated or timed out after {} seconds'.format(i, elapsed_time))\r\nJun 10 18:24:42 RuntimeError: Process 2 terminated or timed out after 100.05913996696472 seconds\r\nJun 10 18:24:42 \r\nJun 10 18:24:42 ----------------------------------------------------------------------\r\n```\n\ncc @ezyang @gchanan @zou3519 @SsnL @albanD @gqchen @pietern @mrshenli @pritamdamania87 @zhaojuanmao @satgera @aazzolini @rohan-varma @xush6528 @jjlilley @osalpekar @jiayisuse @lw @beauby",
-      "performed_via_github_app": null,
-      "score": 0.0
-    },
-    {
-      "url": "https://api.github.com/repos/pytorch/pytorch/issues/35575",
-      "repository_url": "https://api.github.com/repos/pytorch/pytorch",
-      "labels_url": "https://api.github.com/repos/pytorch/pytorch/issues/35575/labels{/name}",
-      "comments_url": "https://api.github.com/repos/pytorch/pytorch/issues/35575/comments",
-      "events_url": "https://api.github.com/repos/pytorch/pytorch/issues/35575/events",
-      "html_url": "https://github.com/pytorch/pytorch/issues/35575",
-      "id": 589428376,
-      "node_id": "MDU6SXNzdWU1ODk0MjgzNzY=",
-      "number": 35575,
-      "title": "DISABLED test_debug_info (__main__.DistAutogradTestWithSpawn)",
-      "user": {
-        "login": "xush6528",
-        "id": 7608630,
-        "node_id": "MDQ6VXNlcjc2MDg2MzA=",
-        "avatar_url": "https://avatars2.githubusercontent.com/u/7608630?v=4",
-        "gravatar_id": "",
-        "url": "https://api.github.com/users/xush6528",
-        "html_url": "https://github.com/xush6528",
-        "followers_url": "https://api.github.com/users/xush6528/followers",
-        "following_url": "https://api.github.com/users/xush6528/following{/other_user}",
-        "gists_url": "https://api.github.com/users/xush6528/gists{/gist_id}",
-        "starred_url": "https://api.github.com/users/xush6528/starred{/owner}{/repo}",
-        "subscriptions_url": "https://api.github.com/users/xush6528/subscriptions",
-        "organizations_url": "https://api.github.com/users/xush6528/orgs",
-        "repos_url": "https://api.github.com/users/xush6528/repos",
-        "events_url": "https://api.github.com/users/xush6528/events{/privacy}",
-        "received_events_url": "https://api.github.com/users/xush6528/received_events",
-        "type": "User",
-        "site_admin": false
-      },
-      "labels": [
-        {
-          "id": 1536612774,
-          "node_id": "MDU6TGFiZWwxNTM2NjEyNzc0",
-          "url": "https://api.github.com/repos/pytorch/pytorch/labels/module:%20rpc",
-          "name": "module: rpc",
-          "color": "f7e101",
-          "default": false,
-          "description": "Related to RPC, distributed autograd, RRef, and distributed optimizer"
-        },
-        {
-          "id": 1301347167,
-          "node_id": "MDU6TGFiZWwxMzAxMzQ3MTY3",
-          "url": "https://api.github.com/repos/pytorch/pytorch/labels/triaged",
-          "name": "triaged",
-          "color": "006b75",
-          "default": false,
-          "description": "This issue has been looked at a team member, and triaged and prioritized into an appropriate module"
-        }
-      ],
-      "state": "open",
-      "locked": false,
-      "assignee": null,
-      "assignees": [
-
-      ],
-      "milestone": null,
-      "comments": 2,
-      "created_at": "2020-03-27T21:44:25Z",
-      "updated_at": "2020-05-11T01:38:23Z",
-      "closed_at": null,
-      "author_association": "CONTRIBUTOR",
-      "active_lock_reason": null,
-      "body": "Saw 2 instances on test, pytorch_linux_xenial_py3_6_gcc5_4_test\r\n\r\nhttps://app.circleci.com/pipelines/github/pytorch/pytorch/147576/workflows/ee6a83a9-b219-488c-8224-b1d8404ad9f1/jobs/4978490\r\n\r\nhttps://app.circleci.com/pipelines/github/pytorch/pytorch/147327/workflows/b0fd43f7-d18a-4b47-a6c2-8c881c1cac63/jobs/4972041\n\ncc @pietern @mrshenli @pritamdamania87 @zhaojuanmao @satgera @gqchen @aazzolini @rohan-varma @xush6528 @jjlilley @osalpekar",
       "performed_via_github_app": null,
       "score": 0.0
     },
