@@ -46,9 +46,9 @@
         {
           "id": 1301397902,
           "node_id": "MDU6TGFiZWwxMzAxMzk3OTAy",
-          "url": "https://api.github.com/repos/pytorch/pytorch/labels/topic:%20flaky-tests",
-          "name": "topic: flaky-tests",
-          "color": "0e8a16",
+          "url": "https://api.github.com/repos/pytorch/pytorch/labels/module:%20flaky-tests",
+          "name": "module: flaky-tests",
+          "color": "f7e101",
           "default": false,
           "description": "Problem is a flaky test in CI"
         },
@@ -130,6 +130,15 @@
           "description": null
         },
         {
+          "id": 1301397902,
+          "node_id": "MDU6TGFiZWwxMzAxMzk3OTAy",
+          "url": "https://api.github.com/repos/pytorch/pytorch/labels/module:%20flaky-tests",
+          "name": "module: flaky-tests",
+          "color": "f7e101",
+          "default": false,
+          "description": "Problem is a flaky test in CI"
+        },
+        {
           "id": 1536612774,
           "node_id": "MDU6TGFiZWwxNTM2NjEyNzc0",
           "url": "https://api.github.com/repos/pytorch/pytorch/labels/module:%20rpc",
@@ -155,15 +164,6 @@
           "color": "f7e101",
           "default": false,
           "description": "Add this issue/PR to distributed oncall triage queue"
-        },
-        {
-          "id": 1301397902,
-          "node_id": "MDU6TGFiZWwxMzAxMzk3OTAy",
-          "url": "https://api.github.com/repos/pytorch/pytorch/labels/topic:%20flaky-tests",
-          "name": "topic: flaky-tests",
-          "color": "0e8a16",
-          "default": false,
-          "description": "Problem is a flaky test in CI"
         },
         {
           "id": 466131885,
@@ -358,6 +358,15 @@
           "description": null
         },
         {
+          "id": 1301397902,
+          "node_id": "MDU6TGFiZWwxMzAxMzk3OTAy",
+          "url": "https://api.github.com/repos/pytorch/pytorch/labels/module:%20flaky-tests",
+          "name": "module: flaky-tests",
+          "color": "f7e101",
+          "default": false,
+          "description": "Problem is a flaky test in CI"
+        },
+        {
           "id": 1536612774,
           "node_id": "MDU6TGFiZWwxNTM2NjEyNzc0",
           "url": "https://api.github.com/repos/pytorch/pytorch/labels/module:%20rpc",
@@ -374,15 +383,6 @@
           "color": "f7e845",
           "default": false,
           "description": "Related to Tensorpipe RPC Agent"
-        },
-        {
-          "id": 1301397902,
-          "node_id": "MDU6TGFiZWwxMzAxMzk3OTAy",
-          "url": "https://api.github.com/repos/pytorch/pytorch/labels/topic:%20flaky-tests",
-          "name": "topic: flaky-tests",
-          "color": "0e8a16",
-          "default": false,
-          "description": "Problem is a flaky test in CI"
         },
         {
           "id": 466131885,
@@ -500,6 +500,15 @@
           "description": null
         },
         {
+          "id": 1301397902,
+          "node_id": "MDU6TGFiZWwxMzAxMzk3OTAy",
+          "url": "https://api.github.com/repos/pytorch/pytorch/labels/module:%20flaky-tests",
+          "name": "module: flaky-tests",
+          "color": "f7e101",
+          "default": false,
+          "description": "Problem is a flaky test in CI"
+        },
+        {
           "id": 1536612774,
           "node_id": "MDU6TGFiZWwxNTM2NjEyNzc0",
           "url": "https://api.github.com/repos/pytorch/pytorch/labels/module:%20rpc",
@@ -516,15 +525,6 @@
           "color": "c5def5",
           "default": false,
           "description": "Add this issue/PR to JIT oncall triage queue"
-        },
-        {
-          "id": 1301397902,
-          "node_id": "MDU6TGFiZWwxMzAxMzk3OTAy",
-          "url": "https://api.github.com/repos/pytorch/pytorch/labels/topic:%20flaky-tests",
-          "name": "topic: flaky-tests",
-          "color": "0e8a16",
-          "default": false,
-          "description": "Problem is a flaky test in CI"
         },
         {
           "id": 466131885,
@@ -651,6 +651,15 @@
           "description": "Related to torch.autograd, and the autograd engine in general"
         },
         {
+          "id": 1301397902,
+          "node_id": "MDU6TGFiZWwxMzAxMzk3OTAy",
+          "url": "https://api.github.com/repos/pytorch/pytorch/labels/module:%20flaky-tests",
+          "name": "module: flaky-tests",
+          "color": "f7e101",
+          "default": false,
+          "description": "Problem is a flaky test in CI"
+        },
+        {
           "id": 1536612774,
           "node_id": "MDU6TGFiZWwxNTM2NjEyNzc0",
           "url": "https://api.github.com/repos/pytorch/pytorch/labels/module:%20rpc",
@@ -667,15 +676,6 @@
           "color": "f7e845",
           "default": false,
           "description": "Related to Tensorpipe RPC Agent"
-        },
-        {
-          "id": 1301397902,
-          "node_id": "MDU6TGFiZWwxMzAxMzk3OTAy",
-          "url": "https://api.github.com/repos/pytorch/pytorch/labels/topic:%20flaky-tests",
-          "name": "topic: flaky-tests",
-          "color": "0e8a16",
-          "default": false,
-          "description": "Problem is a flaky test in CI"
         },
         {
           "id": 466131885,
@@ -814,6 +814,15 @@
       },
       "labels": [
         {
+          "id": 1301397902,
+          "node_id": "MDU6TGFiZWwxMzAxMzk3OTAy",
+          "url": "https://api.github.com/repos/pytorch/pytorch/labels/module:%20flaky-tests",
+          "name": "module: flaky-tests",
+          "color": "f7e101",
+          "default": false,
+          "description": "Problem is a flaky test in CI"
+        },
+        {
           "id": 1031340614,
           "node_id": "MDU6TGFiZWwxMDMxMzQwNjE0",
           "url": "https://api.github.com/repos/pytorch/pytorch/labels/oncall:%20quantization",
@@ -821,15 +830,6 @@
           "color": "f7e101",
           "default": false,
           "description": "Quantization support in PyTorch"
-        },
-        {
-          "id": 1301397902,
-          "node_id": "MDU6TGFiZWwxMzAxMzk3OTAy",
-          "url": "https://api.github.com/repos/pytorch/pytorch/labels/topic:%20flaky-tests",
-          "name": "topic: flaky-tests",
-          "color": "0e8a16",
-          "default": false,
-          "description": "Problem is a flaky test in CI"
         },
         {
           "id": 1301347167,
@@ -929,6 +929,15 @@
       },
       "labels": [
         {
+          "id": 1301397902,
+          "node_id": "MDU6TGFiZWwxMzAxMzk3OTAy",
+          "url": "https://api.github.com/repos/pytorch/pytorch/labels/module:%20flaky-tests",
+          "name": "module: flaky-tests",
+          "color": "f7e101",
+          "default": false,
+          "description": "Problem is a flaky test in CI"
+        },
+        {
           "id": 1031340614,
           "node_id": "MDU6TGFiZWwxMDMxMzQwNjE0",
           "url": "https://api.github.com/repos/pytorch/pytorch/labels/oncall:%20quantization",
@@ -936,15 +945,6 @@
           "color": "f7e101",
           "default": false,
           "description": "Quantization support in PyTorch"
-        },
-        {
-          "id": 1301397902,
-          "node_id": "MDU6TGFiZWwxMzAxMzk3OTAy",
-          "url": "https://api.github.com/repos/pytorch/pytorch/labels/topic:%20flaky-tests",
-          "name": "topic: flaky-tests",
-          "color": "0e8a16",
-          "default": false,
-          "description": "Problem is a flaky test in CI"
         },
         {
           "id": 466131885,
@@ -1062,6 +1062,15 @@
           "description": null
         },
         {
+          "id": 1301397902,
+          "node_id": "MDU6TGFiZWwxMzAxMzk3OTAy",
+          "url": "https://api.github.com/repos/pytorch/pytorch/labels/module:%20flaky-tests",
+          "name": "module: flaky-tests",
+          "color": "f7e101",
+          "default": false,
+          "description": "Problem is a flaky test in CI"
+        },
+        {
           "id": 679953983,
           "node_id": "MDU6TGFiZWw2Nzk5NTM5ODM=",
           "url": "https://api.github.com/repos/pytorch/pytorch/labels/oncall:%20jit",
@@ -1069,15 +1078,6 @@
           "color": "c5def5",
           "default": false,
           "description": "Add this issue/PR to JIT oncall triage queue"
-        },
-        {
-          "id": 1301397902,
-          "node_id": "MDU6TGFiZWwxMzAxMzk3OTAy",
-          "url": "https://api.github.com/repos/pytorch/pytorch/labels/topic:%20flaky-tests",
-          "name": "topic: flaky-tests",
-          "color": "0e8a16",
-          "default": false,
-          "description": "Problem is a flaky test in CI"
         },
         {
           "id": 1301347167,
@@ -1254,6 +1254,15 @@
           "description": null
         },
         {
+          "id": 1301397902,
+          "node_id": "MDU6TGFiZWwxMzAxMzk3OTAy",
+          "url": "https://api.github.com/repos/pytorch/pytorch/labels/module:%20flaky-tests",
+          "name": "module: flaky-tests",
+          "color": "f7e101",
+          "default": false,
+          "description": "Problem is a flaky test in CI"
+        },
+        {
           "id": 679953883,
           "node_id": "MDU6TGFiZWw2Nzk5NTM4ODM=",
           "url": "https://api.github.com/repos/pytorch/pytorch/labels/oncall:%20distributed",
@@ -1261,15 +1270,6 @@
           "color": "f7e101",
           "default": false,
           "description": "Add this issue/PR to distributed oncall triage queue"
-        },
-        {
-          "id": 1301397902,
-          "node_id": "MDU6TGFiZWwxMzAxMzk3OTAy",
-          "url": "https://api.github.com/repos/pytorch/pytorch/labels/topic:%20flaky-tests",
-          "name": "topic: flaky-tests",
-          "color": "0e8a16",
-          "default": false,
-          "description": "Problem is a flaky test in CI"
         },
         {
           "id": 466131885,
