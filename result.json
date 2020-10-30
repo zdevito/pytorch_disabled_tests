@@ -34,7 +34,24 @@
         "site_admin": false
       },
       "labels": [
-
+        {
+          "id": 1972560798,
+          "node_id": "MDU6TGFiZWwxOTcyNTYwNzk4",
+          "url": "https://api.github.com/repos/pytorch/pytorch/labels/module:%20amp%20(automated%20mixed%20precision)",
+          "name": "module: amp (automated mixed precision)",
+          "color": "f7e101",
+          "default": false,
+          "description": ""
+        },
+        {
+          "id": 1301347167,
+          "node_id": "MDU6TGFiZWwxMzAxMzQ3MTY3",
+          "url": "https://api.github.com/repos/pytorch/pytorch/labels/triaged",
+          "name": "triaged",
+          "color": "006b75",
+          "default": false,
+          "description": "This issue has been looked at a team member, and triaged and prioritized into an appropriate module"
+        }
       ],
       "state": "open",
       "locked": false,
@@ -45,11 +62,11 @@
       "milestone": null,
       "comments": 0,
       "created_at": "2020-10-30T18:38:28Z",
-      "updated_at": "2020-10-30T18:38:28Z",
+      "updated_at": "2020-10-30T19:31:07Z",
       "closed_at": null,
       "author_association": "NONE",
       "active_lock_reason": null,
-      "body": "## 🐛 Bug\r\n\r\nWhen we have optimizers for multiple parts of the networks and one such part has the amp context disabled through     `@torch.cuda.amp.autocast(enabled=False)` the optimizer for that part will error out with `AssertionError: No inf checks were recorded for this optimizer.`\r\n\r\n## To Reproduce\r\n\r\nCreate a VAE and have the code processor (where we split into mean and logvar, do the reparameterization trick, generate the z) set to `@torch.cuda.amp.autocast(enabled=False)` and dedicate an optimizer to it. If you follow the multi optimizer example the code will error out.\r\n\r\n## Expected behavior\r\n\r\nAllow the scaler to check if amp is active for those variables and if not, to not error out in regards to the inf checks.\r\n\r\n## Environment\r\n - PyTorch Version (e.g., 1.0): 1.6\r\n - OS (e.g., Linux): Ubuntu 18.04\r\n - How you installed PyTorch (`conda`, `pip`, source): pip\r\n - Build command you used (if compiling from source): N/A\r\n - Python version: 3.6\r\n - CUDA/cuDNN version: 11/7.6\r\n - GPU models and configuration: Titan V\r\n",
+      "body": "## 🐛 Bug\r\n\r\nWhen we have optimizers for multiple parts of the networks and one such part has the amp context disabled through     `@torch.cuda.amp.autocast(enabled=False)` the optimizer for that part will error out with `AssertionError: No inf checks were recorded for this optimizer.`\r\n\r\n## To Reproduce\r\n\r\nCreate a VAE and have the code processor (where we split into mean and logvar, do the reparameterization trick, generate the z) set to `@torch.cuda.amp.autocast(enabled=False)` and dedicate an optimizer to it. If you follow the multi optimizer example the code will error out.\r\n\r\n## Expected behavior\r\n\r\nAllow the scaler to check if amp is active for those variables and if not, to not error out in regards to the inf checks.\r\n\r\n## Environment\r\n - PyTorch Version (e.g., 1.0): 1.6\r\n - OS (e.g., Linux): Ubuntu 18.04\r\n - How you installed PyTorch (`conda`, `pip`, source): pip\r\n - Build command you used (if compiling from source): N/A\r\n - Python version: 3.6\r\n - CUDA/cuDNN version: 11/7.6\r\n - GPU models and configuration: Titan V\r\n\n\ncc @mcarilli",
       "performed_via_github_app": null,
       "score": 0.0
     },
