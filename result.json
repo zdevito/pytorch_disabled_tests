@@ -71,11 +71,11 @@
       "milestone": null,
       "comments": 0,
       "created_at": "2021-01-04T20:53:23Z",
-      "updated_at": "2021-01-05T22:36:24Z",
+      "updated_at": "2021-01-06T05:28:37Z",
       "closed_at": null,
       "author_association": "CONTRIBUTOR",
       "active_lock_reason": null,
-      "body": "As of #36377, min/max functions were disabled for complex inputs (via dtype checks), however, min/max kernels are still compiled and dispatched for complex, see e.g.  \r\nhttps://github.com/pytorch/pytorch/blob/e44b2b72bd4ccecf9c2f6c18d09c11eff446b5a3/aten/src/ATen/native/cpu/ReduceAllOpsKernel.cpp#L77\r\nThis dispatch should be disabled. \r\n\r\ncc @ezyang @anjali411 @dylanbespalko @mruberry \r\ncc @t-vi, thanks for reporting!",
+      "body": "As of #36377, min/max functions were disabled for complex inputs (via dtype checks), however, min/max kernels are still compiled and dispatched for complex, see e.g.  \r\nhttps://github.com/pytorch/pytorch/blob/e44b2b72bd4ccecf9c2f6c18d09c11eff446b5a3/aten/src/ATen/native/cpu/ReduceAllOpsKernel.cpp#L77\r\nThis dispatch should be disabled, and we should rely on errors produced by dispatch macro to not run those ops on complex, instead of doing redundant dtype checks. \r\n\r\ncc @ezyang @anjali411 @dylanbespalko @mruberry \r\ncc @t-vi, thanks for reporting!",
       "performed_via_github_app": null,
       "score": 0.0
     },
