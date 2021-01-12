@@ -1,7 +1,84 @@
 {
-  "total_count": 19,
+  "total_count": 20,
   "incomplete_results": false,
   "items": [
+    {
+      "url": "https://api.github.com/repos/pytorch/pytorch/issues/50064",
+      "repository_url": "https://api.github.com/repos/pytorch/pytorch",
+      "labels_url": "https://api.github.com/repos/pytorch/pytorch/issues/50064/labels{/name}",
+      "comments_url": "https://api.github.com/repos/pytorch/pytorch/issues/50064/comments",
+      "events_url": "https://api.github.com/repos/pytorch/pytorch/issues/50064/events",
+      "html_url": "https://github.com/pytorch/pytorch/issues/50064",
+      "id": 778358588,
+      "node_id": "MDU6SXNzdWU3NzgzNTg1ODg=",
+      "number": 50064,
+      "title": "Complex dispatch should be disabled on min/max functions",
+      "user": {
+        "login": "ngimel",
+        "id": 15841449,
+        "node_id": "MDQ6VXNlcjE1ODQxNDQ5",
+        "avatar_url": "https://avatars3.githubusercontent.com/u/15841449?v=4",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/ngimel",
+        "html_url": "https://github.com/ngimel",
+        "followers_url": "https://api.github.com/users/ngimel/followers",
+        "following_url": "https://api.github.com/users/ngimel/following{/other_user}",
+        "gists_url": "https://api.github.com/users/ngimel/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/ngimel/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/ngimel/subscriptions",
+        "organizations_url": "https://api.github.com/users/ngimel/orgs",
+        "repos_url": "https://api.github.com/users/ngimel/repos",
+        "events_url": "https://api.github.com/users/ngimel/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/ngimel/received_events",
+        "type": "User",
+        "site_admin": false
+      },
+      "labels": [
+        {
+          "id": 1150417147,
+          "node_id": "MDU6TGFiZWwxMTUwNDE3MTQ3",
+          "url": "https://api.github.com/repos/pytorch/pytorch/labels/good%20first%20issue",
+          "name": "good first issue",
+          "color": "34c182",
+          "default": true,
+          "description": ""
+        },
+        {
+          "id": 1301421658,
+          "node_id": "MDU6TGFiZWwxMzAxNDIxNjU4",
+          "url": "https://api.github.com/repos/pytorch/pytorch/labels/module:%20complex",
+          "name": "module: complex",
+          "color": "f7e101",
+          "default": false,
+          "description": "Related to complex number support in PyTorch"
+        },
+        {
+          "id": 1301347167,
+          "node_id": "MDU6TGFiZWwxMzAxMzQ3MTY3",
+          "url": "https://api.github.com/repos/pytorch/pytorch/labels/triaged",
+          "name": "triaged",
+          "color": "006b75",
+          "default": false,
+          "description": "This issue has been looked at a team member, and triaged and prioritized into an appropriate module"
+        }
+      ],
+      "state": "open",
+      "locked": false,
+      "assignee": null,
+      "assignees": [
+
+      ],
+      "milestone": null,
+      "comments": 3,
+      "created_at": "2021-01-04T20:53:23Z",
+      "updated_at": "2021-01-12T17:46:17Z",
+      "closed_at": null,
+      "author_association": "CONTRIBUTOR",
+      "active_lock_reason": null,
+      "body": "As of #36377, min/max functions were disabled for complex inputs (via dtype checks), however, min/max kernels are still compiled and dispatched for complex, see e.g.  \r\nhttps://github.com/pytorch/pytorch/blob/e44b2b72bd4ccecf9c2f6c18d09c11eff446b5a3/aten/src/ATen/native/cpu/ReduceAllOpsKernel.cpp#L77\r\nThis dispatch should be disabled, and we should rely on errors produced by dispatch macro to not run those ops on complex, instead of doing redundant dtype checks. \r\n\r\ncc @ezyang @anjali411 @dylanbespalko @mruberry \r\ncc @t-vi, thanks for reporting!",
+      "performed_via_github_app": null,
+      "score": 0.0
+    },
     {
       "url": "https://api.github.com/repos/pytorch/pytorch/issues/49635",
       "repository_url": "https://api.github.com/repos/pytorch/pytorch",
