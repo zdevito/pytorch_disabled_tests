@@ -1,5 +1,5 @@
 {
-  "total_count": 28,
+  "total_count": 29,
   "incomplete_results": false,
   "items": [
     {
@@ -209,6 +209,57 @@
       "author_association": "CONTRIBUTOR",
       "active_lock_reason": null,
       "body": "https://app.circleci.com/pipelines/github/pytorch/pytorch/169923/workflows/d66ca278-d55c-462b-96cb-55623ce713f7/jobs/5472514/steps\r\n\r\n```\r\nMay 14 07:37:27 =================================== FAILURES ===================================\r\nMay 14 07:37:27 ______________ ParallelWorkersTest.testParallelWorkersShutdownFun ______________\r\nMay 14 07:37:27 \r\nMay 14 07:37:27 self = <caffe2.python.parallel_workers_test.ParallelWorkersTest testMethod=testParallelWorkersShutdownFun>\r\nMay 14 07:37:27 \r\nMay 14 07:37:27     def testParallelWorkersShutdownFun(self):\r\nMay 14 07:37:27         workspace.ResetWorkspace()\r\nMay 14 07:37:27     \r\nMay 14 07:37:27         queue = create_queue()\r\nMay 14 07:37:27         dummy_worker = create_worker(queue, lambda worker_id: str(worker_id))\r\nMay 14 07:37:27         workspace.FeedBlob('data', 'not shutdown')\r\nMay 14 07:37:27     \r\nMay 14 07:37:27         def shutdown_fun():\r\nMay 14 07:37:27             workspace.FeedBlob('data', 'shutdown')\r\nMay 14 07:37:27     \r\nMay 14 07:37:27         worker_coordinator = parallel_workers.init_workers(\r\nMay 14 07:37:27             dummy_worker, shutdown_fun=shutdown_fun\r\nMay 14 07:37:27         )\r\nMay 14 07:37:27         worker_coordinator.start()\r\nMay 14 07:37:27     \r\nMay 14 07:37:27 >       self.assertTrue(worker_coordinator.stop())\r\nMay 14 07:37:27 E       AssertionError: False is not true\r\nMay 14 07:37:27 \r\nMay 14 07:37:27 ../.local/lib/python3.6/site-packages/caffe2/python/parallel_workers_test.py:116: AssertionError\r\nMay 14 07:37:27 ----------------------------- Captured stdout call -----------------------------\r\n```\n\ncc @ezyang @gchanan @zou3519 @bdhirsh @jbschlosser @pietern @mrshenli @pritamdamania87 @zhaojuanmao @satgera @rohan-varma @gqchen @aazzolini @osalpekar @jiayisuse @agolynski @SciPioneer @H-Huang @mrzzd @cbalioglu @houseroad @spandantiwari @lara-hdr @BowenBao @neginraoof",
+      "performed_via_github_app": null,
+      "score": 0.0
+    },
+    {
+      "url": "https://api.github.com/repos/pytorch/pytorch/issues/53184",
+      "repository_url": "https://api.github.com/repos/pytorch/pytorch",
+      "labels_url": "https://api.github.com/repos/pytorch/pytorch/issues/53184/labels{/name}",
+      "comments_url": "https://api.github.com/repos/pytorch/pytorch/issues/53184/comments",
+      "events_url": "https://api.github.com/repos/pytorch/pytorch/issues/53184/events",
+      "html_url": "https://github.com/pytorch/pytorch/issues/53184",
+      "id": 821182396,
+      "node_id": "MDU6SXNzdWU4MjExODIzOTY=",
+      "number": 53184,
+      "title": "DISABLED test_qr_square_many_batched_complex_cuda (__main__.TestAutogradDeviceTypeCUDA)",
+      "user": {
+        "login": "ezyang",
+        "id": 13564,
+        "node_id": "MDQ6VXNlcjEzNTY0",
+        "avatar_url": "https://avatars.githubusercontent.com/u/13564?v=4",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/ezyang",
+        "html_url": "https://github.com/ezyang",
+        "followers_url": "https://api.github.com/users/ezyang/followers",
+        "following_url": "https://api.github.com/users/ezyang/following{/other_user}",
+        "gists_url": "https://api.github.com/users/ezyang/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/ezyang/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/ezyang/subscriptions",
+        "organizations_url": "https://api.github.com/users/ezyang/orgs",
+        "repos_url": "https://api.github.com/users/ezyang/repos",
+        "events_url": "https://api.github.com/users/ezyang/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/ezyang/received_events",
+        "type": "User",
+        "site_admin": false
+      },
+      "labels": [
+
+      ],
+      "state": "open",
+      "locked": false,
+      "assignee": null,
+      "assignees": [
+
+      ],
+      "milestone": null,
+      "comments": 0,
+      "created_at": "2021-03-03T14:52:22Z",
+      "updated_at": "2021-03-03T14:52:22Z",
+      "closed_at": null,
+      "author_association": "CONTRIBUTOR",
+      "active_lock_reason": null,
+      "body": "see also #51552",
       "performed_via_github_app": null,
       "score": 0.0
     },
