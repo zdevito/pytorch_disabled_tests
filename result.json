@@ -1,5 +1,5 @@
 {
-  "total_count": 30,
+  "total_count": 31,
   "incomplete_results": false,
   "items": [
     {
@@ -34,6 +34,74 @@
         "site_admin": false
       },
       "labels": [
+        {
+          "id": 443484135,
+          "node_id": "MDU6TGFiZWw0NDM0ODQxMzU=",
+          "url": "https://api.github.com/repos/pytorch/pytorch/labels/high%20priority",
+          "name": "high priority",
+          "color": "F22613",
+          "default": false,
+          "description": null
+        },
+        {
+          "id": 466131885,
+          "node_id": "MDU6TGFiZWw0NjYxMzE4ODU=",
+          "url": "https://api.github.com/repos/pytorch/pytorch/labels/triage%20review",
+          "name": "triage review",
+          "color": "cc317c",
+          "default": false,
+          "description": ""
+        }
+      ],
+      "state": "open",
+      "locked": false,
+      "assignee": null,
+      "assignees": [
+
+      ],
+      "milestone": null,
+      "comments": 1,
+      "created_at": "2021-03-04T16:12:50Z",
+      "updated_at": "2021-03-04T17:25:09Z",
+      "closed_at": null,
+      "author_association": "CONTRIBUTOR",
+      "active_lock_reason": null,
+      "body": "see also https://github.com/pytorch/pytorch/issues/53267\n\ncc @ezyang @gchanan @zou3519 @bdhirsh @jbschlosser @anjali411",
+      "performed_via_github_app": null,
+      "score": 0.0
+    },
+    {
+      "url": "https://api.github.com/repos/pytorch/pytorch/issues/53275",
+      "repository_url": "https://api.github.com/repos/pytorch/pytorch",
+      "labels_url": "https://api.github.com/repos/pytorch/pytorch/issues/53275/labels{/name}",
+      "comments_url": "https://api.github.com/repos/pytorch/pytorch/issues/53275/comments",
+      "events_url": "https://api.github.com/repos/pytorch/pytorch/issues/53275/events",
+      "html_url": "https://github.com/pytorch/pytorch/issues/53275",
+      "id": 822342065,
+      "node_id": "MDU6SXNzdWU4MjIzNDIwNjU=",
+      "number": 53275,
+      "title": "DISABLED test_cuda_assert_async (__main__.TestCuda) ",
+      "user": {
+        "login": "ezyang",
+        "id": 13564,
+        "node_id": "MDQ6VXNlcjEzNTY0",
+        "avatar_url": "https://avatars.githubusercontent.com/u/13564?v=4",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/ezyang",
+        "html_url": "https://github.com/ezyang",
+        "followers_url": "https://api.github.com/users/ezyang/followers",
+        "following_url": "https://api.github.com/users/ezyang/following{/other_user}",
+        "gists_url": "https://api.github.com/users/ezyang/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/ezyang/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/ezyang/subscriptions",
+        "organizations_url": "https://api.github.com/users/ezyang/orgs",
+        "repos_url": "https://api.github.com/users/ezyang/repos",
+        "events_url": "https://api.github.com/users/ezyang/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/ezyang/received_events",
+        "type": "User",
+        "site_admin": false
+      },
+      "labels": [
 
       ],
       "state": "open",
@@ -44,12 +112,12 @@
       ],
       "milestone": null,
       "comments": 0,
-      "created_at": "2021-03-04T16:12:50Z",
-      "updated_at": "2021-03-04T16:50:32Z",
+      "created_at": "2021-03-04T17:24:30Z",
+      "updated_at": "2021-03-04T17:24:30Z",
       "closed_at": null,
       "author_association": "CONTRIBUTOR",
       "active_lock_reason": null,
-      "body": "see also https://github.com/pytorch/pytorch/issues/53267",
+      "body": "Test needs to be skipped on rocm, patch coming soon",
       "performed_via_github_app": null,
       "score": 0.0
     },
@@ -3063,74 +3131,6 @@
       "author_association": "CONTRIBUTOR",
       "active_lock_reason": null,
       "body": "Currently the following script will succeed:\r\n```\r\nimport torch\r\nimport copy\r\nfrom torch.utils import mkldnn as mkldnn_utils\r\ngroups=1\r\nN = 32\r\nC = 32\r\nM = 32\r\nx = torch.randn(N, C, 56, 56, dtype=torch.float).to_mkldnn()\r\nconv2d = torch.nn.Conv2d(in_channels=C,\r\n                            out_channels=M,\r\n                            kernel_size=3,\r\n                            padding=1)\r\nmkldnn_conv2d = mkldnn_utils.to_mkldnn(copy.deepcopy(conv2d))\r\nwith torch.backends.mkldnn.flags(enabled=False):\r\n    y_mkldnn = mkldnn_conv2d(x).to_dense()\r\n```\r\nIt is confusing that when mkldnn is disabled, one can still call mkldnn functions. An attempt to do so should throw a RuntimeError. \r\n\n\ncc @gujinghui @PenghuiCheng @XiaobingSuper @jianyuh @VitalyFedyunin",
-      "performed_via_github_app": null,
-      "score": 0.0
-    },
-    {
-      "url": "https://api.github.com/repos/pytorch/pytorch/issues/31750",
-      "repository_url": "https://api.github.com/repos/pytorch/pytorch",
-      "labels_url": "https://api.github.com/repos/pytorch/pytorch/issues/31750/labels{/name}",
-      "comments_url": "https://api.github.com/repos/pytorch/pytorch/issues/31750/comments",
-      "events_url": "https://api.github.com/repos/pytorch/pytorch/issues/31750/events",
-      "html_url": "https://github.com/pytorch/pytorch/issues/31750",
-      "id": 544251558,
-      "node_id": "MDU6SXNzdWU1NDQyNTE1NTg=",
-      "number": 31750,
-      "title": "DISABLED test/onnx/test_pytorch_onnx_onnxruntime.py::TestONNXRuntime_opset10::test_interpolate_downsample",
-      "user": {
-        "login": "Krovatkin",
-        "id": 5086322,
-        "node_id": "MDQ6VXNlcjUwODYzMjI=",
-        "avatar_url": "https://avatars.githubusercontent.com/u/5086322?v=4",
-        "gravatar_id": "",
-        "url": "https://api.github.com/users/Krovatkin",
-        "html_url": "https://github.com/Krovatkin",
-        "followers_url": "https://api.github.com/users/Krovatkin/followers",
-        "following_url": "https://api.github.com/users/Krovatkin/following{/other_user}",
-        "gists_url": "https://api.github.com/users/Krovatkin/gists{/gist_id}",
-        "starred_url": "https://api.github.com/users/Krovatkin/starred{/owner}{/repo}",
-        "subscriptions_url": "https://api.github.com/users/Krovatkin/subscriptions",
-        "organizations_url": "https://api.github.com/users/Krovatkin/orgs",
-        "repos_url": "https://api.github.com/users/Krovatkin/repos",
-        "events_url": "https://api.github.com/users/Krovatkin/events{/privacy}",
-        "received_events_url": "https://api.github.com/users/Krovatkin/received_events",
-        "type": "User",
-        "site_admin": false
-      },
-      "labels": [
-        {
-          "id": 1679533716,
-          "node_id": "MDU6TGFiZWwxNjc5NTMzNzE2",
-          "url": "https://api.github.com/repos/pytorch/pytorch/labels/skipped",
-          "name": "skipped",
-          "color": "bfdadc",
-          "default": false,
-          "description": "Denotes a (flaky) test currently skipped in CI."
-        },
-        {
-          "id": 1301347167,
-          "node_id": "MDU6TGFiZWwxMzAxMzQ3MTY3",
-          "url": "https://api.github.com/repos/pytorch/pytorch/labels/triaged",
-          "name": "triaged",
-          "color": "006b75",
-          "default": false,
-          "description": "This issue has been looked at a team member, and triaged and prioritized into an appropriate module"
-        }
-      ],
-      "state": "open",
-      "locked": false,
-      "assignee": null,
-      "assignees": [
-
-      ],
-      "milestone": null,
-      "comments": 2,
-      "created_at": "2019-12-31T19:03:16Z",
-      "updated_at": "2020-01-02T14:49:19Z",
-      "closed_at": null,
-      "author_association": "CONTRIBUTOR",
-      "active_lock_reason": null,
-      "body": "Temporarily disabling a flakey test.",
       "performed_via_github_app": null,
       "score": 0.0
     }
